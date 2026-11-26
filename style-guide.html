@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guía de estilos · Dunkin’</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css?v=interaccion">
-  <link rel="stylesheet" href="css/menu-categories.css">
-  <link rel="stylesheet" href="css/product-card.css?v=interaccion">
-  <link rel="stylesheet" href="css/catalog-controls.css?v=fila">
-  <link rel="stylesheet" href="css/product-controls.css">
-  <link rel="stylesheet" href="css/style-guide.css?v=fila">
-  <link rel="stylesheet" href="css/sucursales.css?v=ficha">
-  <link rel="stylesheet" href="css/nosotros.css">
+  <link rel="stylesheet" href="css/tokens.css?v=cintas">
+  <link rel="stylesheet" href="css/base.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/layout.css?v=relato-espacio">
+  <link rel="stylesheet" href="css/components.css?v=relato-espacio">
+  <link rel="stylesheet" href="css/menu-categories.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/product-card.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/catalog-controls.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/product-controls.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/style-guide.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/sucursales.css?v=relato-espacio">
+  <link rel="stylesheet" href="css/landing-loops.css?v=cintas">
+  <link rel="stylesheet" href="css/nosotros.css?v=pausa">
   <script src="js/sucursales.js" defer></script>
   <script src="js/city-preference.js" defer></script>
-  <link rel="stylesheet" href="css/mobile-menu.css">
+  <link rel="stylesheet" href="css/mobile-menu.css?v=relato-espacio">
   <script src="js/main.js?v=menu-movil-final" defer></script>
+  <script src="js/landing-loops.js?v=5.2" defer></script>
   <script src="js/menu-cafe.js?v=barra-superior" defer></script>
 </head>
 <body>
@@ -116,6 +118,24 @@
     <p class="sg-caption">Figma usa 400, 600 y 700. El archivo local admite todo el intervalo 300–700.</p>
   </article>
 </div>
+<div class="sg-table-wrap" tabindex="0" role="region" aria-label="Escala tipográfica web">
+  <table class="sg-table">
+    <caption>Escala tipográfica web</caption>
+    <thead><tr><th scope="col">Función</th><th scope="col">Móvil (px)</th><th scope="col">Escritorio (px)</th><th scope="col">Tokens</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Texto secundario y botón compacto</th><td>14</td><td>14</td><td><code>--type-secondary</code>, <code>--type-button-compact</code></td></tr>
+      <tr><th scope="row">Texto general, buscadores y direcciones</th><td>16</td><td>16</td><td><code>--type-body</code>, <code>--type-search</code></td></tr>
+      <tr><th scope="row">Etiquetas de categorías y productos</th><td>16</td><td>18</td><td><code>--type-label</code>, <code>--type-label-wide</code></td></tr>
+      <tr><th scope="row">Botón estándar y grande</th><td>16–18</td><td>16–18</td><td><code>--type-button-default</code>, <code>--type-button-large</code></td></tr>
+      <tr><th scope="row">Encabezados de tarjetas</th><td>20</td><td>20</td><td><code>--type-card-heading</code></td></tr>
+      <tr><th scope="row">Texto narrativo de Nosotros</th><td>16</td><td>20</td><td><code>--type-narrative</code>, <code>--type-narrative-wide</code></td></tr>
+      <tr><th scope="row">Subtítulos y precios de la ficha</th><td>24</td><td>24</td><td><code>--type-subtitle</code></td></tr>
+      <tr><th scope="row">Título de ficha · COLD BREW</th><td>36</td><td>36</td><td><code>--type-product-title</code></td></tr>
+      <tr><th scope="row">Títulos de sección · CAFÉ, NOVEDADES, SOMOS</th><td>Hasta 48</td><td>48</td><td><code>--type-section-title</code></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sg-caption">Los títulos convencionales y las etiquetas tienen interlineado de 1,2. Los textos narrativos usan 1,5. La escala expresiva de Hero, Refresher, las campañas de Nosotros y el menú móvil mantiene sus medidas aprobadas. «Probar ahora» conserva 13 px en la composición compacta del Refresher. En Sucursales, «Cerca de mí» usa 13 px hasta 352 px de viewport para dar espacio al buscador de 16 px.</p>
 <div class="sg-table-wrap" tabindex="0" role="region" aria-label="Medidas originales de Figma">
       <table class="sg-table">
         <caption>Medidas originales de Figma</caption>
@@ -140,6 +160,19 @@
 <section class="sg-section" id="espaciados" aria-labelledby="espaciados-titulo">
   <h2 id="espaciados-titulo"><span aria-hidden="true">03</span>Espaciados</h2>
   <h3>Escala normalizada para la web</h3>
+  <div class="sg-table-wrap" tabindex="0" role="region" aria-label="Relaciones de espaciado">
+    <table class="sg-table">
+      <caption>Relaciones de espaciado</caption>
+      <thead><tr><th scope="col">Relación</th><th scope="col">Móvil</th><th scope="col">Tableta</th><th scope="col">Escritorio</th><th scope="col">Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Icono y texto</th><td>8 px</td><td>8 px</td><td>8 px</td><td><a href="sucursales.html">Horario de sucursal</a> · <code>--gap-icon-text</code></td></tr>
+        <tr><th scope="row">Título y descripción</th><td>16 px</td><td>16 px</td><td>24 px</td><td><a href="producto.html">Ficha COLD BREW</a> · <code>--gap-title-description</code></td></tr>
+        <tr><th scope="row">Descripción y CTA</th><td>24 px</td><td>24 px</td><td>32 px</td><td><a href="nosotros.html#about-team-title">Bloque de empleo en escritorio</a> · <code>--gap-description-cta</code></td></tr>
+        <tr><th scope="row">Grupos de contenido</th><td>32 px</td><td>32 px</td><td>48 px</td><td><a href="nosotros.html#about-combination">Después del título de la taza</a> · <code>--gap-content-group</code></td></tr>
+        <tr><th scope="row">Secciones convencionales</th><td>48 px</td><td>64 px</td><td>80 px</td><td><a href="menu-cafe.html#cafe">Cierre del catálogo</a> · <code>--section-space</code></td></tr>
+      </tbody>
+    </table>
+  </div>
 <ul class="sg-measures" role="list"><li><span class="sg-measure" style="--sg-measure:var(--space-4)" aria-hidden="true"></span><strong>4 px</strong><br><code>--space-4</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-8)" aria-hidden="true"></span><strong>8 px</strong><br><code>--space-8</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-12)" aria-hidden="true"></span><strong>12 px</strong><br><code>--space-12</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-16)" aria-hidden="true"></span><strong>16 px</strong><br><code>--space-16</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-24)" aria-hidden="true"></span><strong>24 px</strong><br><code>--space-24</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-32)" aria-hidden="true"></span><strong>32 px</strong><br><code>--space-32</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-40)" aria-hidden="true"></span><strong>40 px</strong><br><code>--space-40</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-48)" aria-hidden="true"></span><strong>48 px</strong><br><code>--space-48</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-64)" aria-hidden="true"></span><strong>64 px</strong><br><code>--space-64</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-80)" aria-hidden="true"></span><strong>80 px</strong><br><code>--space-80</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-96)" aria-hidden="true"></span><strong>96 px</strong><br><code>--space-96</code></li></ul>
 <h3>Margen, padding y gap</h3>
 <div class="layout-grid sg-catalog">
@@ -309,9 +342,13 @@
 <section class="sg-section" id="componentes" aria-labelledby="componentes-titulo">
   <h2 id="componentes-titulo"><span aria-hidden="true">08</span>Componentes</h2>
   <h3 id="componentes-nosotros">Composición de Nosotros</h3>
-  <div class="about-ribbon" aria-hidden="true"><span>NUESTRA HISTORIA&nbsp; NUESTRA HISTORIA</span></div>
-  <p class="sg-caption">Las cintas de Nosotros son estáticas. Una sola imagen de la dona acompaña el relato dentro de su sección: permanece anclada y se desplaza suavemente con el progreso del scroll, en ambos sentidos. Al finalizar, sale con el relato antes del bloque de empleo. Con movimiento reducido permanece fija en la composición inicial y los textos se muestran completos. Las cajas de los recursos conservan sus proporciones con cualquier candidato WebP.</p>
-  <p class="sg-caption">Después de la primera vista, los títulos, párrafos y gráficos del relato aparecen al entrar en pantalla. La entrada combina opacidad y un ascenso de 24 px en escritorio y 20 px en móvil, con 700 ms de <code>ease-out</code> y 120 ms entre grupos. Cada elemento se revela una vez. Con movimiento reducido o sin JavaScript, todo el contenido queda visible desde el inicio.</p>
+  <div class="about-ribbon-wrap">
+  <div class="about-ribbon loop-window" data-loop aria-hidden="true">
+    <div class="loop-track"><div class="loop-sequence"><span>NUESTRA HISTORIA</span><span>NUESTRA HISTORIA</span><span>NUESTRA HISTORIA</span></div></div>
+  </div>
+  <button class="loop-control about-ribbon__control" type="button" data-loop-control aria-label="Pausar movimiento" hidden></button>
+</div>
+  <p class="sg-caption">La portada deja 2,2 segundos de lectura antes de que la dona aparezca sobre los logotipos. Los capítulos quedan por debajo de la primera vista y entran por etapas al bajar. Las cintas «Nuestra historia» y «La combinación» avanzan horizontalmente a 42 px/s con el mismo bucle de Inicio. El control de la primera cinta pausa ambas. El giro de la dona sigue el avance vertical, se revierte al subir y se detiene dentro de 2025. Su eje horizontal permanece fijo. La taza entra por la izquierda, la capa original de chispas y la bandera por la derecha. El titular de la combinación queda debajo de la escena. Las entradas duran 700 ms, con desenlace <code>ease-out</code> y desfases de 120 ms. Con movimiento reducido o sin JavaScript, los textos y recursos permanecen visibles y la dona se muestra en 2025.</p>
   <p><a href="nosotros.html">Ver paneles, composición de marca y bloque de equipo</a></p>
   <h3 id="componentes-sucursales">Localizador de sucursales</h3>
   <p class="sg-caption">Las tarjetas muestran datos provisionales de Figma. Pulsa cada una para alternar su estado. El mapa estático y su marcador documentan el encuadre móvil de Figma. La tarjeta conserva el ancho de referencia de 356 px, padding de 14 × 12 px y radio de 23 px. En el localizador, «Cómo llegar» aparece en la ventana del marcador. Si el mapa no carga, el enlace aparece debajo de la tarjeta seleccionada.</p>

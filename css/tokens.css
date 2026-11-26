@@ -18,27 +18,48 @@
   --weight-semibold: 600;
   --weight-bold: 700;
 
-  /* Tamaños en rem equivalentes a las lecturas de Figma a 16 px de raíz. */
+  /* Escala por función, a 16 px de raíz. */
+  --type-secondary: 0.875rem;
+  --type-body: 1rem;
+  --type-label: var(--type-body);
+  --type-label-wide: 1.125rem;
+  --type-search: var(--type-body);
+  --type-button-compact: var(--type-secondary);
+  --type-button-default: var(--type-body);
+  --type-button-large: 1.125rem;
+  --type-card-heading: 1.25rem;
+  --type-narrative: var(--type-body);
+  --type-narrative-wide: 1.25rem;
+  --type-subtitle: 1.5rem;
+  --type-product-title: 2.25rem;
+  --type-section-title: 3rem;
+  --type-nav-desktop: 1.25rem;
+  --type-locator: var(--type-subtitle);
+
+  /* Medidas expresivas del prototipo y jerarquía aprobada del pie. */
   --type-hero-mobile: 3rem;
   --type-hero-intro-desktop: 4.061875rem; /* 64.99 px */
   --type-hero-brand-desktop: 7.673125rem; /* 122.77 px */
   --type-featured-mobile: 2.875rem;
   --type-featured-desktop: 5rem;
-  --type-section-title: 3rem;
+  --type-campaign-copy-wide: 1.25rem;
+  --type-button-compact-constrained: 0.8125rem;
   --type-store-promo: 2.5rem;
-  --type-nav-desktop: 1.25rem;
-  --type-locator: 1.5rem;
-  --type-copy-mobile: 1rem;
-  --type-copy-desktop: 1.25rem;
-  --type-category-mobile: 0.9375rem;
-  --type-category-desktop: 1.006875rem; /* 16.11 px */
+  --type-store-promo-min: 2.125rem;
+  --type-mobile-menu: 2.875rem;
+  --type-mobile-menu-min: 2rem;
+  --type-narrative-year-min: 4.75rem;
+  --type-narrative-year: 6rem;
+  --type-narrative-year-wide: 8rem;
+  --type-narrative-campaign-min: 2.375rem;
+  --type-narrative-campaign-wide-min: 4.25rem;
+  --type-narrative-campaign-wide: 6rem;
   --type-marquee-mobile: 0.9375rem;
   --type-marquee-desktop: 1.25rem;
   --type-footer-mobile: 0.9375rem;
-  --type-footer-desktop: 0.97rem; /* 15.52 px */
-  --type-button-small: 0.8125rem;
-  --type-button-default: 1rem;
-  --type-button-large: 1.125rem;
+  --type-footer-wide: var(--type-body);
+  --type-footer-heading-wide: var(--type-label-wide);
+  --type-footer-caption-wide: var(--type-secondary);
 
   --leading-tight: 1.2;
   --leading-copy: 1.5;
@@ -63,8 +84,15 @@
   --space-80: 5rem;
   --space-96: 6rem;
 
+  --gap-icon-text: var(--space-8);
+  --gap-title-description: var(--space-16);
+  --gap-description-cta: var(--space-24);
+  --gap-content-group: var(--space-32);
+  --section-space: var(--space-48);
+
   --container-max: var(--reference-desktop);
   --grid-gutter-wide: 1.25rem;
+  --marquee-speed: 42; /* Píxeles por segundo. */
   --brand-label-padding-inline: 1.8125rem; /* 29 px en Figma */
   --target-size: 2.75rem;
 
@@ -73,4 +101,19 @@
   --leading-footer-body: 1.25rem;
   --shadow-soft: 0 3px 8px rgba(0, 0, 0, .15);
   --shadow-medium: 0 4px 12px rgba(0, 0, 0, .25);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --section-space: var(--space-64);
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --gap-title-description: var(--space-24);
+    --gap-description-cta: var(--space-32);
+    --gap-content-group: var(--space-48);
+    --section-space: var(--space-80);
+  }
 }

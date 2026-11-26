@@ -1,6 +1,6 @@
 .product-card {
   --product-media-width: var(--product-width-mobile);
-  --product-label-size: var(--type-category-mobile);
+  --product-label-size: var(--type-label);
 
   display: grid;
   justify-items: center;
@@ -84,7 +84,7 @@
 
 @media (min-width: 64rem) {
   .product-card {
-    --product-label-size: 1.07675rem;
+    --product-label-size: var(--type-label-wide);
   }
 }
 

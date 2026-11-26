@@ -162,7 +162,7 @@
 
   .hero__copy {
     max-inline-size: none;
-    font-size: clamp(var(--type-copy-mobile), calc(20 * var(--hero-pixel)), var(--type-copy-desktop));
+    font-size: clamp(var(--type-body), calc(20 * var(--hero-pixel)), var(--type-campaign-copy-wide));
   }
 
   .hero__button {

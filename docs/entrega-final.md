@@ -8,7 +8,8 @@
 - Sucursales filtra el directorio y el mapa por ciudad, nombre, dirección o zona. «Cerca de mí» solicita la ubicación al pulsar y selecciona la sucursal más próxima entre los resultados visibles. La lista, la búsqueda y las indicaciones siguen disponibles si se rechaza el permiso.
 - El directorio inicia antes de cargar Leaflet. Si falla la petición o se abre el HTML directamente, Sucursales usa el respaldo local incluido en `sucursales.html`. Al actualizar `data/sucursales.json`, sincronizar el bloque `store-directory-fallback` con los mismos campos de visualización.
 - El encabezado muestra un único indicador naranja en el enlace activo. El hover rosa corresponde a enlaces no activos y el foco mantiene su contorno.
-- Nosotros usa un único recurso de la dona, anclado durante los capítulos de la historia. Su desplazamiento es reversible y depende del scroll. Cuando termina el relato, la dona se libera antes de la sección de empleo. Con movimiento reducido, la dona queda en el primer panel y el texto se muestra íntegro.
+- Nosotros deja 2,2 segundos para leer la portada antes de mostrar la única dona. La trayectoria mantiene su eje horizontal, gira al bajar y vuelve a su ángulo inicial al subir. Las cintas «Nuestra historia» y «La combinación» comparten el bucle horizontal de Inicio. El titular queda debajo de la taza y las chispas. La dona termina dentro de 2025 antes del bloque de empleo. Con movimiento reducido o sin JavaScript, la dona aparece en 2025 y los textos quedan visibles.
+- La guía registra la escala tipográfica y las relaciones de espaciado por función. La normalización conserva los márgenes de retícula y los recortes intencionales de las campañas.
 
 ## Pruebas realizadas
 

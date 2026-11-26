@@ -45,7 +45,7 @@
 }
 
 .featured-product__button {
-  --button-font-size: var(--type-button-small);
+  --button-font-size: var(--type-button-compact-constrained);
 
   z-index: 2;
   margin-block-start: calc(15 * var(--featured-unit));
@@ -162,11 +162,11 @@
   .featured-product__copy {
     inline-size: calc(330 * var(--featured-unit));
     margin-block-start: calc(17 * var(--featured-unit));
-    font-size: clamp(var(--type-copy-mobile), calc(20 * var(--featured-unit)), var(--type-copy-desktop));
+    font-size: clamp(var(--type-body), calc(20 * var(--featured-unit)), var(--type-campaign-copy-wide));
   }
 
   .featured-product__button {
-    --button-font-size: clamp(var(--type-button-small), calc(18 * var(--featured-unit)), var(--type-button-large));
+    --button-font-size: clamp(var(--type-button-compact-constrained), calc(18 * var(--featured-unit)), var(--type-button-large));
 
     margin-block-start: calc(27 * var(--featured-unit));
   }

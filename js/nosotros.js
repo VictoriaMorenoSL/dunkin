@@ -1,37 +1,53 @@
 const narrative = document.querySelector(".about-narrative");
 const motion = matchMedia("(prefers-reduced-motion: reduce)");
-const wideNarrative = matchMedia("(min-width: 64rem)");
+const finale = narrative?.querySelector(".about-year--recent");
+const introduction = narrative?.querySelector(".about-intro");
 let frame = 0;
+let introTimer = 0;
+let introReady = false;
 
-function updateDonut() {
-  frame = 0;
-  const bounds = narrative.getBoundingClientRect();
-  const travel = Math.max(1, bounds.height - innerHeight * .5);
-  const progress = Math.min(1, Math.max(0, -bounds.top / travel));
-  const distance = wideNarrative.matches ? 36 : 20;
-  const sideways = wideNarrative.matches ? 19 + Math.sin(progress * Math.PI) * 76 : 0;
-  narrative.style.setProperty("--donut-inline", `${sideways}px`);
-  narrative.style.setProperty("--donut-offset", `${progress * distance}px`);
+function clampProgress(value) {
+  return Math.min(1, Math.max(0, value));
 }
 
-function queueDonut() {
-  if (!frame) frame = requestAnimationFrame(updateDonut);
+function updateNarrative() {
+  frame = 0;
+  const headerHeight = document.querySelector(".site-header").offsetHeight;
+  const start = narrative.getBoundingClientRect().top;
+  const end = finale.getBoundingClientRect();
+  const traveled = Math.max(0, headerHeight - start);
+  const travel = clampProgress(traveled / Math.max(1, finale.offsetTop));
+  const settle = clampProgress((end.bottom - innerHeight * .8) / 220);
+  const enteredStory = introduction.getBoundingClientRect().bottom < innerHeight * .7;
+
+  narrative.toggleAttribute("data-donut-visible", introReady || enteredStory);
+  narrative.style.setProperty("--about-donut-offset", `${18 * travel * settle}px`);
+  narrative.style.setProperty("--about-donut-spin", `${120 * travel}deg`);
+}
+
+function queueNarrative() {
+  if (!frame) frame = requestAnimationFrame(updateNarrative);
 }
 
 function syncMotion() {
+  narrative.toggleAttribute("data-narrative-motion", !motion.matches);
   if (motion.matches) {
-    removeEventListener("scroll", queueDonut);
-    removeEventListener("resize", queueDonut);
+    removeEventListener("scroll", queueNarrative);
+    removeEventListener("resize", queueNarrative);
     cancelAnimationFrame(frame);
+    clearTimeout(introTimer);
     frame = 0;
-    narrative.style.removeProperty("--donut-offset");
-    narrative.style.removeProperty("--donut-inline");
     return;
   }
-
-  addEventListener("scroll", queueDonut, { passive: true });
-  addEventListener("resize", queueDonut);
-  queueDonut();
+  if (!introReady) {
+    introTimer = setTimeout(() => {
+      introReady = true;
+      queueNarrative();
+    }, 2200);
+  }
+  addEventListener("scroll", queueNarrative, { passive: true });
+  addEventListener("resize", queueNarrative);
+  queueNarrative();
 }
 
 function setupReveal(story) {

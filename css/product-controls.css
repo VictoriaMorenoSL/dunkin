@@ -108,7 +108,7 @@
 
 .product-sizes__price {
   color: var(--color-orange);
-  font-size: 1.5rem;
+  font-size: var(--type-subtitle);
 }
 
 @media (hover: hover) and (pointer: fine) {

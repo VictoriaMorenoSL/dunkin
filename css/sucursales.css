@@ -155,7 +155,7 @@
   background: var(--color-white);
   color: var(--color-pink);
   font-family: var(--font-quicksand);
-  font-size: var(--type-copy-mobile);
+  font-size: var(--type-body);
   font-weight: 500;
   line-height: var(--leading-tight);
   text-align: start;
@@ -168,18 +168,14 @@
 }
 
 .store-card__title {
-  font-size: var(--type-copy-desktop);
+  font-size: var(--type-card-heading);
   font-weight: var(--weight-bold);
 }
 
 .store-card__address {
   margin-block-start: .6875rem;
   color: var(--color-orange);
-  font-size: var(--type-category-mobile);
-}
-
-.store-card[data-store-id="plaza-mitikah"] .store-card__address {
-  font-size: inherit;
+  font-size: var(--type-body);
 }
 
 .store-card__hours {
@@ -187,7 +183,7 @@
   grid-template-columns: 19px minmax(0, 1fr);
   align-content: center;
   align-items: start;
-  gap: var(--space-8);
+  gap: var(--gap-icon-text);
   min-block-size: 42px;
   padding-block: var(--space-8);
 }
@@ -234,12 +230,17 @@
 }
 
 @media (max-width: 22rem) {
+  .store-locator__tools {
+    gap: var(--space-4);
+  }
+
   .store-locator__tools .store-locator__nearby {
-    --button-padding-inline: var(--space-8);
+    --button-padding-inline: 0.375rem;
+    --button-font-size: var(--type-button-compact-constrained);
   }
 
   .store-locator__tools .catalog-search {
-    padding-inline-start: var(--space-8);
+    padding-inline-start: var(--space-4);
   }
 }
 
@@ -264,10 +265,6 @@
     justify-self: center;
     inline-size: min(100%, 24rem);
     min-block-size: 36px;
-  }
-
-  .store-locator__tools .store-locator__search input {
-    font-size: var(--type-button-large);
   }
 
   .store-locator__tools .store-locator__nearby {
@@ -335,7 +332,7 @@
 .store-map__notice,
 .store-locator__message {
   color: var(--color-dark);
-  font-size: var(--type-category-mobile);
+  font-size: var(--type-secondary);
   line-height: var(--leading-tight);
 }
 
@@ -362,7 +359,7 @@
   display: inline-flex;
   align-items: center;
   min-block-size: var(--target-size);
-  font-size: var(--type-category-mobile);
+  font-size: var(--type-secondary);
   font-weight: var(--weight-bold);
   text-decoration: underline;
 }
@@ -377,7 +374,7 @@
 }
 
 .store-map__popup strong {
-  font-size: var(--type-copy-mobile);
+  font-size: var(--type-body);
 }
 
 .store-marker {

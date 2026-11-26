@@ -50,7 +50,7 @@
 }
 
 .button--small {
-  --button-font-size: var(--type-button-small);
+  --button-font-size: var(--type-button-compact);
 }
 
 .button--large {
@@ -79,7 +79,7 @@
 }
 
 .button--with-icon {
-  gap: var(--space-8);
+  gap: var(--gap-icon-text);
 }
 
 .button--with-icon img,
@@ -335,14 +335,14 @@
 
 .category-label {
   color: var(--color-pink);
-  font-size: var(--type-category-mobile);
+  font-size: var(--type-label);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
 }
 
 @media (min-width: 64rem) {
   .category-label {
-    font-size: var(--category-label-size, var(--type-category-desktop));
+    font-size: var(--type-label-wide);
   }
 }
 
@@ -567,16 +567,16 @@
 
 @media (min-width: 64rem) {
   .site-footer {
-    font-size: var(--type-copy-mobile);
+    font-size: var(--type-footer-wide);
     line-height: var(--leading-copy);
   }
 
   .site-footer__heading {
-    font-size: var(--type-button-large);
+    font-size: var(--type-footer-heading-wide);
   }
 
   .site-footer__copyright {
-    font-size: .875rem;
+    font-size: var(--type-footer-caption-wide);
   }
 
   .site-footer__brand {

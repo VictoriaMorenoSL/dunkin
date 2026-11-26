@@ -66,10 +66,10 @@
 }
 
 .mobile-menu__home {
-  gap: var(--space-8);
+  gap: var(--gap-icon-text);
   padding-inline: .625rem;
   color: var(--color-off-white);
-  font: var(--weight-bold) var(--type-copy-mobile) / var(--leading-tight) var(--font-quicksand);
+  font: var(--weight-bold) var(--type-body) / var(--leading-tight) var(--font-quicksand);
   text-decoration: none;
 }
 
@@ -100,7 +100,7 @@
   padding-inline: var(--space-8);
   place-items: center;
   color: var(--color-white);
-  font: var(--weight-bold) clamp(2rem, 11.45vw, 2.875rem) / var(--leading-tight) var(--font-dunkin-sans);
+  font: var(--weight-bold) clamp(var(--type-mobile-menu-min), 11.45vw, var(--type-mobile-menu)) / var(--leading-tight) var(--font-dunkin-sans);
   text-align: center;
   text-decoration: none;
   transition: background-color var(--mobile-menu-duration) ease-out;

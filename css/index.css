@@ -27,7 +27,7 @@
 
 .store-promo__content h2 {
   font-family: var(--font-dunkin-regular);
-  font-size: clamp(2.125rem, calc(var(--type-store-promo) - max(0px, 360px - 100vw) * .15), var(--type-store-promo));
+  font-size: clamp(var(--type-store-promo-min), calc(var(--type-store-promo) - max(0px, 360px - 100vw) * .15), var(--type-store-promo));
   font-weight: var(--weight-regular);
   line-height: var(--leading-store-promo);
   letter-spacing: var(--tracking-store-promo);
@@ -103,7 +103,7 @@
 }
 
 .about-preview__button {
-  --button-font-size: var(--type-button-small);
+  --button-font-size: var(--type-button-compact);
 }
 
 @media (min-width: 48rem) {

@@ -40,7 +40,7 @@ body {
   background: var(--color-white);
   color: var(--color-dark);
   font-family: var(--font-quicksand);
-  font-size: var(--type-copy-mobile);
+  font-size: var(--type-body);
   font-weight: var(--weight-regular);
   font-synthesis: none;
   line-height: var(--leading-copy);

@@ -43,14 +43,14 @@
 .product-detail h1 {
   color: var(--color-pink);
   font-family: var(--font-quicksand);
-  font-size: 2.25rem;
+  font-size: var(--type-product-title);
 }
 
 .product-detail__description {
   max-inline-size: 20rem;
-  margin-block-start: .9375rem;
+  margin-block-start: var(--gap-title-description);
   color: var(--color-orange);
-  font-size: var(--type-button-default);
+  font-size: var(--type-body);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
 }
@@ -60,7 +60,7 @@
 }
 
 .product-detail__locator {
-  margin-block-start: 1.75rem;
+  margin-block-start: var(--gap-description-cta);
 }
 
 .product-detail__locator .button__location-icon {
@@ -132,8 +132,8 @@
 
   .product-detail__description {
     max-inline-size: 25.3125rem;
-    margin-block-start: var(--space-24);
-    font-size: var(--type-copy-desktop);
+    margin-block-start: var(--gap-title-description);
+    font-size: var(--type-campaign-copy-wide);
   }
 
   .product-detail .product-sizes {

@@ -114,9 +114,3 @@
     --category-gap: 1.8129375rem;
   }
 }
-
-@media (min-width: 64rem) {
-  .menu-category-grid {
-    --category-label-size: 1rem;
-  }
-}
