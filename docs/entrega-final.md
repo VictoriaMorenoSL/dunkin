@@ -1,0 +1,35 @@
+# Dunkin Web · Auditoría de entrega
+
+## Navegación y controles
+
+- El logotipo del encabezado y del pie lleva a Index. El encabezado marca la sección actual y conserva Menú como sección activa en la ficha de COLD BREW.
+- Index conecta con Menú-Café, Sucursales y Nosotros. La tarjeta COLD BREW abre Producto, y su CTA «Encontrar mi Dunkin» abre Sucursales. «Probar ahora» en Index lleva al localizador, dado que el Refresher no tiene ficha individual en esta entrega.
+- Menú-Café conserva ocho productos. En escritorio el buscador y la ciudad comparten una fila debajo del encabezado y antes de las categorías, alineada a los bordes del catálogo y con 24 px entre controles. En móvil mantienen su posición antes de las categorías. El selector guarda la preferencia en el mismo dominio y Sucursales reutiliza ese valor.
+- Sucursales filtra el directorio y el mapa por ciudad, nombre, dirección o zona. «Cerca de mí» solicita la ubicación al pulsar y selecciona la sucursal más próxima entre los resultados visibles. La lista, la búsqueda y las indicaciones siguen disponibles si se rechaza el permiso.
+- El directorio inicia antes de cargar Leaflet. Si falla la petición o se abre el HTML directamente, Sucursales usa el respaldo local incluido en `sucursales.html`. Al actualizar `data/sucursales.json`, sincronizar el bloque `store-directory-fallback` con los mismos campos de visualización.
+- El encabezado muestra un único indicador naranja en el enlace activo. El hover rosa corresponde a enlaces no activos y el foco mantiene su contorno.
+- Nosotros usa un único recurso de la dona, anclado durante los capítulos de la historia. Su desplazamiento es reversible y depende del scroll. Cuando termina el relato, la dona se libera antes de la sección de empleo. Con movimiento reducido, la dona queda en el primer panel y el texto se muestra íntegro.
+
+## Pruebas realizadas
+
+- Se verificaron las cinco páginas y la guía a 320, 360, 402, 480, 767, 768, 1024, 1318, 1440 y 1920 px. Las mediciones no registraron desbordamiento horizontal.
+- Se comprobaron por teclado el menú móvil, la apertura de la ficha COLD BREW, el selector de ciudad y la selección de la última tarjeta del directorio. La búsqueda de producto se probó con «americano» y con limpieza del campo. La búsqueda de sucursal se probó con «Miguel Alemán», sin coincidencias y al restablecerla. Se verificó la preferencia al navegar entre páginas.
+- A 1318 px, la lista y el mapa de Sucursales empiezan a la misma altura y la lista puede desplazarse de forma independiente hasta el borde superior del pie naranja. A 402 px, el mapa ocupa todo el ancho y la lista forma parte del scroll de página, con 32 px antes del pie. Los controles de zoom y la atribución quedan visibles.
+- Se simularon un fallo de teselas, una denegación de ubicación y una posición conocida. El fallo mantuvo las cinco tarjetas y los enlaces de indicaciones. Se probó el movimiento reducido del relato con la preferencia simulada en el navegador.
+- Se verificaron 468 referencias en seis HTML y los recursos citados en CSS. Los recursos de ejecución se resuelven de forma relativa. No se observaron errores de consola durante la navegación normal auditada.
+
+## Recursos y ejecución
+
+- El proyecto se sirve desde su raíz con un servidor estático. Debe publicarse por HTTPS para que el navegador pueda ofrecer geolocalización fuera de localhost.
+- Las imágenes WebP usan candidatos responsivos donde se necesita preservar la resolución. En Nosotros, diez candidatos suman aproximadamente 550 kB en disco frente a 5,85 MB de las tres imágenes originales. La descarga inicial toma solo los candidatos elegidos por el navegador.
+- Las fotografías originales, los documentos de `docs/` y las capturas de `references/` se conservan en desarrollo. Las capturas de comparación de `references/` no son requeridas por el sitio. Las imágenes originales que todavía figuran como respaldo en `src` deben acompañar cualquier copia de publicación.
+- Leaflet 1.9.4 y su licencia se sirven desde `vendor/leaflet/` solo en Sucursales. La capa base usa **Stadia Maps Alidade Smooth** con créditos visibles a Stadia Maps, OpenMapTiles y OpenStreetMap. Las indicaciones se abren mediante URL de Google Maps desde la ventana del marcador. Ante un fallo del mapa, aparecen debajo de la tarjeta seleccionada. [Teselas ráster de Stadia Maps](https://docs.stadiamaps.com/raster/) · [Atribución](https://docs.stadiamaps.com/attribution/) · [Distribución de Leaflet](https://leafletjs.com/download)
+- El servicio público de teselas de OpenStreetMap respondió con 403. La plantilla anterior empleaba el dominio oficial y permitía la caché normal. La política exige un `Referer` válido y respetar la caché del proveedor, y permite bloquear solicitudes para proteger el servicio. El 403 no identifica la regla aplicada. Se retiró ese endpoint del sitio y las pruebas de error usan un servidor local. [Política de teselas de OpenStreetMap](https://operations.osmfoundation.org/policies/tiles/)
+- La demo académica funciona en `localhost` o `127.0.0.1` sin clave, con conexión y límites propios del proveedor. El navegador envía el origen mediante `strict-origin-when-cross-origin` y respeta la caché HTTP. El sitio no precarga teselas ni el paquete académico las incluye. Ante respuestas 401, 403 o 429 se retira la capa durante la visita. Permanecen los marcadores, el directorio y las indicaciones. [Autenticación en Stadia Maps](https://docs.stadiamaps.com/authentication/)
+- Antes de publicar la demo académica en HTTPS, registrar el dominio y su subdominio real en la propiedad de Stadia Maps y comprobar que el alojamiento preserve `Origin`/`Referer`. La modalidad gratuita permite uso académico no comercial y está sujeta a cuota. La autenticación por dominio evita publicar claves en el código. [Autenticación en Stadia Maps](https://docs.stadiamaps.com/authentication/) · [Límites de servicio](https://docs.stadiamaps.com/limits)
+
+## Pendientes
+
+- Confirmar destinos para categorías sin catálogo, empleo, redes y los enlaces legales. Sus controles quedan inactivos.
+- Validar la vigencia comercial de los precios de COLD BREW y de los datos de contacto del prototipo antes de publicar.
+- El blanco sobre rosa da aproximadamente 4,01:1 y el blanco sobre naranja 2,82:1. Estos pares quedan por debajo de 4,5:1 para texto normal. Se conservan los colores aprobados y queda pendiente una revisión de accesibilidad con cambios de marca autorizados. [Contraste mínimo WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)

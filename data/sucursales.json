@@ -1,0 +1,151 @@
+{
+  "fechaConsulta": "2026-11-25",
+  "verificacion": "Directorio oficial y coordenadas del punto enlazado",
+  "sucursales": [
+    {
+      "id": "plaza-mitikah",
+      "zona": "cdmx",
+      "ciudad": "Ciudad de México",
+      "nombre": "Dunkin' Plaza Mitikah",
+      "direccion": "Av. Río Churubusco 601, Xoco, Benito Juárez, 03330 Ciudad de México",
+      "latitud": 19.360017,
+      "longitud": -99.1684915,
+      "horarioPublicado": "Lunes a domingo, 9:00 AM a 10:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/XpSpbMi2PdRxbVaW7",
+        "direccion": "https://mitikahmall.com.mx/places/dunkin-donuts/"
+      }
+    },
+    {
+      "id": "forum-buenavista",
+      "zona": "cdmx",
+      "ciudad": "Ciudad de México",
+      "nombre": "Dunkin' Forum Buenavista",
+      "direccion": "Eje 1 Norte (Mosqueta) 259, Buenavista, Cuauhtémoc, 06350 Ciudad de México",
+      "latitud": 19.4469957,
+      "longitud": -99.1521347,
+      "horarioPublicado": "Lunes a domingo, 9:00 AM a 10:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/Fsxs1odapi2SMZM56",
+        "direccion": "https://forumbuenavista.mx/como-llegar/"
+      }
+    },
+    {
+      "id": "parque-tepeyac",
+      "zona": "cdmx",
+      "ciudad": "Ciudad de México",
+      "nombre": "Dunkin' Parque Tepeyac",
+      "direccion": "Eduardo Molina 6730, Granjas Modernas, Gustavo A. Madero, 07460 Ciudad de México",
+      "latitud": 19.4779977,
+      "longitud": -99.099149,
+      "horarioPublicado": "Lunes a domingo, 9:00 AM a 10:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/qqNuXGbnVRwXGztM9",
+        "direccion": "https://parquetepeyac.com.mx/directorio/?location=DUNKIN"
+      }
+    },
+    {
+      "id": "las-americas",
+      "zona": "cdmx",
+      "ciudad": "Ecatepec de Morelos",
+      "nombre": "Dunkin' Centro Comercial Las Américas",
+      "direccion": "Av. Central S/N, local PB-24B, Las Américas, 55076 Ecatepec de Morelos, Estado de México",
+      "latitud": 19.5844066,
+      "longitud": -99.0234269,
+      "horarioPublicado": "Lunes a domingo, 9:00 AM a 9:30 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/eNubjjCMB7JeCuzRA"
+      }
+    },
+    {
+      "id": "toreo-parque-central",
+      "zona": "cdmx",
+      "ciudad": "Naucalpan de Juárez",
+      "nombre": "Dunkin' Toreo Parque Central",
+      "direccion": "Boulevard Manuel Ávila Camacho 5, Lomas de Sotelo, 53390 Naucalpan de Juárez, Estado de México",
+      "latitud": 19.4546883,
+      "longitud": -99.2192761,
+      "horarioPublicado": "Lun. a jue. 7:00 AM a 9:30 PM. Vie. 8:00 AM a 9:30 PM. Sáb. y dom. 9:00 AM a 10:30 PM.",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/5679kAqTCciUAyMu7",
+        "direccion": "https://toreoparquecentral.com/"
+      }
+    },
+    {
+      "id": "contry",
+      "zona": "monterrey",
+      "ciudad": "Monterrey",
+      "nombre": "Dunkin' Contry",
+      "direccion": "Av. Eugenio Garza Sada Sur 602, Arroyo Seco, 64740 Monterrey, N.L.",
+      "latitud": 25.6389316,
+      "longitud": -100.2860475,
+      "horarioPublicado": "7:00 AM a 10:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/gmEdSYYY51Gac89h6"
+      }
+    },
+    {
+      "id": "park-point",
+      "zona": "monterrey",
+      "ciudad": "Monterrey",
+      "nombre": "Dunkin' Park Point",
+      "direccion": "Av. Paseo de los Leones 99, Cumbres Elite, Sector Villas, 64349 Monterrey, N.L.",
+      "latitud": 25.7384954,
+      "longitud": -100.4050529,
+      "horarioPublicado": "Todos los días, 7:00 AM a 10:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/EN97RpvH5os2AVSa7"
+      }
+    },
+    {
+      "id": "citadel",
+      "zona": "monterrey",
+      "ciudad": "San Nicolás de los Garza",
+      "nombre": "Dunkin' Citadel",
+      "direccion": "Av. Miguel Alemán 526A, La Fe, 66477 San Nicolás de los Garza, N.L.",
+      "latitud": 25.7262201,
+      "longitud": -100.2150351,
+      "horarioPublicado": "8:00 AM a 9:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/ApYbNMKiY5FzwjnD7"
+      }
+    },
+    {
+      "id": "valle-oriente",
+      "zona": "monterrey",
+      "ciudad": "Monterrey",
+      "nombre": "Dunkin' Valle Oriente",
+      "direccion": "Av. Lázaro Cárdenas 1000, Zona Valle Oriente, 64750 Monterrey, N.L.",
+      "latitud": 25.6380981,
+      "longitud": -100.3142795,
+      "horarioPublicado": "9:00 AM a 9:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/2uNYnzRyq8B9R48b6",
+        "direccion": "https://funocomercial.com/galerias-valle-oriente/directorio/"
+      }
+    },
+    {
+      "id": "alquimia",
+      "zona": "monterrey",
+      "ciudad": "Monterrey",
+      "nombre": "Dunkin' Alquimia",
+      "direccion": "Carretera Nacional 3972, 64985 Monterrey, N.L.",
+      "latitud": 25.5214556,
+      "longitud": -100.2034029,
+      "horarioPublicado": "8:00 AM a 9:00 PM",
+      "fuentes": {
+        "directorio": "https://www.dunkin.mx/nearby_stores.aspx",
+        "coordenadas": "https://maps.app.goo.gl/qLBmDAdBWSm8nKTR9"
+      }
+    }
+  ]
+}

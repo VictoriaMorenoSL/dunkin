@@ -1,0 +1,181 @@
+:root {
+  --site-header-reserve: var(--space-64);
+  scroll-padding-block-start: var(--site-header-reserve);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --site-header-reserve: 6.6875rem;
+  }
+}
+
+.site-header {
+  position: sticky;
+  z-index: 10;
+  inset-block-start: 0;
+  block-size: var(--site-header-reserve);
+  pointer-events: none;
+}
+
+.site-header__surface {
+  background: var(--color-white);
+  pointer-events: auto;
+  max-inline-size: none;
+}
+
+/* The reserved shell preserves the document position while the visible surface contracts. */
+.site-header__nav {
+  transition: padding-block 250ms ease;
+}
+
+.site-header .site-header__link[aria-disabled="true"] {
+  text-decoration: none;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__nav {
+    transition: none;
+  }
+}
+
+.site-header__nav {
+  display: grid;
+  align-items: center;
+  color: var(--color-pink);
+  font-family: var(--font-dunkin-sans);
+  font-size: var(--type-nav-desktop);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+.site-header__nav > :is(a, button) {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-size);
+  text-decoration: none;
+}
+
+.site-header__link:not([aria-current]):focus-visible {
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-header__link:not([aria-current]):hover {
+    text-decoration: underline;
+  }
+}
+
+.site-header__nav > .site-header__toggle,
+.site-header__store-icon {
+  display: none;
+}
+
+.site-header__toggle {
+  justify-content: center;
+  inline-size: var(--target-size);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (width < 48rem) {
+  .site-header__container {
+    /* El área táctil de 44 px añade 6 px al icono y deja un margen visual de 22 px. */
+    padding-inline: var(--space-16);
+  }
+}
+
+@media (width < 64rem) {
+  .site-header__nav {
+    grid-template-columns: minmax(var(--target-size), 1fr) auto minmax(var(--target-size), 1fr);
+    grid-template-rows: minmax(var(--target-size), auto);
+    padding-block: .625rem;
+  }
+
+  .site-header[data-condensed] .site-header__nav {
+    padding-block: .3125rem;
+  }
+
+  .site-header__link--store,
+  .site-header__brand,
+  .site-header__toggle {
+    grid-row: 1;
+  }
+
+  .site-header__link--store {
+    grid-column: 1;
+    justify-content: center;
+    justify-self: start;
+    inline-size: var(--target-size);
+  }
+
+  .site-header__store-icon {
+    display: block;
+  }
+
+  .site-header__store-text,
+  .site-header__nav[data-menu="ready"] > .site-header__secondary {
+    display: none;
+  }
+
+  .site-header__brand {
+    grid-column: 2;
+  }
+
+  .site-header__nav > .site-header__toggle:not([hidden]) {
+    display: inline-flex;
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .site-header__secondary {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+@media (min-width: 64rem) {
+  .site-header__nav {
+    /* Cajas originales de Figma. El espacio entre ellas se reduce al estrechar la ventana. */
+    grid-template-columns: 8.875rem 3.875rem 9rem 7.5625rem 7.5625rem;
+    justify-content: space-between;
+    max-inline-size: 69.125rem;
+    margin-inline: auto;
+    padding-block: 30px 33px;
+  }
+
+  .site-header__link {
+    justify-self: start;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 64rem) {
+  .site-header[data-condensed] .site-header__nav {
+    padding-block: 1rem 1.0625rem;
+  }
+}
+
+.site-header__link[aria-current] {
+  position: relative;
+}
+
+.site-header__link[aria-current]::after {
+  position: absolute;
+  inset-block-end: var(--space-4);
+  inset-inline-start: -3px;
+  inline-size: 65px;
+  block-size: 3px;
+  background: url("../assets/icons/menu-cafe/subrayado-menu.svg") center no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+@media (width < 64rem) {
+  .site-header__link--store[aria-current]::after {
+    inset-inline-start: 50%;
+    translate: -50% 0;
+  }
+}

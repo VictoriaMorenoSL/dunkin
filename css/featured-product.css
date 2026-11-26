@@ -1,0 +1,289 @@
+.featured-product {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  overflow-x: clip;
+  background: var(--color-light-pink);
+  color: var(--color-white);
+}
+
+.featured-product__stage {
+  --featured-unit: min(calc(100cqw / 402), 1.25px);
+  --featured-art-offset: max(0px, calc(100cqw - 402 * var(--featured-unit)));
+  /* En pantallas menores al frame, despeja la descripción sin mover el texto. */
+  --featured-copy-clearance: max(0px, calc((var(--reference-mobile) - 100cqw) * 0.29));
+
+  position: relative;
+  inline-size: 100%;
+  margin-inline: auto;
+}
+
+.featured-product__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-block-size: calc(511 * var(--featured-unit));
+  padding-block: calc(15 * var(--featured-unit)) var(--space-24);
+  padding-inline: calc(24 * var(--featured-unit)) calc(10 * var(--featured-unit));
+}
+
+.featured-product__title {
+  font-size: min(var(--type-featured-mobile), calc(46 * var(--featured-unit)));
+  line-height: var(--leading-tight);
+}
+
+.featured-product__title > span {
+  display: block;
+}
+
+.featured-product__copy {
+  inline-size: min(100%, 11.3125rem);
+  margin-block-start: calc(19.4 * var(--featured-unit));
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-copy);
+  letter-spacing: var(--tracking-featured-copy);
+}
+
+.featured-product__button {
+  --button-font-size: var(--type-button-small);
+
+  z-index: 2;
+  margin-block-start: calc(15 * var(--featured-unit));
+}
+
+.featured-product__art {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  /* El fruto superior puede entrar en la sección anterior; el inferior termina en el panel. */
+  clip-path: inset(-30% 0 0);
+  pointer-events: none;
+}
+
+.featured-product__art > * {
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(var(--featured-angle, 0deg));
+}
+
+.featured-product__fruit {
+  isolation: isolate;
+  inline-size: calc(191.325 * var(--featured-unit));
+  block-size: calc(174.846 * var(--featured-unit));
+}
+
+.featured-product__fruit::before,
+.featured-product__fruit::after {
+  position: absolute;
+  inset: 0;
+  background: url("../assets/images/featured/pitahaya-horizontal.png") center / cover no-repeat;
+  background-image: image-set(url("../assets/images/webp/featured/pitahaya-horizontal-360.webp") 1x,
+    url("../assets/images/webp/featured/pitahaya-horizontal-720.webp") 2x);
+  content: "";
+}
+
+/* Las máscaras mezclan el original y su copia desenfocada de 0 a 4 px.
+   La rampa solo controla el efecto de Figma sobre la imagen. */
+.featured-product__fruit::before {
+  mask-image: linear-gradient(117.4deg, #000 36%, transparent 96%);
+}
+
+.featured-product__fruit::after {
+  mask-image: linear-gradient(117.4deg, transparent 36%, #000 96%);
+  filter: blur(4px);
+  mix-blend-mode: plus-lighter;
+}
+
+.featured-product__fruit--back {
+  z-index: 1;
+  inset-inline-start: calc(var(--featured-art-offset) + var(--featured-copy-clearance) + 229.323 * var(--featured-unit));
+  inset-block-start: calc(328.994 * var(--featured-unit));
+  --featured-angle: -47.16deg;
+}
+
+.featured-product__fruit--top {
+  display: none;
+}
+
+.featured-product__drink {
+  z-index: 3;
+  inset-inline-start: calc(var(--featured-art-offset) + var(--featured-copy-clearance) + 211.534 * var(--featured-unit));
+  inset-block-start: calc(98 * var(--featured-unit));
+  inline-size: calc(255.841 * var(--featured-unit));
+  block-size: auto;
+  max-inline-size: none;
+  --featured-angle: 16.34deg;
+}
+
+.featured-product__drink img {
+  inline-size: 100%;
+}
+
+.featured-product__foreground {
+  z-index: 4;
+  inset-inline-start: calc(var(--featured-art-offset) + 72 * var(--featured-unit));
+  inset-block-start: calc(347 * var(--featured-unit));
+  inline-size: calc(136 * var(--featured-unit));
+  block-size: calc(142 * var(--featured-unit));
+  overflow: clip;
+}
+
+.featured-product__foreground img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+@media (width < 23rem) {
+  .featured-product__drink {
+    inset-block-start: calc(98 * var(--featured-unit) + clamp(0px, (23rem - 100cqw) * .35, 1.125rem));
+  }
+}
+
+@media (min-width: 48rem) {
+  .featured-product__stage {
+    --featured-unit: min(calc(100cqw / 1318), 1px);
+    --featured-art-offset: 0px;
+
+    max-inline-size: var(--reference-desktop);
+  }
+
+  .featured-product__content {
+    min-block-size: calc(613 * var(--featured-unit));
+    padding-block-start: calc(41 * var(--featured-unit));
+    padding-inline-start: calc(96 * var(--featured-unit));
+  }
+
+  .featured-product__title {
+    margin-inline-start: calc(11 * var(--featured-unit));
+    font-size: min(var(--type-featured-desktop), calc(80 * var(--featured-unit)));
+  }
+
+  .featured-product__copy {
+    inline-size: calc(330 * var(--featured-unit));
+    margin-block-start: calc(17 * var(--featured-unit));
+    font-size: clamp(var(--type-copy-mobile), calc(20 * var(--featured-unit)), var(--type-copy-desktop));
+  }
+
+  .featured-product__button {
+    --button-font-size: clamp(var(--type-button-small), calc(18 * var(--featured-unit)), var(--type-button-large));
+
+    margin-block-start: calc(27 * var(--featured-unit));
+  }
+
+  .featured-product__fruit {
+    inline-size: calc(320.927 * var(--featured-unit));
+    block-size: calc(293.286 * var(--featured-unit));
+  }
+
+  .featured-product__fruit--back {
+    inset-inline-start: calc(830 * var(--featured-unit));
+    inset-block-start: calc(356.323 * var(--featured-unit));
+  }
+
+  .featured-product__fruit--top {
+    display: block;
+    z-index: 2;
+    inset-inline-start: calc(1112.052 * var(--featured-unit));
+    inset-block-start: calc(-105 * var(--featured-unit));
+    --featured-angle: 20.78deg;
+  }
+
+  .featured-product__drink {
+    inset-inline-start: calc(708.802 * var(--featured-unit));
+    inset-block-start: calc(-66.851 * var(--featured-unit));
+    inline-size: calc(438.973 * var(--featured-unit));
+  }
+
+  .featured-product__foreground {
+    inset-inline-start: calc(473 * var(--featured-unit));
+    inset-block-start: calc(403 * var(--featured-unit));
+    inline-size: calc(255 * var(--featured-unit));
+    block-size: calc(210 * var(--featured-unit));
+  }
+
+  .featured-product__foreground img {
+    block-size: auto;
+    aspect-ratio: 1225 / 1284;
+    margin-block-start: calc(-0.14 * var(--featured-unit));
+  }
+}
+
+.featured-product__motion {
+  position: absolute;
+  z-index: 3;
+  inset-inline-end: var(--page-gutter);
+  inset-block-end: var(--space-4);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .featured-product__art > * {
+    animation: featured-float var(--featured-duration) ease-in-out var(--featured-delay, 0s) infinite;
+    animation-play-state: paused;
+  }
+
+  .featured-product[data-motion-playing] .featured-product__art > * {
+    animation-play-state: running;
+  }
+
+  .featured-product__drink {
+    --featured-duration: 5.5s;
+    --featured-y: 5;
+    --featured-turn: -0.85deg;
+  }
+
+  .featured-product__fruit--back {
+    --featured-duration: 6.1s;
+    --featured-delay: 0.35s;
+    --featured-x: 6;
+    --featured-y: -5;
+    --featured-turn: 0.8deg;
+  }
+
+  .featured-product__fruit--top {
+    --featured-duration: 6.6s;
+    --featured-delay: 0.95s;
+    --featured-x: 12;
+    --featured-y: 10;
+    --featured-turn: 1.4deg;
+  }
+
+  .featured-product__foreground {
+    --featured-duration: 6.9s;
+    --featured-delay: 0.6s;
+    --featured-x: 3;
+    --featured-y: -7;
+    --featured-turn: 0.7deg;
+  }
+}
+
+@media (min-width: 48rem) {
+  .featured-product__drink {
+    --featured-y: 12;
+    --featured-turn: -2deg;
+  }
+
+  .featured-product__fruit--back {
+    --featured-x: 9;
+    --featured-y: -11;
+    --featured-turn: 1.3deg;
+  }
+
+  .featured-product__foreground {
+    --featured-x: 6;
+    --featured-y: -15;
+    --featured-turn: 1.2deg;
+  }
+}
+
+@keyframes featured-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(var(--featured-angle, 0deg));
+  }
+
+  50% {
+    transform:
+      translate(calc(var(--featured-x, 0) * var(--featured-unit)), calc(var(--featured-y) * var(--featured-unit)))
+      rotate(calc(var(--featured-angle, 0deg) + var(--featured-turn)));
+  }
+}

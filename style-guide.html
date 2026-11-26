@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de estilos · Dunkin’</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css?v=interaccion">
+  <link rel="stylesheet" href="css/menu-categories.css">
+  <link rel="stylesheet" href="css/product-card.css?v=interaccion">
+  <link rel="stylesheet" href="css/catalog-controls.css?v=fila">
+  <link rel="stylesheet" href="css/product-controls.css">
+  <link rel="stylesheet" href="css/style-guide.css?v=fila">
+  <link rel="stylesheet" href="css/sucursales.css?v=ficha">
+  <link rel="stylesheet" href="css/nosotros.css">
+  <script src="js/sucursales.js" defer></script>
+  <script src="js/city-preference.js" defer></script>
+  <link rel="stylesheet" href="css/mobile-menu.css">
+  <script src="js/main.js?v=menu-movil-final" defer></script>
+  <script src="js/menu-cafe.js?v=barra-superior" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#guia">Saltar al contenido</a>
+  <header class="sg-header" id="inicio">
+    <div class="layout-container layout-cluster sg-header__inner">
+      <img src="assets/logos/dunkin-header.svg" alt="Dunkin’" width="144" height="28">
+      <a href="index.html">Ir a la landing</a>
+    </div>
+  </header>
+  <main class="layout-container" id="guia" tabindex="-1">
+    <div class="layout-stack sg-intro">
+      <h1>Guía de estilos</h1>
+      <p>Consulta las medidas de Figma y prueba los componentes con los estilos del proyecto.</p>
+    </div>
+    <nav class="sg-index" aria-label="Secciones de la guía">
+      <ul class="layout-cluster" role="list"><li><a href="#identidad">Identidad visual</a></li><li><a href="#tipografia">Tipografía</a></li><li><a href="#espaciados">Espaciados</a></li><li><a href="#reticula">Retícula responsive</a></li><li><a href="#botones">Botones y enlaces</a></li><li><a href="#iconos">Iconografía</a></li><li><a href="#formas">Formas y efectos</a></li><li><a href="#componentes">Componentes</a></li></ul>
+    </nav>
+    <section class="sg-section" id="identidad" aria-labelledby="identidad-titulo">
+  <h2 id="identidad-titulo"><span aria-hidden="true">01</span>Identidad visual</h2>
+  <h3>Logotipos originales</h3>
+<ul class="layout-grid layout-grid--four-up sg-catalog" role="list"><li class="sg-panel"><figure>
+  <div class="sg-logo-stage"><img src="assets/logos/dunkin-header.svg" alt="Dunkin’" width="144" height="28"></div>
+  <figcaption><strong>Cabecera</strong> · 144 × 28 px<br><span class="sg-caption">Firma a color para escritorio y móvil.</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure>
+  <div class="sg-logo-stage"><img src="assets/logos/dunkin-somos.svg" alt="Dunkin’" width="354" height="69"></div>
+  <figcaption><strong>Somos Dunkin</strong> · 354 × 69 px<br><span class="sg-caption">Firma a color de la sección Nosotros.</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure>
+  <div class="sg-logo-stage sg-stage--orange"><img src="assets/logos/dunkin-footer-escritorio.svg" alt="Dunkin’" width="174" height="35"></div>
+  <figcaption><strong>Pie de escritorio</strong> · 174 × 35 px<br><span class="sg-caption">Firma blanca.</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure>
+  <div class="sg-logo-stage sg-stage--orange"><img src="assets/logos/dunkin-footer-movil.svg" alt="Dunkin’" width="168" height="33"></div>
+  <figcaption><strong>Pie de móvil</strong> · 168 × 33 px<br><span class="sg-caption">Firma blanca.</span></figcaption>
+</figure></li></ul>
+<h3>Paleta del proyecto</h3>
+<ul class="layout-grid sg-catalog" role="list"><li class="sg-panel">
+  <div class="sg-swatch" style="--sg-swatch:var(--color-pink)" aria-hidden="true"></div>
+  <strong>Rosa principal</strong><br><code>#F20C90</code><br><code>--color-pink</code>
+  <p class="sg-caption">Localizador, titulares y botones principales.</p>
+</li>
+<li class="sg-panel">
+  <div class="sg-swatch" style="--sg-swatch:var(--color-orange)" aria-hidden="true"></div>
+  <strong>Naranja</strong><br><code>#FF6D0D</code><br><code>--color-orange</code>
+  <p class="sg-caption">Botones secundarios, etiquetas y pie de página.</p>
+</li>
+<li class="sg-panel">
+  <div class="sg-swatch" style="--sg-swatch:var(--color-light-pink)" aria-hidden="true"></div>
+  <strong>Rosa claro</strong><br><code>#F76DBC</code><br><code>--color-light-pink</code>
+  <p class="sg-caption">Fondo del producto destacado.</p>
+</li>
+<li class="sg-panel">
+  <div class="sg-swatch" style="--sg-swatch:var(--color-white)" aria-hidden="true"></div>
+  <strong>Blanco</strong><br><code>#FFFFFF</code><br><code>--color-white</code>
+  <p class="sg-caption">Superficies, logotipos y texto sobre fondos de marca.</p>
+</li>
+<li class="sg-panel">
+  <div class="sg-swatch" style="--sg-swatch:var(--color-off-white)" aria-hidden="true"></div>
+  <strong>Blanco secundario</strong><br><code>#F5F5F5</code><br><code>--color-off-white</code>
+  <p class="sg-caption">Texto del localizador y de la variante transparente original de Figma.</p>
+</li>
+<li class="sg-panel">
+  <div class="sg-swatch" style="--sg-swatch:var(--color-dark)" aria-hidden="true"></div>
+  <strong>Oscuro</strong><br><code>#1C1C1C</code><br><code>--color-dark</code>
+  <p class="sg-caption">Texto base web; en Figma figura en la barra de estado móvil.</p>
+</li></ul>
+<p class="sg-caption">Los archivos SVG conservan sus propios rellenos, incluidos <code>#EF6A00</code> y <code>#C63663</code> en el logotipo a color.</p>
+</section>
+<section class="sg-section" id="tipografia" aria-labelledby="tipografia-titulo">
+  <h2 id="tipografia-titulo"><span aria-hidden="true">02</span>Tipografía</h2>
+  <div class="layout-grid sg-type-comparison">
+  <article class="sg-panel">
+    <h3>Escritorio · frame de 1318 px</h3>
+    <p class="sg-type-specimen sg-type-specimen--desktop">TU DÍA PIDE <strong>DUNKIN</strong></p>
+  </article>
+  <article class="sg-panel">
+    <h3>Móvil · frame de 402 px</h3>
+    <p class="sg-type-specimen sg-type-specimen--mobile">TU DÍA PIDE<br>DUNKIN</p>
+  </article>
+</div>
+<p class="sg-caption">Las muestras del titular se reducen si el espacio es estrecho. En el hero móvil, Figma usa 24 px en los espacios entre palabras.</p>
+<h3>Familias y pesos disponibles</h3>
+<div class="layout-grid sg-type-comparison">
+  <article class="sg-panel sg-type-family" style="--sg-family:var(--font-dunkin-sans)">
+    <h4>Dunkin Sans</h4><span style="font-weight:var(--weight-regular)">ACERCA DE · 400</span><span style="font-weight:var(--weight-bold)">NOVEDADES · 700</span>
+  </article>
+  <article class="sg-panel sg-type-family" style="--sg-family:var(--font-dunkin-regular)">
+    <h4>Dunkin Regular</h4><span style="font-weight:var(--weight-regular)">TU DUNKIN ESTA CERCA · 400</span>
+  </article>
+  <article class="sg-panel sg-type-family" style="--sg-family:var(--font-quicksand)">
+    <h4>Quicksand variable</h4><span style="font-weight:300">Encuentra algo para cada momento de tu día. · 300</span><span style="font-weight:400">Encuentra algo para cada momento de tu día. · 400</span><span style="font-weight:500">Encuentra algo para cada momento de tu día. · 500</span><span style="font-weight:600">Encuentra algo para cada momento de tu día. · 600</span><span style="font-weight:700">Encuentra algo para cada momento de tu día. · 700</span>
+    <p class="sg-caption">Figma usa 400, 600 y 700. El archivo local admite todo el intervalo 300–700.</p>
+  </article>
+</div>
+<div class="sg-table-wrap" tabindex="0" role="region" aria-label="Medidas originales de Figma">
+      <table class="sg-table">
+        <caption>Medidas originales de Figma</caption>
+        <thead><tr><th scope="col">Función y texto</th><th scope="col">Familia / peso</th><th scope="col">Escritorio (px)</th><th scope="col">Móvil (px)</th><th scope="col">Interlineado</th><th scope="col">Entre caracteres</th></tr></thead>
+        <tbody><tr><th scope="row">Hero · «TU DÍA PIDE DUNKIN»</th><td>Dunkin Sans 700</td><td>64,99 y 122,77</td><td>48</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Producto · «STRAWBERRY DRAGONFRUIT REFRESHER»</th><td>Dunkin Sans 700</td><td>80</td><td>46</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Sección · «NOVEDADES» y «SOMOS»</th><td>Dunkin Sans 700</td><td>48</td><td>48</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Sucursales · «TU DUNKIN ESTA CERCA»</th><td>Dunkin Regular 400</td><td>—</td><td>40</td><td>43 px</td><td>−4 %</td></tr>
+<tr><th scope="row">Navegación · «SUCURSALES»</th><td>Dunkin Sans 700</td><td>20</td><td>Iconos en la cabecera original</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Localizador · «Encontrar ubicación»</th><td>Quicksand 700</td><td>24</td><td>24</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Hero · «Encuentra algo para cada momento de tu día.»</th><td>Quicksand 700</td><td>20</td><td>16</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Producto · «Frutal, frío y hecho para esos días en los que necesitas un break.»</th><td>Quicksand 600</td><td>20</td><td>16</td><td>150 %</td><td>−1,9 %</td></tr>
+<tr><th scope="row">Categoría · «BEBIDAS FRÍAS»</th><td>Quicksand 700</td><td>16,11</td><td>15</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Etiqueta · «Tu día sabe mejor con Dunkin»</th><td>Quicksand 700</td><td>20</td><td>15</td><td>16 px</td><td>0</td></tr>
+<tr><th scope="row">Botón · «VER MENÚ», «Probar ahora»</th><td>Quicksand 700</td><td>16 o 18</td><td>13 o 16</td><td>120 %</td><td>0</td></tr>
+<tr><th scope="row">Pie · «ACERCA DE», «CONTACTO»</th><td>Dunkin Sans 400</td><td>15,52</td><td>15</td><td>Automático</td><td>0</td></tr>
+<tr><th scope="row">Pie · contacto y navegación</th><td>Quicksand 400 / 700</td><td>15,52</td><td>15</td><td>16,55 / 16 px</td><td>0</td></tr></tbody>
+      </table>
+    </div>
+<p class="sg-caption"><strong>Interlineados web.</strong> Las frases de marca pasan de 16 a 24 px en escritorio y mantienen 16 px en móvil. El pie usa 24 px de interlineado en escritorio y 20 px en móvil; los originales son 16,55 px en escritorio y 16 px en móvil.</p>
+</section>
+<section class="sg-section" id="espaciados" aria-labelledby="espaciados-titulo">
+  <h2 id="espaciados-titulo"><span aria-hidden="true">03</span>Espaciados</h2>
+  <h3>Escala normalizada para la web</h3>
+<ul class="sg-measures" role="list"><li><span class="sg-measure" style="--sg-measure:var(--space-4)" aria-hidden="true"></span><strong>4 px</strong><br><code>--space-4</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-8)" aria-hidden="true"></span><strong>8 px</strong><br><code>--space-8</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-12)" aria-hidden="true"></span><strong>12 px</strong><br><code>--space-12</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-16)" aria-hidden="true"></span><strong>16 px</strong><br><code>--space-16</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-24)" aria-hidden="true"></span><strong>24 px</strong><br><code>--space-24</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-32)" aria-hidden="true"></span><strong>32 px</strong><br><code>--space-32</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-40)" aria-hidden="true"></span><strong>40 px</strong><br><code>--space-40</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-48)" aria-hidden="true"></span><strong>48 px</strong><br><code>--space-48</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-64)" aria-hidden="true"></span><strong>64 px</strong><br><code>--space-64</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-80)" aria-hidden="true"></span><strong>80 px</strong><br><code>--space-80</code></li><li><span class="sg-measure" style="--sg-measure:var(--space-96)" aria-hidden="true"></span><strong>96 px</strong><br><code>--space-96</code></li></ul>
+<h3>Margen, padding y gap</h3>
+<div class="layout-grid sg-catalog">
+  <figure class="sg-panel"><div class="sg-space-demo sg-space-demo--margin" aria-hidden="true"><span></span></div><figcaption>Margen exterior de 16 px</figcaption></figure>
+  <figure class="sg-panel"><div class="sg-space-demo sg-space-demo--padding" aria-hidden="true"><span></span></div><figcaption>Padding interior de 24 px</figcaption></figure>
+  <figure class="sg-panel"><div class="sg-space-demo sg-space-demo--gap" aria-hidden="true"><span></span><span></span></div><figcaption>Gap de 16 px entre elementos</figcaption></figure>
+</div>
+<div class="sg-table-wrap" tabindex="0" role="region" aria-label="Medidas de Figma y equivalentes web">
+      <table class="sg-table">
+        <caption>Medidas de Figma y equivalentes web</caption>
+        <thead><tr><th scope="col">Aplicación</th><th scope="col">Original de Figma</th><th scope="col">Normalización web</th></tr></thead>
+        <tbody><tr><th scope="row">Botón estándar · relleno interior</th><td>8 px vertical y 24 px horizontal</td><td>8 y 24 px en <code>.button</code></td></tr>
+<tr><th scope="row">Botón compacto · relleno interior</th><td>8 px vertical y 12 px horizontal</td><td>8 y 12 px con <code>.button--narrow</code></td></tr>
+<tr><th scope="row">Etiqueta de marca · relleno interior</th><td>8 px vertical y 29 px horizontal</td><td>8 y 29 px en <code>.brand-label</code></td></tr>
+<tr><th scope="row">Hero móvil · gap vertical</th><td>12 px</td><td>12 px en la escala disponible</td></tr>
+<tr><th scope="row">Foto y rótulo de categoría · gap</th><td>Escritorio: 6,45–29,01 px. Móvil: 6–27 px.</td><td>Se conserva la separación individual de cada categoría.</td></tr>
+<tr><th scope="row">Banner móvil · gap entre texto e icono</th><td>9 px</td><td>9 px en móvil y 13 px en escritorio.</td></tr>
+<tr><th scope="row">Retícula · margen lateral</th><td>Escritorio: 40 px. Móvil: 24 px.</td><td>40 / 32 / 24 px en escritorio, tableta y móvil</td></tr>
+<tr><th scope="row">Retícula · gutter</th><td>Escritorio: 20 px. Móvil: 16 px.</td><td>20 / 20 / 16 px en escritorio, tableta y móvil</td></tr></tbody>
+      </table>
+    </div>
+</section>
+<section class="sg-section" id="reticula" aria-labelledby="reticula-titulo">
+  <h2 id="reticula-titulo"><span aria-hidden="true">04</span>Retícula responsive</h2>
+  <p>El contenedor web es fluido hasta <code>--container-max</code> (1318 px, incluido el padding lateral). Cambia el ancho de la ventana para ver cómo responde la muestra.</p>
+<div class="sg-table-wrap" tabindex="0" role="region" aria-label="Retícula del proyecto y referencia de Figma">
+      <table class="sg-table">
+        <caption>Retícula del proyecto y referencia de Figma</caption>
+        <thead><tr><th scope="col">Vista</th><th scope="col">Breakpoint web</th><th scope="col">Columnas web</th><th scope="col">Margen web</th><th scope="col">Gutter web</th><th scope="col">Frame original</th></tr></thead>
+        <tbody><tr><th scope="row">Móvil</th><td>Menos de 768 px</td><td>4</td><td>24 px</td><td>16 px</td><td>402 px · 4 columnas, márgenes de 24 px y gutters de 16 px</td></tr>
+<tr><th scope="row">Tableta</th><td>768–1023 px</td><td>8</td><td>32 px</td><td>20 px</td><td>Sin frame de referencia</td></tr>
+<tr><th scope="row">Escritorio</th><td>Desde 1024 px</td><td>10</td><td>40 px</td><td>20 px</td><td>1318 px · 10 columnas, márgenes de 40 px y gutters de 20 px</td></tr></tbody>
+      </table>
+    </div>
+<h3>Diagramas de las tres retículas</h3>
+<div class="layout-grid sg-catalog sg-catalog--wide"><figure class="sg-panel"><div class="layout-grid sg-grid-diagram" style="--grid-columns:4" aria-hidden="true"><span></span><span></span><span></span><span></span></div><figcaption><strong>Móvil</strong> · 4 columnas</figcaption></figure><figure class="sg-panel"><div class="layout-grid sg-grid-diagram" style="--grid-columns:8" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><figcaption><strong>Tableta</strong> · 8 columnas</figcaption></figure><figure class="sg-panel"><div class="layout-grid sg-grid-diagram" style="--grid-columns:10" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><figcaption><strong>Escritorio</strong> · 10 columnas</figcaption></figure></div>
+<h3>Distribución en vivo</h3>
+<div class="layout-grid layout-grid--four-up sg-live-grid">
+  <div>Bebidas frías</div><div>Donas y Munchkins</div><div>Café</div><div>Desayuno</div>
+</div>
+<p class="sg-caption">La muestra usa <code>.layout-grid</code> y los breakpoints reales. Los bloques ocupan 2 columnas en móvil y tableta. En escritorio se distribuyen en 2 + 3 + 3 + 2 columnas.</p>
+</section>
+<section class="sg-section" id="botones" aria-labelledby="botones-titulo">
+  <h2 id="botones-titulo"><span aria-hidden="true">05</span>Botones y enlaces</h2>
+  <h3>Cuatro variantes visuales</h3>
+<p>Pasa el puntero por cada botón y retíralo para probar la ida y la vuelta del hover.</p>
+<ul class="layout-grid layout-grid--four-up sg-catalog" role="list">
+  <li class="sg-panel"><div class="sg-button-stage"><button type="button" class="button button--primary">VER MENÚ</button></div><strong>Primary</strong><p class="sg-caption">En hover, fondo blanco con texto y contorno rosa.</p></li>
+  <li class="sg-panel"><div class="sg-button-stage"><button type="button" class="button button--secondary">Conócenos</button></div><strong>Secondary</strong><p class="sg-caption">En hover, fondo blanco con texto y contorno naranja.</p></li>
+  <li class="sg-panel"><div class="sg-button-stage sg-stage--dark"><button type="button" class="button button--inverse">Probar ahora</button></div><strong>Inverse</strong><p class="sg-caption">En hover, fondo rosa con texto blanco.</p></li>
+  <li class="sg-panel"><div class="sg-button-stage"><button type="button" class="button button--outline">Menú</button><button type="button" class="button button--outline button--small" data-outline="pink">Monterrey</button></div><strong>Outline</strong><p class="sg-caption">En hover, relleno del color del contorno y texto blanco. Menú usa naranja y Monterrey, rosa.</p></li>
+</ul>
+<div class="sg-table-wrap" tabindex="0" role="region" aria-label="Aplicaciones originales de los botones">
+  <table class="sg-table">
+    <caption>Aplicaciones originales de los botones</caption>
+    <thead><tr><th scope="col">Aplicación</th><th scope="col">Figma</th><th scope="col">Variante web</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">VER MENÚ · hero</th><td>Default, rosa con texto blanco; 16 px móvil / 18 px escritorio</td><td>Primary</td></tr>
+      <tr><th scope="row">Trabaja con nosotros · Encontrar mi Dunkin · CDMX</th><td>Trabaja, Variant2 y Variant6; rosa con texto blanco; 13 / 16 / 13 px</td><td>Primary</td></tr>
+      <tr><th scope="row">Probar ahora · componente original</th><td>Variant3 naranja con texto blanco; 13 px</td><td>Secondary</td></tr>
+      <tr><th scope="row">VER MENÚ · categorías</th><td>Instancia naranja con texto blanco; 16 px</td><td>Secondary</td></tr>
+      <tr><th scope="row">Cerca de mí · Conócenos</th><td>Variant8 y Variant9; naranja con texto blanco; padding horizontal de 12 px</td><td>Secondary compacto</td></tr>
+      <tr><th scope="row">Probar ahora · destacado; Encontrar Local · móvil</th><td>Instancias blancas con texto rosa; 18 / 13 px</td><td>Inverse</td></tr>
+      <tr><th scope="row">Inicio</th><td>Variant10 transparente, texto blanco secundario; 16 px</td><td>Inverse sobre fondo oscuro</td></tr>
+      <tr><th scope="row">Menú</th><td>Menu; fondo transparente, texto rosa, borde naranja; 16 px</td><td>Outline con borde naranja.</td></tr>
+      <tr><th scope="row">Monterrey</th><td>Variant7; fondo transparente, texto naranja, borde rosa; 13 px</td><td>Outline pequeño con borde rosa y texto rosa según la revisión.</td></tr>
+    </tbody>
+  </table>
+</div>
+<h3>Estados interactivos</h3>
+<ul class="layout-grid sg-catalog sg-state-list" role="list"><li class="sg-panel"><h4>Default</h4><button class="button button--primary" type="button">VER MENÚ</button><p class="sg-caption">Estado en reposo del componente.</p></li><li class="sg-panel"><h4>Hover</h4><button class="button button--primary" type="button">VER MENÚ</button><p class="sg-caption">Pasa el puntero para ver la inversión de colores y el cambio de escala.</p></li><li class="sg-panel"><h4>Focus-visible</h4><button class="button button--primary" type="button">VER MENÚ</button><p class="sg-caption">Llega con Tab para ver el contorno.</p></li><li class="sg-panel"><h4>Active</h4><button class="button button--primary" type="button">VER MENÚ</button><p class="sg-caption">Mantén pulsado el botón para ver la presión.</p></li><li class="sg-panel"><h4>Disabled</h4><button class="button button--primary" type="button" disabled>VER MENÚ</button><p class="sg-caption">Botón nativo deshabilitado.</p></li></ul>
+<p class="sg-caption"><strong>Decisión de desarrollo web.</strong> El hover se añadió después de Figma. Usa una transición de ida y vuelta de 250 ms con <code>ease</code> y una escala de 1,03 que conserva el espacio del botón en el layout. Se activa con puntero preciso compatible con hover. Con <code>prefers-reduced-motion</code>, el color cambia de inmediato y se mantiene la escala original.</p>
+<p class="sg-caption">El foco de doble contraste y el estado deshabilitado se conservan. Al pulsar un botón, <code>active</code> reduce su escala a 0,97 en 120 ms. Con movimiento reducido conserva su escala.</p>
+<h3>Iconos, botones compactos y enlaces</h3>
+<div class="layout-cluster">
+  <button type="button" class="button button--primary button--with-icon button--small button--narrow"><span class="button__location-icon" aria-hidden="true"></span>Encontrar mi Dunkin</button>
+  <button type="button" class="button button--secondary button--small button--narrow">Cerca de mí</button>
+  <button type="button" class="button button--outline button--with-icon button--narrow"><img src="assets/icons/menu-movil.svg" alt="" width="32" height="32">Menú</button>
+  <button type="button" class="button button--outline button--icon-only" aria-label="Sucursales"><img src="assets/icons/sucursal-movil.svg" alt="" width="32" height="32"></button>
+</div>
+<div class="sg-button-stage sg-stage--dark"><button class="button button--inverse button--compact" type="button">Inicio</button></div>
+<p class="sg-caption">Los tamaños <code>--small</code> (13 px), estándar (16 px) y <code>--large</code> (18 px), el padding compacto <code>--narrow</code> y los modificadores <code>--with-icon</code> y <code>--icon-only</code> son independientes del color. Los iconos son los SVG originales.</p>
+<div class="layout-cluster">
+  <a class="sg-inline-link" href="#reticula">Consultar retícula</a>
+  <a class="button button--outline" href="index.html#menu-categories">Ir a categorías</a>
+  <span class="sg-inline-disabled" role="link" aria-disabled="true">Producto · enlace inactivo</span>
+</div>
+<p class="sg-caption">El enlace de texto hereda <code>base.css</code>. Su grosor de subrayado en hover, el subrayado doble en active y el ejemplo de enlace inactivo son propuestas de la guía.</p>
+<h3>Foco, contraste y área táctil</h3>
+<p>Los botones y el enlace del localizador usan un área mínima de 44 px de alto. Los botones también tienen un mínimo de 44 px de ancho, incluso con icono solo. El foco por teclado combina un anillo claro y un contorno oscuro.</p>
+<p>El blanco sobre rosa y el rosa sobre blanco dan <strong>4,02:1</strong>. El blanco sobre naranja da <strong>2,82:1</strong> y sobre rosa claro, <strong>2,67:1</strong>. El blanco secundario del localizador sobre rosa da <strong>3,68:1</strong> y alcanza el mínimo para su texto de 24 px en negrita. El contorno naranja sobre blanco da <strong>2,82:1</strong>, por debajo de 3:1 cuando el borde es necesario para distinguir el control. <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum">Criterio de contraste del texto</a> · <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast">Criterio de contraste de componentes</a>.</p>
+<p><strong>Alternativas para aprobación.</strong> Usar al menos 19 px en negrita donde la combinación rosa/blanco lo permita, especialmente en botones, navegación y rótulos. Para el texto blanco sobre naranja o rosa claro, evaluar un fondo más oscuro o una opción de alto contraste. Revisar el contorno naranja sobre la superficie final de cada botón. Estas alternativas siguen pendientes de aprobación y la landing presenta incumplimientos de contraste respecto a WCAG AA.</p>
+</section>
+<section class="sg-section" id="iconos" aria-labelledby="iconos-titulo">
+  <h2 id="iconos-titulo"><span aria-hidden="true">06</span>Iconografía</h2>
+  <p>Archivos originales de Figma, a sus dimensiones SVG.</p><ul class="layout-grid sg-catalog" role="list"><li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/ubicacion.svg" alt="" width="24" height="24"></div>
+  <figcaption><strong>Ubicación</strong><br>24 × 24 px<br><span class="sg-caption">Banner de ubicación</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage">
+  <img src="assets/icons/menu-movil.svg" alt="" width="32" height="32"></div>
+  <figcaption><strong>Menú</strong><br>32 × 32 px<br><span class="sg-caption">Cabecera móvil</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage">
+  <img src="assets/icons/sucursal-movil.svg" alt="" width="32" height="32"></div>
+  <figcaption><strong>Sucursal</strong><br>32 × 32 px<br><span class="sg-caption">Cabecera móvil</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/facebook-escritorio.svg" alt="" width="27" height="27"></div>
+  <figcaption><strong>Facebook · escritorio</strong><br>27 × 27 px<br><span class="sg-caption">Pie de página</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/facebook-movil.svg" alt="" width="27" height="27"></div>
+  <figcaption><strong>Facebook · móvil</strong><br>27 × 27 px<br><span class="sg-caption">Pie de página</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/instagram-escritorio.svg" alt="" width="25" height="25"></div>
+  <figcaption><strong>Instagram · escritorio</strong><br>25 × 25 px<br><span class="sg-caption">Pie de página</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/instagram-movil.svg" alt="" width="24" height="24"></div>
+  <figcaption><strong>Instagram · móvil</strong><br>24 × 24 px<br><span class="sg-caption">Pie de página</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/tiktok-escritorio.svg" alt="" width="21" height="25"></div>
+  <figcaption><strong>TikTok · escritorio</strong><br>21 × 25 px<br><span class="sg-caption">Pie de página</span></figcaption>
+</figure></li>
+<li class="sg-panel"><figure><div class="sg-icon-stage sg-stage--pink">
+  <img src="assets/icons/tiktok-movil.svg" alt="" width="21" height="24"></div>
+  <figcaption><strong>TikTok · móvil</strong><br>21 × 24 px<br><span class="sg-caption">Pie de página</span></figcaption>
+</figure></li></ul>
+</section>
+<section class="sg-section" id="formas" aria-labelledby="formas-titulo">
+  <h2 id="formas-titulo"><span aria-hidden="true">07</span>Formas y efectos</h2>
+  <h3>Radios originales</h3>
+<ul class="layout-grid sg-catalog" role="list"><li class="sg-panel"><span class="sg-shape" style="--sg-radius:var(--radius-button)" aria-hidden="true"></span><strong>Botones · 11 px</strong><br><code>--radius-button</code></li><li class="sg-panel"><span class="sg-shape" style="--sg-radius:var(--radius-label)" aria-hidden="true"></span><strong>Etiquetas · 15 px</strong><br><code>--radius-label</code></li><li class="sg-panel"><span class="sg-shape" style="--sg-radius:var(--radius-photo)" aria-hidden="true"></span><strong>Fotografías · 25 px</strong><br><code>--radius-photo</code></li></ul>
+<h3>Sombras reutilizables</h3>
+<div class="layout-grid sg-catalog sg-catalog--wide">
+  <figure class="sg-panel"><img class="sg-product image-shadow image-shadow--alpha" src="assets/images/categories/cafe.png" alt="Café" loading="lazy"><figcaption><strong>Suave · categorías</strong><br><code>--shadow-soft: 0 3px 8px rgba(0, 0, 0, .15)</code></figcaption></figure>
+  <figure class="sg-panel"><img class="sg-product image-shadow image-shadow--medium image-shadow--alpha" src="assets/images/categories/donas-y-munchkins.png" alt="Dona con chispas" loading="lazy"><figcaption><strong>Media · muestra de referencia</strong><br><code>--shadow-medium: 0 4px 12px rgba(0, 0, 0, .25)</code></figcaption></figure>
+</div>
+<p class="sg-caption">Ambos tamaños de pantalla usan los mismos valores. El modificador <code>.image-shadow--alpha</code> aplica <code>drop-shadow()</code> a las imágenes transparentes. Para una imagen opaca, <code>.image-shadow</code> usa <code>box-shadow</code>.</p>
+<div class="sg-table-wrap" tabindex="0" role="region" aria-label="Sombras originales de las imágenes de categorías">
+      <table class="sg-table">
+        <caption>Sombras originales de las imágenes de categorías</caption>
+        <thead><tr><th scope="col">Aplicación</th><th scope="col">Escritorio: X / Y / blur (px)</th><th scope="col">Móvil: X / Y / blur (px)</th></tr></thead>
+        <tbody><tr><th scope="row">Bebidas frías</th><td>3,22 / −1,07 / 14,50</td><td>3 / −1 / 13,50</td></tr>
+<tr><th scope="row">Donas y Munchkins</th><td>0 / 4,30 / 4,30</td><td>0 / 4 / 4</td></tr>
+<tr><th scope="row">Café</th><td>0 / 4 / 9,80</td><td>0 / 4 / 6,90</td></tr>
+<tr><th scope="row">Desayuno</th><td>0 / 4 / 8</td><td>0 / 4 / 6,90</td></tr></tbody>
+      </table>
+    </div>
+<p class="sg-caption">Referencia documental de Figma. Las cuatro sombras originales tienen negro al 25 % y expansión 0.</p>
+<h3>Etiquetas de marca</h3>
+<div class="layout-cluster">
+  <span class="brand-label brand-label--orange">Tu día sabe mejor con Dunkin</span>
+  <span class="brand-label">Para disfrutar</span>
+</div>
+<p class="sg-caption">Las etiquetas usan texto blanco, fondos rosa y naranja de Figma, radio de 15 px y padding de 8 × 29 px. En escritorio el interlineado web es de 24 px.</p>
+<h3>Tratamiento de fotografías</h3>
+<div class="layout-grid sg-catalog">
+  <figure class="sg-panel"><img class="photo sg-photo" src="assets/images/gallery/iced-latte.jpeg" alt="Iced latte sobre una base" loading="lazy"><figcaption>Recorte 4:5 de muestra con <code>.photo</code> (25 px).</figcaption></figure>
+  <figure class="sg-panel"><img class="photo sg-photo" src="assets/images/gallery/dona-glaseado-morado.png" alt="Dona con glaseado morado" loading="lazy"><figcaption>La foto llena el área con <code>object-fit: cover</code>.</figcaption></figure>
+</div>
+<p class="sg-caption">La galería usa los recortes de cada frame y el radio original de 25 px. El Refresher conserva sus efectos y desenfoques originales sin aplicar la sombra media. El desenfoque progresivo de 0 a 4 px de la pitahaya destacada todavía no tiene equivalencia compartida.</p>
+</section>
+<section class="sg-section" id="componentes" aria-labelledby="componentes-titulo">
+  <h2 id="componentes-titulo"><span aria-hidden="true">08</span>Componentes</h2>
+  <h3 id="componentes-nosotros">Composición de Nosotros</h3>
+  <div class="about-ribbon" aria-hidden="true"><span>NUESTRA HISTORIA&nbsp; NUESTRA HISTORIA</span></div>
+  <p class="sg-caption">Las cintas de Nosotros son estáticas. Una sola imagen de la dona acompaña el relato dentro de su sección: permanece anclada y se desplaza suavemente con el progreso del scroll, en ambos sentidos. Al finalizar, sale con el relato antes del bloque de empleo. Con movimiento reducido permanece fija en la composición inicial y los textos se muestran completos. Las cajas de los recursos conservan sus proporciones con cualquier candidato WebP.</p>
+  <p class="sg-caption">Después de la primera vista, los títulos, párrafos y gráficos del relato aparecen al entrar en pantalla. La entrada combina opacidad y un ascenso de 24 px en escritorio y 20 px en móvil, con 700 ms de <code>ease-out</code> y 120 ms entre grupos. Cada elemento se revela una vez. Con movimiento reducido o sin JavaScript, todo el contenido queda visible desde el inicio.</p>
+  <p><a href="nosotros.html">Ver paneles, composición de marca y bloque de equipo</a></p>
+  <h3 id="componentes-sucursales">Localizador de sucursales</h3>
+  <p class="sg-caption">Las tarjetas muestran datos provisionales de Figma. Pulsa cada una para alternar su estado. El mapa estático y su marcador documentan el encuadre móvil de Figma. La tarjeta conserva el ancho de referencia de 356 px, padding de 14 × 12 px y radio de 23 px. En el localizador, «Cómo llegar» aparece en la ventana del marcador. Si el mapa no carga, el enlace aparece debajo de la tarjeta seleccionada.</p>
+  <div class="layout-grid sg-catalog">
+    <div class="sg-panel layout-stack">
+      <button class="store-card" type="button" aria-pressed="false" aria-labelledby="sg-store-plaza-mitikah-title" aria-describedby="sg-store-plaza-mitikah-address sg-store-plaza-mitikah-hours" data-store-id="plaza-mitikah">
+        <span id="sg-store-plaza-mitikah-title" class="store-card__title">Dunkin' Plaza Mitikah</span>
+        <span id="sg-store-plaza-mitikah-address" class="store-card__address">Av. Río Churubusco 601, Xoco, Benito Juárez, 03330, Ciudad de México</span>
+        <span id="sg-store-plaza-mitikah-hours" class="store-card__hours"><span class="store-card__clock" aria-hidden="true"></span>Lunes a Domingo (9:00 AM a 9:30 PM)</span>
+      </button>
+    </div>
+    <div class="sg-panel layout-stack">
+      <button class="store-card" type="button" aria-pressed="true" aria-labelledby="sg-store-forum-buenavista-title" aria-describedby="sg-store-forum-buenavista-address sg-store-forum-buenavista-hours" data-store-id="forum-buenavista">
+        <span id="sg-store-forum-buenavista-title" class="store-card__title">Dunkin' Forum Buenavista</span>
+        <span id="sg-store-forum-buenavista-address" class="store-card__address">Eje 1 Nte. 259, Buenavista, Cuauhtémoc, Gustavo A. Madero, 06350, Ciudad de México</span>
+        <span id="sg-store-forum-buenavista-hours" class="store-card__hours"><span class="store-card__clock" aria-hidden="true"></span>Lunes a Domingo (9:00 AM a 9:30 PM)</span>
+      </button>
+    </div>
+    <div class="sg-panel">
+      <figure class="store-map">
+      <picture>
+        <source type="image/webp" srcset="assets/images/webp/sucursales/mapa-buenavista-800.webp 800w, assets/images/webp/sucursales/mapa-buenavista-1604.webp 1604w" sizes="(min-width: 82.375rem) 936px, (min-width: 64rem) 72vw, (min-width: 42rem) 640px, 100vw">
+        <img src="assets/images/sucursales/originales/mapa-buenavista.png" width="1604" height="1022" alt="Mapa ilustrativo de la zona de Buenavista, Ciudad de México." decoding="async">
+      </picture>
+      <span class="store-map__pin" data-store-id="forum-buenavista" aria-hidden="true">
+        <span class="button__location-icon"></span>
+      </span>
+    </figure>
+    </div>
+  </div>
+  <div class="layout-cluster">
+    <fieldset class="catalog-cities store-locator__cities" aria-label="Ciudad">
+      <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+        <input type="radio" name="ciudad-sucursales" value="cdmx" checked>
+        CDMX <span class="button__location-icon" aria-hidden="true"></span>
+      </label>
+      <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+        <input type="radio" name="ciudad-sucursales" value="monterrey">
+        Monterrey <span class="button__location-icon" aria-hidden="true"></span>
+      </label>
+    </fieldset>
+    <div class="catalog-search store-locator__search" role="search" aria-label="Buscar tienda">
+      <input type="search" placeholder="Buscar tienda" aria-label="Buscar tienda">
+      <button class="catalog-search__action" type="button" aria-label="Buscar">
+        <img src="assets/icons/menu-cafe/buscar-producto.svg" width="17" height="17" alt="">
+      </button>
+    </div>
+    <button class="button button--secondary button--small button--compact button--compact-flat button--with-icon store-locator__nearby" type="button">
+      Cerca de mí <span class="store-locator__nearby-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <p class="sg-caption"><a href="sucursales.html">Abrir la previsualización de Sucursales</a></p>
+  <h3 id="controles-menu">Controles de Menú-Café</h3>
+  <p>Escribe parte de un nombre o usa la lupa. Prueba «americano» para ver dos coincidencias y «vainilla» para ver el estado vacío. Usa × o «Ver todos los productos» para restablecer la lista. El lector de pantalla anuncia el número de resultados.</p>
+  <p>El selector usa un grupo de opciones. Con el teclado, usa Tab para entrar y las flechas para cambiar de ciudad. La muestra permite probar la selección sin cambiar la preferencia de Menú-Café.</p>
+  <figure class="sg-panel sg-catalog-proposal" id="propuesta-menu-desktop">
+    <figcaption><strong>Controles de Menú-Café en escritorio</strong><br>La búsqueda y la ciudad van debajo del encabezado, antes de las categorías y del título CAFÉ. En escritorio comparten una fila de la anchura del catálogo con 24 px de separación. En móvil se apilan.</figcaption>
+    <div class="catalog-controls-row">
+      <form class="catalog-search" role="search" aria-label="Buscar producto" data-catalog-search="sg-search-results">
+        <input type="search" name="producto" aria-label="Buscar producto" aria-controls="sg-search-results" placeholder="Buscar producto" autocomplete="off">
+        <button class="catalog-search__action" type="button" data-search-clear aria-label="Limpiar búsqueda" hidden><span aria-hidden="true">×</span></button>
+        <button class="catalog-search__action" type="submit" aria-label="Buscar"><img src="assets/icons/menu-cafe/buscar-producto.svg" width="17" height="17" alt=""></button>
+      </form>
+      <fieldset class="catalog-cities" aria-label="Ciudad" data-catalog-city="demo">
+        <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+          <input type="radio" name="ciudad" value="cdmx" autocomplete="off" checked>
+          CDMX <span class="button__location-icon" aria-hidden="true"></span>
+        </label>
+        <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+          <input type="radio" name="ciudad" value="monterrey" autocomplete="off">
+          Monterrey <span class="button__location-icon button__location-icon--monterrey" aria-hidden="true"></span>
+        </label>
+      </fieldset>
+    </div>
+    <p class="sg-catalog-proposal__title" aria-hidden="true">CAFÉ</p>
+    <ul id="sg-search-results" class="sg-catalog-proposal__results" role="list" aria-label="Productos de muestra">
+      <li class="product-card__name">LATTE</li>
+      <li class="product-card__name">CAPPUCCINO</li>
+      <li class="product-card__name">MOCHA</li>
+      <li class="product-card__name">MACCHIATO</li>
+      <li class="product-card__name">DECAF</li>
+      <li class="product-card__name">ESPRESSO AMERICANO</li>
+      <li class="product-card__name">AMERICANO</li>
+      <li class="product-card__name">COLD BREW</li>
+    </ul>
+    <div class="catalog-empty" data-search-empty hidden>
+        <h2>No encontramos productos</h2>
+        <p>Intenta buscar con otro nombre.</p>
+        <button type="button" class="catalog-empty__restore" data-search-clear>Ver todos los productos</button>
+      </div>
+      <p class="catalog-search__status" role="status" data-search-status></p>
+  </figure>
+  <h4>Pista de categorías</h4>
+  <p>Desplaza la pista horizontalmente con el dedo o el trackpad. Con el foco sobre la pista, usa las flechas, Inicio o Fin. Café abre el catálogo actual. Las demás categorías se muestran como referencias visuales.</p>
+  <div class="sg-catalog-rail">
+    <div class="catalog-category-rail" data-category-rail="62" tabindex="0" role="group" aria-label="Categorías desplazables">
+        <ul class="catalog-category-rail-list" role="list">
+          <li class="menu-category--breakfast">
+            <div class="category-link" data-category="desayuno">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/desayuno-180.webp 180w, assets/images/webp/categories/desayuno-360.webp 360w" sizes="127px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/desayuno.png" width="1536" height="1024" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">DESAYUNOS</span>
+            </div>
+          </li>
+          <li class="menu-category--coffee">
+            <a class="category-link" data-category="cafe" href="menu-cafe.html#cafe" aria-current="location">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/cafe-180.webp 180w, assets/images/webp/categories/cafe-360.webp 360w" sizes="113px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/cafe.png" width="1145" height="1374" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">CAFÉS</span>
+            </a>
+          </li>
+          <li class="menu-category--donuts">
+            <div class="category-link" data-category="donas-y-munchkins">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/donas-y-munchkins-180.webp 180w, assets/images/webp/categories/donas-y-munchkins-360.webp 360w" sizes="135px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/donas-y-munchkins.png" width="1536" height="1024" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">DONAS Y MUNCHKINS</span>
+            </div>
+          </li>
+          <li class="menu-category--cold">
+            <div class="category-link" data-category="bebidas-frias">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/bebidas-frias-180.webp 180w, assets/images/webp/categories/bebidas-frias-360.webp 360w" sizes="112px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/bebidas-frias.png" width="1182" height="1330" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">BEBIDAS FRÍAS</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <h3 id="controles-producto">Controles de la ficha de producto</h3>
+  <p>La ficha de COLD BREW muestra S como estado inicial. Usa Tab y las flechas para probar la selección exclusiva. El foco enmarca la opción y el hover y la pulsación la subrayan. La selección solo cambia la presentación. Los volúmenes y precios que aparecen aquí proceden del prototipo.</p>
+  <div class="layout-stack">
+    <a class="button button--outline button--compact button--with-icon product-back" href="menu-cafe.html#cafe">
+      <span class="product-back__icon" aria-hidden="true"></span>Menú
+    </a>
+    <fieldset class="product-sizes" aria-label="Tamaño">
+      <div class="product-sizes__options">
+        <label class="product-sizes__option product-sizes__option--s">
+          <span class="product-sizes__choice">
+            <input class="product-sizes__input" type="radio" name="sg-tamano" value="s" aria-label="S, 355 ml" checked>
+            <span class="button button--compact product-sizes__mark" aria-hidden="true">S</span>
+          </span>
+          <span class="product-sizes__volume">355 ml</span>
+          <span class="product-sizes__price">$59</span>
+        </label>
+        <label class="product-sizes__option product-sizes__option--m">
+          <span class="product-sizes__choice">
+            <input class="product-sizes__input" type="radio" name="sg-tamano" value="m" aria-label="M, 473 ml">
+            <span class="button button--compact product-sizes__mark" aria-hidden="true">M</span>
+          </span>
+          <span class="product-sizes__volume">473 ml</span>
+          <span class="product-sizes__price">$69</span>
+        </label>
+        <label class="product-sizes__option product-sizes__option--l">
+          <span class="product-sizes__choice">
+            <input class="product-sizes__input" type="radio" name="sg-tamano" value="l" aria-label="L, 591 ml">
+            <span class="button button--compact product-sizes__mark" aria-hidden="true">L</span>
+          </span>
+          <span class="product-sizes__volume">591 ml</span>
+          <span class="product-sizes__price">$75</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <h3 id="tarjeta-producto">Tarjeta de producto</h3>
+  <div class="layout-cluster">
+    <a class="product-card product-card--cold-brew" href="producto.html?producto=cold-brew">
+      <picture class="product-card__media">
+        <source type="image/webp" srcset="assets/images/webp/menu-cafe/cold-brew-192.webp 192w, assets/images/webp/menu-cafe/cold-brew-384.webp 384w" sizes="(min-width: 48rem) 120px, 104px">
+        <img class="product-card__image" src="assets/images/menu-cafe/originales/cold-brew.png" width="1024" height="1536" alt="" loading="lazy" decoding="async">
+      </picture>
+      <span class="product-card__name">COLD BREW</span>
+    </a>
+  </div>
+  <p class="sg-caption">La imagen conserva su proporción y tamaño de cada frame. En hover, el nombre cambia a naranja y la imagen crece a 1,05, sube 6 px y usa la sombra suave. La transición dura 250 ms con <code>ease-out</code>. El foco conserva su contorno y la pulsación reduce la imagen a 0,97. Con movimiento reducido se aplican solo el color y la sombra, sin desplazamiento, escala ni transición. La muestra abre la ficha de Cold Brew.</p>
+
+  <h3>Categorías del menú</h3>
+<div class="layout-stack menu-categories__inner">
+<ul class="layout-grid menu-category-grid" role="list">
+          <li class="menu-category--cold">
+            <a class="category-link" href="index.html#categoria-bebidas-frias">
+              <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/bebidas-frias.png" alt="" width="1182" height="1330" loading="lazy">
+              <span class="category-label">BEBIDAS FRÍAS</span>
+            </a>
+          </li>
+          <li class="menu-category--donuts">
+            <a class="category-link" href="index.html#categoria-donas-y-munchkins">
+              <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/donas-y-munchkins.png" alt="" width="1536" height="1024" loading="lazy">
+              <span class="category-label">DONAS Y MUNCHKINS</span>
+            </a>
+          </li>
+          <li class="menu-category--coffee">
+            <a class="category-link" href="index.html#categoria-cafe">
+              <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/cafe.png" alt="" width="1145" height="1374" loading="lazy">
+              <span class="category-label">CAFÉ</span>
+            </a>
+          </li>
+          <li class="menu-category--breakfast">
+            <a class="category-link" href="index.html#categoria-desayuno">
+              <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/desayuno.png" alt="" width="1536" height="1024" loading="lazy">
+              <span class="category-label">DESAYUNO</span>
+            </a>
+          </li>
+</ul>
+<a class="button button--secondary" href="index.html#menu-categories-list">VER MENÚ</a>
+</div>
+<p class="sg-caption">La muestra usa las cuatro fotografías originales con sus proporciones, la sombra suave aprobada y los rótulos rosa #F20C90 en mayúsculas. Los enlaces llevan a las categorías de la landing.</p>
+<p class="sg-caption"><strong>Decisión de desarrollo web.</strong> En dispositivos con puntero preciso y hover, el nombre pasa de rosa a naranja y la imagen crece a 1,05, sube 6 px y pasa de sombra suave a media. La transición dura 250 ms con <code>ease-out</code>. Con movimiento reducido se aplican solo el color y la sombra, sin desplazamiento, escala ni transición.</p>
+ <p class="sg-caption"><strong>Adaptación web.</strong> La fila de cuatro empieza a 768 px. El botón conserva los 44 px de altura del sistema y su centro coincide con el de Figma. Los enlaces usan anclas provisionales de la landing mientras se crean las páginas.</p>
+<h3>Banner de ubicación</h3>
+<a class="store-locator-banner store-locator-link" href="index.html#store-locator-banner">
+  <span>Encontrar ubicación</span>
+  <img src="assets/icons/ubicacion.svg" alt="" width="24" height="24">
+</a>
+<p class="sg-caption">Toda la franja rosa de 64 px funciona como enlace. El subrayado aparece con el puntero y el foco de teclado se indica con un contorno interior.</p>
+<h3>Verificación de otros textos de la landing</h3>
+<p>En los frames de escritorio y móvil se verificó blanco en los titulares y textos del hero, el producto destacado, la promoción de sucursales y el pie. La navegación de escritorio, <strong>NOVEDADES</strong> y <strong>SOMOS</strong> usan rosa. Las muestras tipográficas de la guía conservan sus rótulos editoriales.</p>
+<h3>Flotación del Strawberry Dragonfruit Refresher</h3>
+<p><strong>Decisión de desarrollo web.</strong> La bebida completa un ciclo de 5,5 s con 12 px de recorrido vertical y hasta 2° de variación de giro en el frame de escritorio. Las tres pitahayas usan ciclos de 6,1, 6,6 y 6,9 s con distintos desfases. Cada ciclo vuelve a la pose original mediante transformaciones con <code>ease-in-out</code>. En móvil se reduce la amplitud y solo se animan las capas visibles en ese frame.</p>
+<p>El control con icono de la esquina inferior derecha pausa y reanuda únicamente la composición del Refresher. El movimiento se detiene fuera de pantalla y se desactiva con la preferencia de movimiento reducido.</p>
+<p><a href="index.html#featured-product">Probar la flotación del Refresher</a></p>
+<h3>Cintas y galería de Novedades</h3>
+<p>Las cintas avanzan a 42 px/s y las fotografías a 18 px/s. En móvil las pistas de cada sección van en sentidos opuestos. En escritorio las fotos se pueden recorrer mediante arrastre, desplazamiento horizontal y flechas del teclado. El control de icono en la esquina inferior derecha de la galería pausa y reanuda ambas secciones. Su contorno rosa mide 28 px de diámetro y su área interactiva es de 44 × 44 px. El movimiento comienza automáticamente. La galería horizontal admite gestos táctiles y deja libre el scroll vertical. Con movimiento reducido, el control se oculta, las frases se ajustan en filas y las fotos móviles se muestran en columnas estáticas.</p>
+<p><a href="index.html#news-gallery">Probar los carruseles en la landing</a></p>
+<h3>Promoción de sucursales y Somos Dunkin</h3>
+<div class="layout-cluster">
+  <a class="button button--inverse button--small" href="index.html#store-locator-banner">Encontrar Local</a>
+  <a class="button button--secondary button--narrow" href="nosotros.html">Conócenos</a>
+</div>
+<p class="sg-caption">Los botones de la muestra heredan el hover y el foco de teclado globales. La promoción de sucursales aparece por debajo de 768 px. Su titular conserva 40 px, interlineado de 43 px y espaciado de −1,6 px. «Conócenos» usa 18 px en escritorio y 13 px en móvil, y el logotipo de Somos conserva su proporción de 354 × 69 px.</p>
+<h3>Pie de página</h3>
+<p>La muestra al final de la guía reutiliza <code>.site-footer</code>. Los enlaces disponibles se subrayan con el puntero y tienen contorno al recibir el foco de teclado. Los círculos de redes conservan sus colores y crecen a 1,03 en 250 ms con <code>ease</code> cuando el dispositivo admite hover. La preferencia de movimiento reducido desactiva ese efecto.</p>
+<p class="sg-caption">En escritorio los encabezados usan 18 px, los enlaces y el contacto 16 px y los derechos 14 px, con interlineado de 24 px. En móvil, los enlaces habilitados tienen objetivos de al menos 44 px. Los destinos de redes y los documentos legales siguen pendientes. Los datos de contacto corresponden al texto de Figma.</p>
+<h3>Encabezado fijo al desplazarse</h3>
+<p>El encabezado conserva su tamaño inicial y reduce su padding vertical al bajar. La transición tarda 250 ms y se desactiva con movimiento reducido. La página reserva su altura inicial y separa de la cabecera los destinos de los enlaces internos. La sección activa usa un único indicador naranja, incluso al pasar el puntero. El subrayado rosa identifica los enlaces no activos en hover y todos conservan el contorno de foco.</p>
+  <h3 id="menu-movil">Menú móvil de pantalla completa</h3>
+  <p>La referencia de 402 × 874 px usa Dunkin Sans Bold de 46 px en filas de 95 px. Las tres variantes hover muestran una franja naranja con las mismas letras blancas, tamaño y posición. En pantallas táctiles, la franja aparece al pulsar. La entrada y la salida duran 300 ms con <code>ease-out</code>, y se desactivan con movimiento reducido. Los iconos sociales conservan el arte original y esperan destinos confirmados.</p>
+  <button type="button" class="button button--primary" data-mobile-menu-demo aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" hidden>Probar menú móvil</button>
+<p><a href="index.html">Probar el encabezado en la landing</a></p>
+<h3>Elementos compartidos</h3>
+<p>La guía utiliza <code>.button</code> y sus modificadores, <code>.brand-label</code>, <code>.photo</code>, <code>.layout-container</code>, <code>.layout-grid</code> y <code>.layout-cluster</code> del proyecto. Los CTA usan <code>.button--compact</code> para conservar su silueta y el área táctil. El Refresher y Novedades comparten el aspecto de <code>.loop-control</code>.</p>
+<details class="sg-details">
+  <summary>Decisiones pendientes</summary>
+  <ul>
+    <li>Revisar las alternativas de contraste del texto y los contornos con los colores originales como referencia.</li>
+    <li>Conectar las páginas y destinos oficiales cuando estén disponibles. Consultar <a href="docs/reutilizacion-index.md">las rutas pendientes y la estrategia de reutilización</a>.</li>
+    <li>Confirmar la licencia de incrustación web de las fuentes Dunkin antes de publicar.</li>
+  </ul>
+</details>
+</section>
+  </main>
+  <div class="layout-container sg-footer">
+    <a href="#inicio">Volver al inicio</a>
+  </div>
+  <footer id="site-footer" class="site-footer">
+    <div class="layout-container layout-grid site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="index.html" aria-label="Dunkin’, inicio">
+          <picture>
+            <source media="(min-width: 48rem)" srcset="assets/logos/dunkin-footer-escritorio.svg" width="174" height="35">
+            <img src="assets/logos/dunkin-footer-movil.svg" width="168" height="33" alt="">
+          </picture>
+        </a>
+        <img class="site-footer__flag" src="assets/images/brand/bandera-mexico.png" width="40" height="40" alt="México">
+      </div>
+      <nav class="site-footer__nav" aria-labelledby="footer-about">
+        <h2 class="site-footer__heading" id="footer-about">ACERCA DE</h2>
+        <ul class="site-footer__links" role="list">
+          <li><a href="index.html">Principal</a></li>
+          <li><a href="index.html#menu-categories" data-future-href="menu-cafe.html">Menú</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="#footer-contact">Contáctanos</a></li>
+        </ul>
+        <ul class="site-footer__links" role="list">
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a role="link" aria-disabled="true">Términos y condiciones</a></li>
+          <li><a role="link" aria-disabled="true">Política de privacidad</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2 class="site-footer__heading" id="footer-contact">CONTACTO</h2>
+        <address>
+          <a href="mailto:dunkindonuts@dunkin.com.mx">dunkindonuts@dunkin.com.mx</a>
+          <a href="tel:5611234567">Tel. 56 1123 4567</a>
+        </address>
+        <ul class="site-footer__socials" role="list" aria-label="Redes sociales">
+          <li><a class="site-footer__social" aria-label="Facebook" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/facebook-escritorio.svg" width="27" height="27">
+            <img src="assets/icons/facebook-movil.svg" width="27" height="27" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="TikTok" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/tiktok-escritorio.svg" width="21" height="25">
+            <img src="assets/icons/tiktok-movil.svg" width="21" height="24" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="Instagram" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/instagram-escritorio.svg" width="25" height="25">
+            <img src="assets/icons/instagram-movil.svg" width="24" height="24" alt="">
+          </picture></a></li>
+        </ul>
+      </div>
+      <p class="site-footer__copyright">Dunkin' Derechos Reservados © 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

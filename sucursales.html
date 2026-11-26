@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sucursales | Dunkin’ México</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css?v=5.2">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css?v=interaccion">
+  <link rel="stylesheet" href="css/site-header.css?v=menu-movil">
+  <link rel="stylesheet" href="css/catalog-controls.css">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/sucursales.css?v=ficha">
+  <script src="js/city-preference.js" defer></script>
+  <script src="js/store-map.js?v=ficha" defer></script>
+  <!-- Respaldo local de los datos de visualización de data/sucursales.json. -->
+  <script type="application/json" id="store-directory-fallback">
+  [
+    {"id":"plaza-mitikah","zona":"cdmx","ciudad":"Ciudad de México","nombre":"Dunkin' Plaza Mitikah","direccion":"Av. Río Churubusco 601, Xoco, Benito Juárez, 03330 Ciudad de México","latitud":19.360017,"longitud":-99.1684915,"horarioPublicado":"Lunes a domingo, 9:00 AM a 10:00 PM"},
+    {"id":"forum-buenavista","zona":"cdmx","ciudad":"Ciudad de México","nombre":"Dunkin' Forum Buenavista","direccion":"Eje 1 Norte (Mosqueta) 259, Buenavista, Cuauhtémoc, 06350 Ciudad de México","latitud":19.4469957,"longitud":-99.1521347,"horarioPublicado":"Lunes a domingo, 9:00 AM a 10:00 PM"},
+    {"id":"parque-tepeyac","zona":"cdmx","ciudad":"Ciudad de México","nombre":"Dunkin' Parque Tepeyac","direccion":"Eduardo Molina 6730, Granjas Modernas, Gustavo A. Madero, 07460 Ciudad de México","latitud":19.4779977,"longitud":-99.099149,"horarioPublicado":"Lunes a domingo, 9:00 AM a 10:00 PM"},
+    {"id":"las-americas","zona":"cdmx","ciudad":"Ecatepec de Morelos","nombre":"Dunkin' Centro Comercial Las Américas","direccion":"Av. Central S/N, local PB-24B, Las Américas, 55076 Ecatepec de Morelos, Estado de México","latitud":19.5844066,"longitud":-99.0234269,"horarioPublicado":"Lunes a domingo, 9:00 AM a 9:30 PM"},
+    {"id":"toreo-parque-central","zona":"cdmx","ciudad":"Naucalpan de Juárez","nombre":"Dunkin' Toreo Parque Central","direccion":"Boulevard Manuel Ávila Camacho 5, Lomas de Sotelo, 53390 Naucalpan de Juárez, Estado de México","latitud":19.4546883,"longitud":-99.2192761,"horarioPublicado":"Lun. a jue. 7:00 AM a 9:30 PM. Vie. 8:00 AM a 9:30 PM. Sáb. y dom. 9:00 AM a 10:30 PM."},
+    {"id":"contry","zona":"monterrey","ciudad":"Monterrey","nombre":"Dunkin' Contry","direccion":"Av. Eugenio Garza Sada Sur 602, Arroyo Seco, 64740 Monterrey, N.L.","latitud":25.6389316,"longitud":-100.2860475,"horarioPublicado":"7:00 AM a 10:00 PM"},
+    {"id":"park-point","zona":"monterrey","ciudad":"Monterrey","nombre":"Dunkin' Park Point","direccion":"Av. Paseo de los Leones 99, Cumbres Elite, Sector Villas, 64349 Monterrey, N.L.","latitud":25.7384954,"longitud":-100.4050529,"horarioPublicado":"Todos los días, 7:00 AM a 10:00 PM"},
+    {"id":"citadel","zona":"monterrey","ciudad":"San Nicolás de los Garza","nombre":"Dunkin' Citadel","direccion":"Av. Miguel Alemán 526A, La Fe, 66477 San Nicolás de los Garza, N.L.","latitud":25.7262201,"longitud":-100.2150351,"horarioPublicado":"8:00 AM a 9:00 PM"},
+    {"id":"valle-oriente","zona":"monterrey","ciudad":"Monterrey","nombre":"Dunkin' Valle Oriente","direccion":"Av. Lázaro Cárdenas 1000, Zona Valle Oriente, 64750 Monterrey, N.L.","latitud":25.6380981,"longitud":-100.3142795,"horarioPublicado":"9:00 AM a 9:00 PM"},
+    {"id":"alquimia","zona":"monterrey","ciudad":"Monterrey","nombre":"Dunkin' Alquimia","direccion":"Carretera Nacional 3972, 64985 Monterrey, N.L.","latitud":25.5214556,"longitud":-100.2034029,"horarioPublicado":"8:00 AM a 9:00 PM"}
+  ]
+  </script>
+  <link rel="stylesheet" href="css/mobile-menu.css">
+  <script src="js/main.js?v=menu-movil-final" defer></script>
+</head>
+<body class="stores-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header id="site-header" class="site-header">
+    <div class="site-header__surface layout-container site-header__container">
+      <nav id="site-navigation" class="site-header__nav" aria-label="Navegación principal">
+        <a class="site-header__link site-header__link--store" href="sucursales.html" aria-current="page" aria-label="Sucursales">
+          <span class="site-header__store-text">SUCURSALES</span>
+          <img class="site-header__store-icon" src="assets/icons/sucursal-movil.svg" alt="" width="32" height="32">
+        </a>
+        <a id="site-header-menu" class="site-header__link site-header__secondary" href="menu-cafe.html">MENÚ</a>
+        <a class="site-header__brand" href="index.html" aria-label="Dunkin’, inicio">
+          <img src="assets/logos/dunkin-header.svg" alt="" width="144" height="28">
+        </a>
+        <a id="site-header-about" class="site-header__link site-header__secondary" href="nosotros.html">NOSOTROS</a>
+        <a id="site-header-contact" class="site-header__link site-header__secondary" href="#footer-contact">CONTACTO</a>
+        <button class="site-header__toggle button--graphic button--primary" type="button" aria-label="Menú"
+                aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" hidden>
+          <!-- Geometría original de menu-movil.svg, con los estados cromáticos compartidos. -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+            <rect class="button__graphic-surface" width="32" height="32" rx="16" />
+            <path class="button__graphic-ink" d="M9 9H23M9 16.2593H23M9 23H23" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="layout-container layout-grid store-locator" tabindex="-1">
+    <h1 class="store-locator__assistive">Sucursales</h1>
+    <fieldset class="catalog-cities store-locator__cities" aria-label="Ciudad" data-store-city>
+      <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+        <input type="radio" name="ciudad-sucursales" value="cdmx" checked>
+        CDMX <span class="button__location-icon" aria-hidden="true"></span>
+      </label>
+      <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+        <input type="radio" name="ciudad-sucursales" value="monterrey">
+        Monterrey <span class="button__location-icon" aria-hidden="true"></span>
+      </label>
+    </fieldset>
+    <section class="store-map store-map--interactive" aria-label="Mapa de sucursales">
+      <div id="store-map" class="store-map__canvas" data-store-map
+           data-tile-url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
+           data-tile-max-zoom="19"></div>
+      <template id="store-map-credit">&copy; <a href="https://stadiamaps.com/attribution/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></template>
+      <p class="store-map__notice" data-map-notice role="status" hidden></p>
+    </section>
+    <div class="store-locator__tools">
+      <form class="catalog-search store-locator__search" role="search" aria-label="Buscar tienda" data-store-search>
+        <input type="search" placeholder="Buscar tienda" aria-label="Buscar tienda" name="consulta" aria-controls="store-list">
+        <button class="catalog-search__action" type="submit" aria-label="Buscar">
+          <img src="assets/icons/menu-cafe/buscar-producto.svg" width="17" height="17" alt="">
+        </button>
+      </form>
+      <button class="button button--secondary button--small button--compact button--compact-flat button--with-icon store-locator__nearby" type="button" data-store-nearby>
+        Cerca de mí <span class="store-locator__nearby-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <section class="store-locator__results" aria-label="Sucursales de CDMX y zona metropolitana">
+      <div class="store-locator__scroll" data-store-results role="group" aria-label="Lista de sucursales">
+        <p class="store-locator__message" data-store-message role="status">Cargando sucursales…</p>
+        <ul id="store-list" class="store-locator__list" data-store-list role="list"></ul>
+        <p class="store-locator__assistive" role="status" data-store-count></p>
+        <p class="store-locator__message" role="status" data-nearby-message hidden></p>
+        <noscript><p class="store-locator__message">Consulta las ubicaciones en el <a href="https://www.dunkin.mx/nearby_stores.aspx">directorio oficial de Dunkin</a>.</p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer">
+    <div class="layout-container layout-grid site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="index.html" aria-label="Dunkin’, inicio">
+          <picture>
+            <source media="(min-width: 48rem)" srcset="assets/logos/dunkin-footer-escritorio.svg" width="174" height="35">
+            <img src="assets/logos/dunkin-footer-movil.svg" width="168" height="33" alt="">
+          </picture>
+        </a>
+        <picture class="site-footer__flag"><source type="image/webp" srcset="assets/images/webp/brand/bandera-mexico-48.webp 48w, assets/images/webp/brand/bandera-mexico-96.webp 96w" sizes="42px"><img src="assets/images/brand/bandera-mexico.png" width="40" height="40" alt="México" loading="lazy"></picture>
+      </div>
+      <nav class="site-footer__nav" aria-labelledby="footer-about">
+        <h2 class="site-footer__heading" id="footer-about">ACERCA DE</h2>
+        <ul class="site-footer__links" role="list">
+          <li><a href="index.html">Principal</a></li>
+          <li><a href="menu-cafe.html">Menú</a></li>
+          <li><a href="sucursales.html" aria-current="page">Sucursales</a></li>
+          <li><a href="#footer-contact">Contáctanos</a></li>
+        </ul>
+        <ul class="site-footer__links" role="list">
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a role="link" aria-disabled="true">Términos y condiciones</a></li>
+          <li><a role="link" aria-disabled="true">Política de privacidad</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2 class="site-footer__heading" id="footer-contact">CONTACTO</h2>
+        <address>
+          <a href="mailto:dunkindonuts@dunkin.com.mx">dunkindonuts@dunkin.com.mx</a>
+          <a href="tel:5611234567">Tel. 56 1123 4567</a>
+        </address>
+        <ul class="site-footer__socials" role="list" aria-label="Redes sociales">
+          <li><a class="site-footer__social" aria-label="Facebook" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/facebook-escritorio.svg" width="27" height="27">
+            <img src="assets/icons/facebook-movil.svg" width="27" height="27" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="TikTok" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/tiktok-escritorio.svg" width="21" height="25">
+            <img src="assets/icons/tiktok-movil.svg" width="21" height="24" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="Instagram" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/instagram-escritorio.svg" width="25" height="25">
+            <img src="assets/icons/instagram-movil.svg" width="24" height="24" alt="">
+          </picture></a></li>
+        </ul>
+      </div>
+      <p class="site-footer__copyright">Dunkin' Derechos Reservados © 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

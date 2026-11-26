@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú-Café | Dunkin’ México</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css?v=5.2">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css?v=interaccion">
+  <link rel="stylesheet" href="css/site-header.css?v=menu-movil">
+  <link rel="stylesheet" href="css/menu-categories.css?v=5.2.1">
+  <link rel="stylesheet" href="css/product-card.css?v=interaccion">
+  <link rel="stylesheet" href="css/catalog-controls.css?v=fila">
+  <link rel="stylesheet" href="css/menu-cafe.css?v=barra-superior">
+  <script src="js/city-preference.js" defer></script>
+  <link rel="stylesheet" href="css/mobile-menu.css">
+  <script src="js/main.js?v=menu-movil-final" defer></script>
+  <script src="js/menu-cafe.js?v=barra-superior" defer></script>
+</head>
+<body class="menu-cafe">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header id="site-header" class="site-header">
+    <div class="site-header__surface layout-container site-header__container">
+      <nav id="site-navigation" class="site-header__nav" aria-label="Navegación principal">
+        <a class="site-header__link site-header__link--store" href="sucursales.html" aria-label="Sucursales">
+          <span class="site-header__store-text">SUCURSALES</span>
+          <img class="site-header__store-icon" src="assets/icons/sucursal-movil.svg" alt="" width="32" height="32">
+        </a>
+        <a id="site-header-menu" class="site-header__link site-header__secondary" href="menu-cafe.html" aria-current="page">MENÚ</a>
+        <a class="site-header__brand" href="index.html" aria-label="Dunkin’, inicio">
+          <img src="assets/logos/dunkin-header.svg" alt="" width="144" height="28">
+        </a>
+        <a id="site-header-about" class="site-header__link site-header__secondary" href="nosotros.html">NOSOTROS</a>
+        <a id="site-header-contact" class="site-header__link site-header__secondary" href="#footer-contact">CONTACTO</a>
+        <button class="site-header__toggle button--graphic button--primary" type="button" aria-label="Menú"
+                aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" hidden>
+          <!-- Geometría original de menu-movil.svg, con los estados cromáticos compartidos. -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+            <rect class="button__graphic-surface" width="32" height="32" rx="16" />
+            <path class="button__graphic-ink" d="M9 9H23M9 16.2593H23M9 23H23" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="menu-cafe__main" tabindex="-1">
+    <div class="layout-container menu-cafe__filters catalog-controls-row">
+      <form class="catalog-search" role="search" aria-label="Buscar producto" data-catalog-search="cafe-products">
+        <input type="search" name="producto" aria-label="Buscar producto" aria-controls="cafe-products" placeholder="Buscar producto" autocomplete="off">
+        <button class="catalog-search__action" type="button" data-search-clear aria-label="Limpiar búsqueda" hidden><span aria-hidden="true">×</span></button>
+        <button class="catalog-search__action" type="submit" aria-label="Buscar"><img src="assets/icons/menu-cafe/buscar-producto.svg" width="17" height="17" alt=""></button>
+      </form>
+      <fieldset class="catalog-cities" aria-label="Ciudad" data-catalog-city>
+        <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+          <input type="radio" name="ciudad" value="cdmx" autocomplete="off" checked>
+          CDMX <span class="button__location-icon" aria-hidden="true"></span>
+        </label>
+        <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+          <input type="radio" name="ciudad" value="monterrey" autocomplete="off">
+          Monterrey <span class="button__location-icon button__location-icon--monterrey" aria-hidden="true"></span>
+        </label>
+      </fieldset>
+    </div>
+
+    <nav class="menu-cafe__categories" aria-label="Categorías del menú">
+      <div class="layout-container menu-cafe__category-row">
+        <ul class="layout-grid menu-category-grid" role="list">
+          <li class="menu-category--cold">
+            <div class="category-link" data-category="bebidas-frias">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/bebidas-frias-180.webp 180w, assets/images/webp/categories/bebidas-frias-360.webp 360w" sizes="149px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/bebidas-frias.png" width="1182" height="1330" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">BEBIDAS FRÍAS</span>
+            </div>
+          </li>
+          <li class="menu-category--donuts">
+            <div class="category-link" data-category="donas-y-munchkins">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/donas-y-munchkins-180.webp 180w, assets/images/webp/categories/donas-y-munchkins-360.webp 360w" sizes="179px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/donas-y-munchkins.png" width="1536" height="1024" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">DONAS Y MUNCHKINS</span>
+            </div>
+          </li>
+          <li class="menu-category--coffee">
+            <a class="category-link" data-category="cafe" href="#cafe" aria-current="location">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/cafe-180.webp 180w, assets/images/webp/categories/cafe-360.webp 360w" sizes="158px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/cafe.png" width="1145" height="1374" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">CAFÉ</span>
+            </a>
+          </li>
+          <li class="menu-category--breakfast">
+            <div class="category-link" data-category="desayuno">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/desayuno-180.webp 180w, assets/images/webp/categories/desayuno-360.webp 360w" sizes="150px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/desayuno.png" width="1536" height="1024" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">DESAYUNO</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="catalog-category-rail" data-category-rail="62" tabindex="0" role="group" aria-label="Categorías desplazables">
+        <ul class="catalog-category-rail-list" role="list">
+          <li class="menu-category--breakfast">
+            <div class="category-link" data-category="desayuno">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/desayuno-180.webp 180w, assets/images/webp/categories/desayuno-360.webp 360w" sizes="127px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/desayuno.png" width="1536" height="1024" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">DESAYUNOS</span>
+            </div>
+          </li>
+          <li class="menu-category--coffee">
+            <a class="category-link" data-category="cafe" href="#cafe" aria-current="location">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/cafe-180.webp 180w, assets/images/webp/categories/cafe-360.webp 360w" sizes="113px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/cafe.png" width="1145" height="1374" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">CAFÉS</span>
+            </a>
+          </li>
+          <li class="menu-category--donuts">
+            <div class="category-link" data-category="donas-y-munchkins">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/donas-y-munchkins-180.webp 180w, assets/images/webp/categories/donas-y-munchkins-360.webp 360w" sizes="135px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/donas-y-munchkins.png" width="1536" height="1024" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">DONAS Y MUNCHKINS</span>
+            </div>
+          </li>
+          <li class="menu-category--cold">
+            <div class="category-link" data-category="bebidas-frias">
+              <picture>
+                <source type="image/webp" srcset="assets/images/webp/categories/bebidas-frias-180.webp 180w, assets/images/webp/categories/bebidas-frias-360.webp 360w" sizes="112px">
+                <img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/bebidas-frias.png" width="1182" height="1330" alt="" loading="lazy">
+              </picture>
+              <span class="category-label">BEBIDAS FRÍAS</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="cafe" class="layout-container menu-cafe__catalog" aria-labelledby="cafe-title">
+      <h1 id="cafe-title">CAFÉ</h1>
+      <ul id="cafe-products" class="menu-cafe__products" role="list" aria-labelledby="cafe-title">
+        <li id="producto-latte" class="product-card product-card--latte">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/latte-192.webp 192w, assets/images/webp/menu-cafe/latte-384.webp 384w" sizes="(min-width: 48rem) 120px, 104px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/latte.png" width="1024" height="1536" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">LATTE</span>
+        </li>
+        <li id="producto-cappuccino" class="product-card product-card--cappuccino">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/cappuccino-192.webp 192w, assets/images/webp/menu-cafe/cappuccino-384.webp 384w" sizes="(min-width: 48rem) 141px, 122px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/cappuccino.png" width="1199" height="1312" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">CAPPUCCINO</span>
+        </li>
+        <li id="producto-mocha" class="product-card product-card--mocha">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/mocha-192.webp 192w, assets/images/webp/menu-cafe/mocha-384.webp 384w" sizes="(min-width: 48rem) 143px, 124px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/mocha.png" width="1225" height="1284" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">MOCHA</span>
+        </li>
+        <li id="producto-macchiato" class="product-card product-card--macchiato">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/macchiato-192.webp 192w, assets/images/webp/menu-cafe/macchiato-384.webp 384w" sizes="(min-width: 48rem) 142px, 123px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/macchiato.png" width="1210" height="1300" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">MACCHIATO</span>
+        </li>
+        <li id="producto-decaf" class="product-card product-card--decaf">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/decaf-192.webp 192w, assets/images/webp/menu-cafe/decaf-384.webp 384w" sizes="(min-width: 48rem) 153px, 133px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/decaf.png" width="1312" height="1199" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">DECAF</span>
+        </li>
+        <li id="producto-espresso" class="product-card product-card--espresso">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/espresso-192.webp 192w, assets/images/webp/menu-cafe/espresso-384.webp 384w" sizes="(min-width: 48rem) 153px, 133px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/espresso.png" width="1312" height="1199" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">ESPRESSO<br>AMERICANO</span>
+        </li>
+        <li id="producto-americano" class="product-card product-card--americano">
+          <picture class="product-card__media">
+            <source type="image/webp" srcset="assets/images/webp/menu-cafe/americano-192.webp 192w, assets/images/webp/menu-cafe/americano-384.webp 384w" sizes="(min-width: 48rem) 144px, 125px">
+            <img class="product-card__image" src="assets/images/menu-cafe/originales/americano.png" width="1237" height="1271" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="product-card__name">AMERICANO</span>
+        </li>
+        <li id="producto-cold-brew" class="menu-cafe__linked-product">
+          <a class="product-card product-card--cold-brew" href="producto.html?producto=cold-brew">
+            <picture class="product-card__media">
+              <source type="image/webp" srcset="assets/images/webp/menu-cafe/cold-brew-192.webp 192w, assets/images/webp/menu-cafe/cold-brew-384.webp 384w" sizes="(min-width: 48rem) 120px, 104px">
+              <img class="product-card__image" src="assets/images/menu-cafe/originales/cold-brew.png" width="1024" height="1536" alt="" loading="lazy" decoding="async">
+            </picture>
+            <span class="product-card__name">COLD BREW</span>
+          </a>
+        </li>
+      </ul>
+      <div class="catalog-empty" data-search-empty hidden>
+        <h2>No encontramos productos</h2>
+        <p>Intenta buscar con otro nombre.</p>
+        <button type="button" class="catalog-empty__restore" data-search-clear>Ver todos los productos</button>
+      </div>
+      <p class="catalog-search__status" role="status" data-search-status></p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer">
+    <div class="layout-container layout-grid site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="index.html" aria-label="Dunkin’, inicio">
+          <picture>
+            <source media="(min-width: 48rem)" srcset="assets/logos/dunkin-footer-escritorio.svg" width="174" height="35">
+            <img src="assets/logos/dunkin-footer-movil.svg" width="168" height="33" alt="">
+          </picture>
+        </a>
+        <picture class="site-footer__flag"><source type="image/webp" srcset="assets/images/webp/brand/bandera-mexico-48.webp 48w, assets/images/webp/brand/bandera-mexico-96.webp 96w" sizes="42px"><img src="assets/images/brand/bandera-mexico.png" width="40" height="40" alt="México" loading="lazy"></picture>
+      </div>
+      <nav class="site-footer__nav" aria-labelledby="footer-about">
+        <h2 class="site-footer__heading" id="footer-about">ACERCA DE</h2>
+        <ul class="site-footer__links" role="list">
+          <li><a href="index.html">Principal</a></li>
+          <li><a href="menu-cafe.html" aria-current="page">Menú</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="#footer-contact">Contáctanos</a></li>
+        </ul>
+        <ul class="site-footer__links" role="list">
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a role="link" aria-disabled="true">Términos y condiciones</a></li>
+          <li><a role="link" aria-disabled="true">Política de privacidad</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2 class="site-footer__heading" id="footer-contact">CONTACTO</h2>
+        <address>
+          <a href="mailto:dunkindonuts@dunkin.com.mx">dunkindonuts@dunkin.com.mx</a>
+          <a href="tel:5611234567">Tel. 56 1123 4567</a>
+        </address>
+        <ul class="site-footer__socials" role="list" aria-label="Redes sociales">
+          <li><a class="site-footer__social" aria-label="Facebook" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/facebook-escritorio.svg" width="27" height="27">
+            <img src="assets/icons/facebook-movil.svg" width="27" height="27" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="TikTok" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/tiktok-escritorio.svg" width="21" height="25">
+            <img src="assets/icons/tiktok-movil.svg" width="21" height="24" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="Instagram" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/instagram-escritorio.svg" width="25" height="25">
+            <img src="assets/icons/instagram-movil.svg" width="24" height="24" alt="">
+          </picture></a></li>
+        </ul>
+      </div>
+      <p class="site-footer__copyright">Dunkin' Derechos Reservados © 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

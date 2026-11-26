@@ -1,0 +1,611 @@
+.button {
+  --button-background: transparent;
+  --button-color: var(--color-white);
+  --button-border: transparent;
+  --button-font-size: var(--type-button-default);
+  --button-padding-inline: var(--space-24);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: var(--target-size);
+  min-block-size: var(--target-size);
+  max-inline-size: 100%;
+  padding: var(--space-8) var(--button-padding-inline);
+  border: 1px solid var(--button-border);
+  border-radius: var(--radius-button);
+  background: var(--button-display-background, var(--button-background));
+  color: var(--button-display-color, var(--button-color));
+  font-family: var(--font-quicksand);
+  font-size: var(--button-font-size);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.button--primary {
+  --button-background: var(--color-pink);
+}
+
+.button--secondary {
+  --button-background: var(--color-orange);
+}
+
+.button--inverse {
+  --button-background: var(--color-white);
+  --button-color: var(--color-pink);
+}
+
+.button--outline {
+  --button-color: var(--color-pink);
+  --button-border: var(--color-orange);
+}
+
+.button--outline[data-outline="pink"] {
+  --button-border: var(--color-pink);
+}
+
+.button--small {
+  --button-font-size: var(--type-button-small);
+}
+
+.button--large {
+  --button-font-size: var(--type-button-large);
+}
+
+.button--narrow {
+  --button-padding-inline: var(--space-12);
+}
+
+.button--compact {
+  min-block-size: 0;
+  border: 0;
+}
+
+.button--compact::before {
+  position: absolute;
+  inset-inline: 0;
+  inset-block: min(0px, calc((100% - var(--target-size)) / 2));
+  content: "";
+}
+
+.button--compact-flat {
+  min-block-size: 2rem;
+  padding-block: 0;
+}
+
+.button--with-icon {
+  gap: var(--space-8);
+}
+
+.button--with-icon img,
+.button--icon-only img {
+  flex: none;
+}
+
+.button--icon-only {
+  padding: var(--space-4);
+}
+
+.button__location-icon {
+  flex: none;
+  inline-size: var(--space-24);
+  block-size: var(--space-24);
+  background-color: currentColor;
+  mask: url("../assets/icons/ubicacion.svg") center / contain no-repeat;
+}
+
+/* Los botones de icono con arte vectorial conservan su área táctil transparente. */
+.button__graphic-surface {
+  fill: var(--button-display-background, var(--button-background));
+  stroke: var(--button-display-edge, transparent);
+  stroke-width: 2px;
+}
+
+.button__graphic-ink {
+  stroke: var(--button-display-color, var(--button-color, var(--color-white)));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(.button, .button--graphic) {
+    --button-hover-scale: 1.03;
+    --button-hover-transition: 250ms ease;
+  }
+
+  :is(.button--primary, .button--secondary) {
+    --button-hover-background: var(--color-white);
+    --button-hover-color: var(--button-background);
+    --button-hover-edge: var(--button-background);
+  }
+
+  .button--inverse {
+    --button-hover-background: var(--color-pink);
+    --button-hover-color: var(--color-white);
+  }
+
+  .button--outline {
+    --button-hover-background: var(--button-border);
+    --button-hover-color: var(--color-white);
+  }
+
+  :is(.button, .button--graphic):hover:not(:disabled, [aria-disabled="true"]) {
+    --button-display-background: var(--button-hover-background, var(--button-background));
+    --button-display-color: var(--button-hover-color, var(--button-color, var(--color-white)));
+    --button-display-edge: var(--button-hover-edge, transparent);
+
+    scale: var(--button-hover-scale);
+  }
+
+  /* El borde superpuesto no cambia el tamaño, incluso si el botón no tiene borde en reposo. */
+  .button::after {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--button-display-edge, transparent);
+    border-radius: inherit;
+    pointer-events: none;
+    transition: border-color var(--button-hover-transition);
+    content: "";
+  }
+
+  .button__graphic-surface {
+    transition: fill var(--button-hover-transition), stroke var(--button-hover-transition);
+  }
+
+  .button__graphic-ink {
+    transition: stroke var(--button-hover-transition);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :is(.button, .button--graphic) {
+      --button-hover-scale: 1;
+      --button-hover-transition: 0s;
+    }
+  }
+}
+
+:is(.button, .button--graphic, .loop-control):not(:disabled, [aria-disabled="true"]) {
+  transition: scale 120ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(.button, .button--graphic):not(:disabled, [aria-disabled="true"]) {
+    transition: background-color var(--button-hover-transition),
+      color var(--button-hover-transition),
+      scale var(--button-scale-transition, var(--button-hover-transition));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(.button, .button--graphic, .loop-control):active:not(:disabled, [aria-disabled="true"]) {
+    --button-scale-transition: 120ms ease;
+    scale: .97;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loop-control {
+    transition: none;
+  }
+}
+
+.loop-control {
+  display: grid;
+  inline-size: var(--target-size);
+  block-size: var(--target-size);
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--color-pink);
+  cursor: pointer;
+}
+
+.loop-control[hidden] {
+  display: none;
+}
+
+.loop-control::before,
+.loop-control::after {
+  content: "";
+  grid-area: 1 / 1;
+}
+
+.loop-control::before {
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: var(--color-white);
+}
+
+.loop-control::after {
+  inline-size: 0.625rem;
+  block-size: 0.75rem;
+  border-inline: 0.1875rem solid currentColor;
+}
+
+.loop-control[data-paused]::after {
+  border: 0;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  translate: 1px 0;
+}
+
+.loop-control:focus-visible {
+  outline-offset: -2px;
+}
+
+:is(.button, .store-locator-link):focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-white);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+@media (forced-colors: active) {
+  :is(.button, .store-locator-link):focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+.store-locator-banner {
+  background: var(--color-pink);
+}
+
+.store-locator-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5625rem;
+  min-block-size: var(--space-64);
+  inline-size: 100%;
+  padding-inline: var(--space-16);
+  color: var(--color-off-white);
+  font-size: var(--type-locator);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  text-align: center;
+  text-decoration: none;
+}
+
+.store-locator-link img {
+  flex: none;
+}
+
+.store-locator-link:focus-visible {
+  outline-offset: -4px;
+  box-shadow: inset 0 0 0 2px var(--color-white);
+}
+
+@media (min-width: 64rem) {
+  .store-locator-link {
+    gap: 0.8125rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .store-locator-link[href]:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+  }
+}
+
+.brand-label {
+  --label-color: var(--color-pink);
+
+  display: inline-block;
+  padding: var(--space-8) var(--brand-label-padding-inline);
+  border-radius: var(--radius-label);
+  background: var(--label-color);
+  color: var(--color-white);
+  font-size: var(--type-marquee-mobile);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-marquee-mobile);
+}
+
+.brand-label--orange {
+  --label-color: var(--color-orange);
+}
+
+@media (min-width: 64rem) {
+  .brand-label {
+    font-size: var(--type-marquee-desktop);
+    line-height: var(--leading-marquee-desktop);
+  }
+}
+
+.category-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--category-gap, var(--space-12));
+  min-block-size: var(--target-size);
+  text-align: center;
+  text-decoration: none;
+}
+
+.category-label {
+  color: var(--color-pink);
+  font-size: var(--type-category-mobile);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+@media (min-width: 64rem) {
+  .category-label {
+    font-size: var(--category-label-size, var(--type-category-desktop));
+  }
+}
+
+/* Movimiento compartido de las imágenes de categorías y del catálogo. */
+@media (hover: hover) and (pointer: fine) {
+  .category-link:hover .category-label,
+  .product-card:hover .product-card__name {
+    color: var(--color-orange);
+  }
+
+  .category-link:hover .category-link__image.image-shadow {
+    --image-shadow: var(--shadow-medium);
+  }
+
+  .product-card:hover .product-card__image {
+    filter: drop-shadow(var(--shadow-soft));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :is(.category-label, .product-card__name) {
+      transition: color 250ms ease-out;
+    }
+
+    :is(.category-link__image, .product-card__image) {
+      transition: scale 250ms ease-out, translate 250ms ease-out, filter 250ms ease-out;
+    }
+
+    .category-link:hover .category-link__image,
+    .product-card:hover:not(:active) .product-card__image {
+      scale: 1.05;
+      translate: 0 -6px;
+    }
+  }
+}
+
+.photo {
+  border-radius: var(--radius-photo);
+}
+
+.image-shadow {
+  --image-shadow: var(--shadow-soft);
+}
+
+.image-shadow--medium {
+  --image-shadow: var(--shadow-medium);
+}
+
+.image-shadow:not(.image-shadow--alpha) {
+  box-shadow: var(--image-shadow);
+}
+
+.image-shadow--alpha {
+  filter: drop-shadow(var(--image-shadow));
+}
+
+.site-footer {
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-size: var(--type-footer-mobile);
+  line-height: var(--leading-footer-body);
+}
+
+.site-footer__inner {
+  row-gap: var(--space-12);
+  padding-block: 1.25rem 1.375rem;
+}
+
+.site-footer__inner > * {
+  grid-column: 1 / -1;
+}
+
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-end: var(--space-16);
+}
+
+.site-footer__flag {
+  flex: none;
+  inline-size: 2.5rem;
+}
+
+.site-footer__heading {
+  font-size: inherit;
+  font-weight: var(--weight-regular);
+  line-height: inherit;
+}
+
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+  row-gap: var(--space-8);
+}
+
+.site-footer__nav .site-footer__heading {
+  grid-column: 1 / -1;
+}
+
+.site-footer__links,
+.site-footer__socials {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer__links {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  font-weight: var(--weight-bold);
+}
+
+.site-footer a {
+  text-decoration: none;
+}
+
+.site-footer address {
+  display: grid;
+  justify-items: start;
+  margin-block-start: var(--space-4);
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.site-footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-block-start: var(--space-12);
+}
+
+.site-footer__social {
+  display: grid;
+  inline-size: 2.25rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-pink);
+}
+
+.site-footer__copyright {
+  margin-block-start: var(--space-4);
+  font-weight: var(--weight-bold);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-footer :is(nav, address) a[href]:hover {
+    text-decoration: underline;
+  }
+
+  .site-footer__social {
+    transition: scale 250ms ease;
+  }
+
+  .site-footer__social:hover {
+    scale: 1.03;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__social {
+    transition: none;
+  }
+
+  .site-footer__social:hover {
+    scale: 1;
+  }
+}
+
+@media (min-width: 48rem) {
+  .site-footer__inner {
+    min-block-size: 22.25rem;
+    padding-block: 2.875rem var(--space-40);
+    row-gap: var(--space-48);
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / span 2;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: var(--space-16);
+    padding-inline-end: 0;
+  }
+
+  .site-footer__brand picture img {
+    inline-size: 10.875rem;
+  }
+
+  .site-footer__flag {
+    inline-size: 2.625rem;
+  }
+
+  .site-footer__nav {
+    grid-column: 3 / span 3;
+  }
+
+  .site-footer__contact {
+    grid-column: 6 / -1;
+  }
+
+  .site-footer__nav,
+  .site-footer__contact {
+    padding-block-start: 4.25rem;
+  }
+
+  .site-footer address {
+    margin-block-start: var(--space-12);
+  }
+
+  .site-footer__social {
+    inline-size: 2.3275rem;
+  }
+
+  .site-footer__copyright {
+    align-self: end;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 64rem) {
+  .site-footer {
+    font-size: var(--type-copy-mobile);
+    line-height: var(--leading-copy);
+  }
+
+  .site-footer__heading {
+    font-size: var(--type-button-large);
+  }
+
+  .site-footer__copyright {
+    font-size: .875rem;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / span 3;
+  }
+
+  .site-footer__nav {
+    grid-column: 4 / span 4;
+  }
+
+  .site-footer__contact {
+    grid-column: 8 / -1;
+  }
+}
+
+@media (width < 48rem) {
+  .site-footer :is(nav, address) a[href] {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--target-size);
+  }
+
+  .site-footer__links {
+    gap: 0;
+  }
+
+  .site-footer__links a {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--target-size);
+  }
+}

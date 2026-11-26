@@ -1,0 +1,166 @@
+/* Composiciones exclusivas de la landing. */
+.store-promo {
+  color: var(--color-white);
+}
+
+.store-promo__panel {
+  position: relative;
+  display: grid;
+  align-items: start;
+  min-block-size: 16rem;
+  padding-block: var(--space-40) var(--space-32);
+  background: var(--color-pink) url("../assets/images/stores/panel-rosa-movil.svg") center / 100% 100% no-repeat;
+}
+
+.store-promo__grid {
+  position: relative;
+  max-inline-size: 36rem;
+}
+
+.store-promo__content {
+  grid-column: 2 / -1;
+  display: grid;
+  justify-items: start;
+  row-gap: 1.4375rem;
+  padding-inline-start: clamp(0.5rem, calc(31vw - 6.25rem), 1.5625rem);
+}
+
+.store-promo__content h2 {
+  font-family: var(--font-dunkin-regular);
+  font-size: clamp(2.125rem, calc(var(--type-store-promo) - max(0px, 360px - 100vw) * .15), var(--type-store-promo));
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-store-promo);
+  letter-spacing: var(--tracking-store-promo);
+}
+
+.store-promo__donuts {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: -0.5625rem;
+  inset-inline-start: max(-3.0625rem, calc(50% - 15.625rem));
+  inline-size: 10.375rem;
+  max-inline-size: 42vw;
+  pointer-events: none;
+}
+
+.store-promo__donuts img {
+  inline-size: 100%;
+}
+
+.store-promo__photo {
+  overflow: clip;
+}
+
+.store-promo__photo img {
+  inline-size: 100%;
+  min-block-size: 16.125rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: right;
+}
+
+.about-preview {
+  position: relative;
+  isolation: isolate;
+  min-block-size: 18.125rem;
+  padding-block: 1.375rem var(--space-48);
+  color: var(--color-pink);
+}
+
+.about-preview__decoration {
+  position: absolute;
+  z-index: -1;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 12rem;
+  overflow: clip;
+  pointer-events: none;
+}
+
+.about-preview__decoration img {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-end: 0;
+  inline-size: 33.1875rem;
+  max-inline-size: none;
+  aspect-ratio: 941 / 1672;
+  translate: -51.13% 0;
+}
+
+.about-preview__content {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-items: center;
+  gap: 1.6875rem;
+  text-align: center;
+}
+
+.about-preview__content h2 {
+  display: grid;
+  justify-items: center;
+  gap: 1.4rem;
+  font-size: var(--type-section-title);
+}
+
+.about-preview__button {
+  --button-font-size: var(--type-button-small);
+}
+
+@media (min-width: 48rem) {
+  .store-promo {
+    display: none;
+  }
+
+  .about-preview {
+    min-block-size: 23.875rem;
+    padding-block-start: 3.75rem;
+  }
+
+  .about-preview__content {
+    translate: -1.375vw -0.1875rem;
+  }
+
+  .about-preview__button {
+    --button-font-size: var(--type-button-large);
+  }
+
+  .about-preview__decoration {
+    block-size: min(35.125vw, 28.9375rem);
+  }
+
+  .about-preview__decoration img {
+    inset-inline-start: max(0px, calc((100% - var(--container-max)) / 2));
+    inset-block-end: -1rem;
+    inline-size: min(97.19%, 80.0625rem);
+    translate: none;
+  }
+}
+
+@media (min-width: 82.375rem) {
+  .about-preview__decoration {
+    --about-decoration-width: 80.0625rem;
+  }
+
+  /* El mismo lienzo se ancla a ambos extremos. Solo se difuminan los bordes interiores. */
+  .about-preview__decoration img,
+  .about-preview__decoration::after {
+    inline-size: var(--about-decoration-width);
+  }
+
+  .about-preview__decoration img {
+    inset-inline-start: 0;
+    mask-image: linear-gradient(to right, #000 54%, transparent 59%);
+  }
+
+  .about-preview__decoration::after {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-end: -1rem;
+    aspect-ratio: 941 / 1672;
+    background: url("../assets/images/brand/confeti-somos-dunkin.png") center / contain no-repeat;
+    background-image: image-set(url("../assets/images/webp/brand/confeti-somos-dunkin-941.webp") type("image/webp"),
+      url("../assets/images/brand/confeti-somos-dunkin.png") type("image/png"));
+    mask-image: linear-gradient(to right, transparent 55%, #000 60%);
+    content: "";
+  }
+}

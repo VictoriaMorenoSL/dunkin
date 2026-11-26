@@ -1,0 +1,76 @@
+:root {
+  /* Figma: colores, radios, tipografía y medidas de los frames. */
+  --color-pink: #F20C90;
+  --color-orange: #FF6D0D;
+  --color-light-pink: #F76DBC;
+  --color-white: #FFFFFF;
+  --color-off-white: #F5F5F5;
+  --color-dark: #1C1C1C;
+
+  --radius-button: 11px;
+  --radius-label: 15px;
+  --radius-photo: 25px;
+
+  --font-dunkin-sans: "Dunkin Sans";
+  --font-dunkin-regular: "Dunkin Regular";
+  --font-quicksand: "Quicksand";
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Tamaños en rem equivalentes a las lecturas de Figma a 16 px de raíz. */
+  --type-hero-mobile: 3rem;
+  --type-hero-intro-desktop: 4.061875rem; /* 64.99 px */
+  --type-hero-brand-desktop: 7.673125rem; /* 122.77 px */
+  --type-featured-mobile: 2.875rem;
+  --type-featured-desktop: 5rem;
+  --type-section-title: 3rem;
+  --type-store-promo: 2.5rem;
+  --type-nav-desktop: 1.25rem;
+  --type-locator: 1.5rem;
+  --type-copy-mobile: 1rem;
+  --type-copy-desktop: 1.25rem;
+  --type-category-mobile: 0.9375rem;
+  --type-category-desktop: 1.006875rem; /* 16.11 px */
+  --type-marquee-mobile: 0.9375rem;
+  --type-marquee-desktop: 1.25rem;
+  --type-footer-mobile: 0.9375rem;
+  --type-footer-desktop: 0.97rem; /* 15.52 px */
+  --type-button-small: 0.8125rem;
+  --type-button-default: 1rem;
+  --type-button-large: 1.125rem;
+
+  --leading-tight: 1.2;
+  --leading-copy: 1.5;
+  --leading-store-promo: 1.075; /* 43 px a 40 px */
+  --leading-marquee-mobile: 1.066667; /* 16 px a 15 px */
+  --tracking-featured-copy: -0.019em;
+  --tracking-store-promo: -0.04em;
+
+  --reference-desktop: 82.375rem; /* 1318 px */
+  --reference-mobile: 25.125rem; /* 402 px */
+
+  /* Propuesta web: espaciado y límite exterior del contenedor. */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-96: 6rem;
+
+  --container-max: var(--reference-desktop);
+  --grid-gutter-wide: 1.25rem;
+  --brand-label-padding-inline: 1.8125rem; /* 29 px en Figma */
+  --target-size: 2.75rem;
+
+  /* Normalizaciones web. Las medidas originales figuran en la guía. */
+  --leading-marquee-desktop: 1.5rem;
+  --leading-footer-body: 1.25rem;
+  --shadow-soft: 0 3px 8px rgba(0, 0, 0, .15);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, .25);
+}

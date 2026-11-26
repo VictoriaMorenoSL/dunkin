@@ -1,0 +1,238 @@
+.hero {
+  background: var(--color-orange);
+  color: var(--color-white);
+  container-type: inline-size;
+  overflow: clip;
+}
+
+.hero__stage {
+  /* Medidas de Figma relativas al ancho de la composición. */
+  --hero-pixel: min(calc(100cqw / 402), calc(1px - max(0px, 100cqw - var(--reference-mobile)) / 1090));
+  --hero-wide-inset: clamp(0px, calc((100cqw - var(--reference-mobile)) * .14), 50px);
+  --hero-art-shift: max(0px, calc((var(--reference-mobile) - 100cqw) * 0.3));
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: start;
+  min-block-size: calc(704 * var(--hero-pixel) + var(--hero-art-shift));
+  overflow: clip;
+}
+
+.hero__art {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__art::before,
+.hero__art::after,
+.hero__stage::before {
+  position: absolute;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.hero__art::before,
+.hero__art::after {
+  inline-size: 100%;
+  background-image: var(--hero-photo);
+  background-size: calc(1221 * var(--hero-pixel)) auto;
+  background-position: calc(50% + 1.5 * var(--hero-pixel)) calc(-25.5 * var(--hero-pixel));
+}
+
+.hero__art::before {
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  block-size: calc(673 * var(--hero-pixel));
+}
+
+.hero__art::after {
+  /* En móviles menores al frame, separa la foto inferior del botón. */
+  inset-block-start: calc(55 * var(--hero-pixel) + var(--hero-art-shift));
+  inset-inline-start: 0;
+  background-position-x: calc(50% + .5 * var(--hero-pixel));
+  block-size: calc(649 * var(--hero-pixel));
+}
+
+.hero__stage::before {
+  z-index: -1;
+  inset-block-start: 0;
+  inset-inline-start: calc(50% - 284 * var(--hero-pixel));
+  inline-size: calc(586 * var(--hero-pixel));
+  block-size: calc(195 * var(--hero-pixel));
+  background-image: url("../assets/images/hero/confeti-movil.png");
+  background-image: image-set(url("../assets/images/webp/hero/confeti-movil-640.webp") 1x,
+    url("../assets/images/webp/hero/confeti-movil-941.webp") 2x);
+  background-size: 99.5% auto;
+  background-position: calc(0.176 * var(--hero-pixel)) calc(-57.58 * var(--hero-pixel));
+  pointer-events: none;
+}
+
+.hero__content {
+  --stack-gap: var(--space-12);
+
+  align-items: center;
+  margin-block-start: calc(120 * var(--hero-pixel) - var(--hero-wide-inset));
+  padding: 0 var(--space-16) var(--space-24);
+  text-align: center;
+}
+
+.hero__title {
+  font-size: min(var(--type-hero-mobile), calc(48 * var(--hero-pixel)));
+}
+
+.hero__title > span {
+  display: block;
+}
+
+.hero__word-gap {
+  font-size: 0.5em;
+}
+
+.hero__copy {
+  max-inline-size: 14.5rem;
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+@media (min-width: 48rem) {
+  .hero__stage {
+    --hero-pixel: min(calc(100cqw / 1318), calc(90rem / 1318));
+    --hero-art-height: calc(576 * var(--hero-pixel));
+    --hero-height: max(var(--hero-art-height), calc(468px - (100cqw - 48rem) * .24));
+
+    max-inline-size: 90rem;
+    min-block-size: var(--hero-height);
+    margin-inline: auto;
+  }
+
+  .hero__art::before {
+    inset: 0;
+    inline-size: auto;
+    block-size: auto;
+    background-image: var(--hero-photo);
+    /* Centra el arte en el alto adicional de tableta sin cambiar su escala. */
+    background-size: calc(min(100cqw, 90rem) * 3.0009) auto;
+    background-position: center calc(-123.36 * var(--hero-pixel) + (var(--hero-height) - var(--hero-art-height)) / 2);
+  }
+
+  .hero__art::after {
+    content: none;
+  }
+
+  .hero__stage::before {
+    /* El confeti frontal pasa por delante del titular en el frame de escritorio. */
+    z-index: 1;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: calc(292 * var(--hero-pixel));
+    background-image: url("../assets/images/hero/confeti-escritorio.png");
+    background-image: image-set(url("../assets/images/webp/hero/confeti-escritorio-640.webp") 1x,
+      url("../assets/images/webp/hero/confeti-escritorio-941.webp") 2x);
+    background-size: 100.04% auto;
+    background-position: calc(-0.252 * var(--hero-pixel)) calc(-395.69 * var(--hero-pixel));
+  }
+
+  .hero__content {
+    --stack-gap: clamp(var(--space-12), calc(19.74 * var(--hero-pixel)), 1.23375rem);
+
+    align-items: start;
+    inline-size: min(38cqw, 34rem);
+    margin-block-start: calc(190 * var(--hero-pixel));
+    margin-inline-start: calc(101 * var(--hero-pixel));
+    padding-inline: 0;
+    text-align: start;
+  }
+
+  .hero__title {
+    font-size: min(var(--type-hero-intro-desktop), calc(64.99 * var(--hero-pixel)));
+  }
+
+  .hero__title > span:last-child {
+    margin-block-start: max(-1.565625rem, calc(-25.05 * var(--hero-pixel)));
+    font-size: min(var(--type-hero-brand-desktop), calc(122.77 * var(--hero-pixel)));
+  }
+
+  .hero__word-gap {
+    font-size: inherit;
+  }
+
+  .hero__copy {
+    max-inline-size: none;
+    font-size: clamp(var(--type-copy-mobile), calc(20 * var(--hero-pixel)), var(--type-copy-desktop));
+  }
+
+  .hero__button {
+    --button-font-size: clamp(var(--type-button-default), calc(18 * var(--hero-pixel)), var(--type-button-large));
+
+    margin-block-start: -0.09375rem;
+    margin-inline-start: max(-0.375rem, calc(-6 * var(--hero-pixel)));
+  }
+}
+
+@media (width >= 48rem) and (width < 64rem) {
+  .hero__content {
+    margin-block-start: max(calc(190 * var(--hero-pixel)), calc(var(--hero-height) * .27));
+  }
+}
+
+.hero {
+  --hero-photo: url("../assets/images/webp/hero/foto-movil-extendida-480.webp");
+}
+
+@media (width < 48rem) and (min-resolution: 1.5dppx) {
+  .hero {
+    --hero-photo: url("../assets/images/webp/hero/foto-movil-extendida-941.webp");
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    --hero-photo: url("../assets/images/webp/hero/foto-escritorio-1440.webp?v=5.2.1");
+  }
+
+  .hero__stage {
+    overflow: visible;
+  }
+
+  .hero__art {
+    inset-inline: 50% auto;
+    inline-size: 100cqw;
+    translate: -50% 0;
+  }
+}
+
+@media (min-width: 48rem) and (min-resolution: 1.5dppx) {
+  .hero {
+    --hero-photo: url("../assets/images/webp/hero/foto-escritorio-1672.webp?v=5.2.1");
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero__stage::before {
+    /* La chispa frontal llega más abajo que la caja de recorte original. */
+    block-size: calc(380 * var(--hero-pixel));
+  }
+}
+
+@media (width > 90rem) {
+  .hero__stage::before {
+    /* El borde del confeti queda dentro del viewport cuando la foto alcanza su escala máxima. */
+    mask-image: linear-gradient(to right, #000 calc(100% - 3.5rem), transparent);
+  }
+
+  .hero__art::after {
+    /* Suaviza únicamente el empalme con la extensión del raster, fuera de los vasos. */
+    inset-block: 0;
+    inset-inline-start: calc(50% + 45rem - .75rem);
+    inline-size: 1.5rem;
+    block-size: auto;
+    background: none;
+    backdrop-filter: blur(4px);
+    mask-image: linear-gradient(to right, transparent, #000 30% 70%, transparent);
+    content: "";
+  }
+}

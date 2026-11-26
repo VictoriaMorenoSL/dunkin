@@ -1,0 +1,98 @@
+/* Las tres fuentes .otf locales contienen datos TrueType. */
+@font-face {
+  font-family: "Dunkin Sans";
+  src: url("../assets/fonts/dunkin-sans-regular.otf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dunkin Sans";
+  src: url("../assets/fonts/dunkin-sans-bold.otf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dunkin Regular";
+  src: url("../assets/fonts/dunkin-regular.otf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/quicksand-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-family: var(--font-quicksand);
+  font-size: var(--type-copy-mobile);
+  font-weight: var(--weight-regular);
+  font-synthesis: none;
+  line-height: var(--leading-copy);
+}
+
+:where(h1, h2, h3, p, ul, figure) {
+  margin: 0;
+}
+
+:where(h1, h2, h3) {
+  font-family: var(--font-dunkin-sans);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  overflow-wrap: anywhere;
+}
+
+:where(ul) {
+  padding-inline-start: var(--space-24);
+}
+
+:where(img) {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(a) {
+  color: inherit;
+  text-underline-offset: 0.16em;
+}
+
+:where(button) {
+  color: inherit;
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: var(--space-4);
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: var(--space-8);
+  inset-inline-start: var(--space-8);
+  z-index: 11;
+  padding: var(--space-8) var(--space-12);
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-weight: var(--weight-bold);
+}
+
+.skip-link:not(:focus) {
+  clip-path: inset(50%);
+}

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dunkin’ México</title>
+  <meta name="description" content="Conoce el menú de Dunkin’ México, descubre sus bebidas, donas y desayunos y explora las novedades de Dunkin’.">
+
+  <link rel="preload" as="image" type="image/webp" media="(width &lt; 48rem) and (resolution &lt; 1.5dppx)" href="assets/images/webp/hero/foto-movil-extendida-480.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(width &lt; 48rem) and (min-resolution: 1.5dppx)" href="assets/images/webp/hero/foto-movil-extendida-941.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 48rem) and (resolution &lt; 1.5dppx)" href="assets/images/webp/hero/foto-escritorio-1440.webp?v=5.2.1" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 48rem) and (min-resolution: 1.5dppx)" href="assets/images/webp/hero/foto-escritorio-1672.webp?v=5.2.1" fetchpriority="high">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css?v=5.2">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css?v=interaccion">
+  <link rel="stylesheet" href="css/site-header.css?v=menu-movil">
+  <link rel="stylesheet" href="css/hero.css?v=bordes">
+  <link rel="stylesheet" href="css/menu-categories.css?v=5.2.1">
+  <link rel="stylesheet" href="css/featured-product.css?v=5.2.1">
+  <link rel="stylesheet" href="css/landing-loops.css?v=5.2">
+  <link rel="stylesheet" href="css/index.css?v=confeti-lateral">
+  <link rel="stylesheet" href="css/mobile-menu.css">
+  <script src="js/main.js?v=menu-movil-final" defer></script>
+  <script src="js/landing-loops.js?v=5.2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header id="site-header" class="site-header">
+    <div class="site-header__surface layout-container site-header__container">
+      <nav id="site-navigation" class="site-header__nav" aria-label="Navegación principal">
+        <a class="site-header__link site-header__link--store" href="sucursales.html" aria-label="Sucursales">
+          <span class="site-header__store-text">SUCURSALES</span>
+          <img class="site-header__store-icon" src="assets/icons/sucursal-movil.svg" alt="" width="32" height="32">
+        </a>
+        <a id="site-header-menu" class="site-header__link site-header__secondary" href="menu-cafe.html">MENÚ</a>
+        <a class="site-header__brand" href="index.html" aria-current="page" aria-label="Dunkin’, inicio">
+          <img src="assets/logos/dunkin-header.svg" alt="" width="144" height="28">
+        </a>
+        <a id="site-header-about" class="site-header__link site-header__secondary" href="nosotros.html">NOSOTROS</a>
+        <a id="site-header-contact" class="site-header__link site-header__secondary" href="#footer-contact">CONTACTO</a>
+        <button class="site-header__toggle button--graphic button--primary" type="button" aria-label="Menú"
+                aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" hidden>
+          <!-- Geometría original de menu-movil.svg, con los estados cromáticos compartidos. -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+            <rect class="button__graphic-surface" width="32" height="32" rx="16" />
+            <path class="button__graphic-ink" d="M9 9H23M9 16.2593H23M9 23H23" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero__stage">
+        <div class="hero__art" aria-hidden="true"></div>
+        <div class="layout-stack hero__content">
+          <h1 id="hero-title" class="hero__title"><span>TU<span class="hero__word-gap"> </span>DÍA<span class="hero__word-gap"> </span>PIDE</span> <span>DUNKIN</span></h1>
+          <p class="hero__copy">Encuentra algo para cada momento de tu día.</p>
+          <a class="button button--primary button--compact hero__button" href="menu-cafe.html">VER MENÚ</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="store-locator-banner" class="store-locator-banner" aria-label="Ubicación">
+      <a class="store-locator-link" href="sucursales.html">
+        <span>Encontrar ubicación</span>
+        <img src="assets/icons/ubicacion.svg" alt="" width="24" height="24">
+      </a>
+    </section>
+
+    <section id="menu-categories" class="menu-categories" aria-label="Categorías del menú">
+      <div class="layout-container layout-stack menu-categories__inner">
+        <ul id="menu-categories-list" class="layout-grid menu-category-grid" role="list">
+          <li id="categoria-bebidas-frias" class="menu-category--cold">
+            <a class="category-link" role="link" aria-disabled="true">
+              <picture><source type="image/webp" srcset="assets/images/webp/categories/bebidas-frias-180.webp 180w, assets/images/webp/categories/bebidas-frias-360.webp 360w" sizes="(min-width: 48rem) 149px, 139px"><img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/bebidas-frias.png" alt="" width="1182" height="1330" loading="lazy"></picture>
+              <span class="category-label">BEBIDAS FRÍAS</span>
+            </a>
+          </li>
+          <li id="categoria-donas-y-munchkins" class="menu-category--donuts">
+            <a class="category-link" role="link" aria-disabled="true">
+              <picture><source type="image/webp" srcset="assets/images/webp/categories/donas-y-munchkins-180.webp 180w, assets/images/webp/categories/donas-y-munchkins-360.webp 360w" sizes="(min-width: 48rem) 179px, 166px"><img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/donas-y-munchkins.png" alt="" width="1536" height="1024" loading="lazy"></picture>
+              <span class="category-label">DONAS Y MUNCHKINS</span>
+            </a>
+          </li>
+          <li id="categoria-cafe" class="menu-category--coffee">
+            <a class="category-link" href="menu-cafe.html#cafe">
+              <picture><source type="image/webp" srcset="assets/images/webp/categories/cafe-180.webp 180w, assets/images/webp/categories/cafe-360.webp 360w" sizes="(min-width: 48rem) 158px, 147px"><img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/cafe.png" alt="" width="1145" height="1374" loading="lazy"></picture>
+              <span class="category-label">CAFÉ</span>
+            </a>
+          </li>
+          <li id="categoria-desayuno" class="menu-category--breakfast">
+            <a class="category-link" role="link" aria-disabled="true">
+              <picture><source type="image/webp" srcset="assets/images/webp/categories/desayuno-180.webp 180w, assets/images/webp/categories/desayuno-360.webp 360w" sizes="(min-width: 48rem) 150px, 139px"><img class="category-link__image image-shadow image-shadow--alpha" src="assets/images/categories/desayuno.png" alt="" width="1536" height="1024" loading="lazy"></picture>
+              <span class="category-label">DESAYUNO</span>
+            </a>
+          </li>
+        </ul>
+        <a class="button button--secondary" href="menu-cafe.html">VER MENÚ</a>
+      </div>
+    </section>
+
+    <section id="featured-product" class="featured-product" aria-labelledby="featured-product-title">
+      <div class="featured-product__stage">
+        <div class="featured-product__content">
+          <h2 id="featured-product-title" class="featured-product__title" lang="en"><span>STRAWBERRY</span> <span>DRAGONFRUIT</span> <span>REFRESHER</span></h2>
+          <p class="featured-product__copy">Frutal, frío y hecho para esos días en los que necesitas un break.</p>
+          <a class="button button--inverse button--compact featured-product__button" href="sucursales.html">Probar ahora</a>
+        </div>
+        <div class="featured-product__art" id="featured-product-art">
+          <div class="featured-product__fruit featured-product__fruit--back" aria-hidden="true"></div>
+          <div class="featured-product__fruit featured-product__fruit--top" aria-hidden="true"></div>
+          <picture class="featured-product__drink"><source type="image/webp" srcset="assets/images/webp/featured/strawberry-dragonfruit-refresher-480.webp 480w, assets/images/webp/featured/strawberry-dragonfruit-refresher-960.webp 960w" sizes="(min-width: 82.375rem) 439px, (min-width: 48rem) 34vw, 320px"><img src="assets/images/featured/strawberry-dragonfruit-refresher.png" alt="Vaso de Strawberry Dragonfruit Refresher" width="1024" height="1536" loading="lazy"></picture>
+          <div class="featured-product__foreground">
+            <picture><source type="image/webp" srcset="assets/images/webp/featured/pitahaya-inclinada-300.webp 300w, assets/images/webp/featured/pitahaya-inclinada-600.webp 600w" sizes="(min-width: 48rem) 255px, 170px"><img src="assets/images/featured/pitahaya-inclinada.png" alt="" width="1225" height="1284" loading="lazy"></picture>
+          </div>
+        </div>
+        <button class="loop-control featured-product__motion" type="button" data-featured-control hidden
+                aria-controls="featured-product-art" aria-label="Pausar animación del Refresher"></button>
+      </div>
+    </section>
+
+    <section id="brand-marquee" class="brand-marquee" aria-label="Frases de Dunkin">
+      <div class="loop-window brand-marquee__desktop" data-loop data-direction="1">
+        <div class="loop-track">
+          <ul class="loop-sequence" role="list">
+            <li class="brand-label">Para disfrutar</li>
+            <li class="brand-label brand-label--orange">Tu día sabe mejor con Dunkin</li>
+            <li class="brand-label">Para disfrutar</li>
+            <li class="brand-label brand-label--orange">Algo rico cambia el día</li>
+            <li class="brand-label">Hazle espacio al antojo</li>
+            <li class="brand-label brand-label--orange">Tu día sabe mejor con Dunkin</li>
+          </ul>
+        </div>
+      </div>
+      <div class="loop-window brand-marquee__mobile" data-loop data-direction="1" style="--loop-start: 8.375rem">
+        <div class="loop-track">
+          <ul class="loop-sequence" role="list">
+            <li class="brand-label">Para disfrutar</li>
+            <li class="brand-label brand-label--orange">Tu día sabe mejor con Dunkin</li>
+          </ul>
+        </div>
+      </div>
+      <div class="loop-window brand-marquee__mobile" data-loop data-direction="-1" style="--loop-start: 2.25rem">
+        <div class="loop-track">
+          <ul class="loop-sequence" role="list">
+            <li class="brand-label">Hazle espacio al antojo</li>
+            <li class="brand-label brand-label--orange">Algo rico cambia el día</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="news-gallery" class="news-gallery" aria-labelledby="news-gallery-title">
+      <h2 id="news-gallery-title" class="news-gallery__title">NOVEDADES</h2>
+      <p id="news-gallery-help" hidden>Usa las flechas izquierda y derecha o desliza horizontalmente para recorrer las fotografías.</p>
+      <div class="loop-window news-gallery__desktop" data-loop data-manual aria-label="Carrusel de fotografías"
+           role="region" aria-describedby="news-gallery-help" tabindex="0">
+        <div class="loop-track">
+          <ul class="loop-sequence" role="list">
+            <li class="news-gallery__photo" style="--photo-width: 16.75rem; --photo-ratio: 268 / 336">
+              <picture><source media="(min-width: 48rem)" type="image/webp" srcset="assets/images/webp/gallery/iced-latte-320.webp 320w, assets/images/webp/gallery/iced-latte-640.webp 640w" sizes="(min-width: 48rem) 268px, 250px"><source media="(min-width: 48rem)" srcset="assets/images/gallery/iced-latte.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Iced latte sobre un pedestal" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo" style="--photo-width: 16.875rem; --photo-ratio: 270 / 337">
+              <picture><source media="(min-width: 48rem)" type="image/webp" srcset="assets/images/webp/gallery/macro-iced-coffee-320.webp 320w, assets/images/webp/gallery/macro-iced-coffee-640.webp 640w" sizes="(min-width: 48rem) 270px, 250px"><source media="(min-width: 48rem)" srcset="assets/images/gallery/macro-iced-coffee.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Detalle de café frío con hielo" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo" style="--photo-width: 17.25rem; --photo-ratio: 276 / 345">
+              <picture><source media="(min-width: 48rem)" type="image/webp" srcset="assets/images/webp/gallery/strawberry-dragonfruit-refresher-320.webp 320w, assets/images/webp/gallery/strawberry-dragonfruit-refresher-640.webp 640w" sizes="(min-width: 48rem) 276px, 250px"><source media="(min-width: 48rem)" srcset="assets/images/gallery/strawberry-dragonfruit-refresher.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Strawberry Dragonfruit Refresher" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo" style="--photo-width: 17.9375rem; --photo-ratio: 287 / 345">
+              <picture><source media="(min-width: 48rem)" type="image/webp" srcset="assets/images/webp/gallery/dona-glaseado-morado-320.webp 320w, assets/images/webp/gallery/dona-glaseado-morado-640.webp 640w" sizes="(min-width: 48rem) 288px, 250px"><source media="(min-width: 48rem)" srcset="assets/images/gallery/dona-glaseado-morado.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Dona con glaseado morado" width="1145" height="1374" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo news-gallery__photo--break" style="--photo-width: 16.87rem; --photo-ratio: 269.92 / 337">
+              <picture><source media="(min-width: 48rem)" type="image/webp" srcset="assets/images/webp/gallery/break-dunkin-528.webp 528w, assets/images/webp/gallery/break-dunkin-1056.webp 1056w" sizes="(min-width: 48rem) 506px, 475px"><source media="(min-width: 48rem)" srcset="assets/images/gallery/break-dunkin.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Una mano toma una dona con chispas" width="1536" height="1024" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="layout-container news-gallery__mobile">
+        <div class="news-gallery__columns">
+          <div class="loop-window news-gallery__column" data-loop data-axis="y">
+            <div class="loop-track">
+              <ul class="loop-sequence" role="list">
+            <li class="news-gallery__photo" style="--photo-width: 99.41%; --photo-ratio: 168 / 210">
+              <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/gallery/iced-latte-320.webp 320w, assets/images/webp/gallery/iced-latte-640.webp 640w" sizes="(min-width: 48rem) 268px, 250px"><source media="(width &lt; 48rem)" srcset="assets/images/gallery/iced-latte.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Iced latte sobre un pedestal" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo news-gallery__photo--break" style="--photo-width: 100%; --photo-ratio: 169 / 211">
+              <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/gallery/break-dunkin-528.webp 528w, assets/images/webp/gallery/break-dunkin-1056.webp 1056w" sizes="(min-width: 48rem) 506px, 475px"><source media="(width &lt; 48rem)" srcset="assets/images/gallery/break-dunkin.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Una mano toma una dona con chispas" width="1536" height="1024" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo" style="--photo-width: 100%; --photo-ratio: 169 / 211">
+              <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/gallery/mano-iced-latte-320.webp 320w, assets/images/webp/gallery/mano-iced-latte-640.webp 640w" sizes="250px"><source media="(width &lt; 48rem)" srcset="assets/images/gallery/mano-iced-latte.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Iced latte sostenido con la mano" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+              </ul>
+            </div>
+          </div>
+          <div class="loop-window news-gallery__column news-gallery__column--right" data-loop data-axis="y" data-direction="-1">
+            <div class="loop-track">
+              <ul class="loop-sequence" role="list">
+            <li class="news-gallery__photo" style="--photo-width: 97.69%; --photo-ratio: 169 / 211">
+              <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/gallery/macro-iced-coffee-320.webp 320w, assets/images/webp/gallery/macro-iced-coffee-640.webp 640w" sizes="(min-width: 48rem) 270px, 250px"><source media="(width &lt; 48rem)" srcset="assets/images/gallery/macro-iced-coffee.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Detalle de café frío con hielo" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo" style="--photo-width: 100%; --photo-ratio: 173 / 216">
+              <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/gallery/strawberry-dragonfruit-refresher-320.webp 320w, assets/images/webp/gallery/strawberry-dragonfruit-refresher-640.webp 640w" sizes="(min-width: 48rem) 276px, 250px"><source media="(width &lt; 48rem)" srcset="assets/images/gallery/strawberry-dragonfruit-refresher.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Strawberry Dragonfruit Refresher" width="1122" height="1402" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+            <li class="news-gallery__photo" style="--photo-width: 98.27%; --photo-ratio: 170 / 204">
+              <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/gallery/dona-glaseado-morado-320.webp 320w, assets/images/webp/gallery/dona-glaseado-morado-640.webp 640w" sizes="(min-width: 48rem) 288px, 250px"><source media="(width &lt; 48rem)" srcset="assets/images/gallery/dona-glaseado-morado.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Dona con glaseado morado" width="1145" height="1374" decoding="async" draggable="false" loading="lazy"></picture>
+            </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="loop-control news-gallery__motion" type="button" data-loop-control hidden
+              aria-label="Pausar movimiento" aria-controls="brand-marquee news-gallery"></button>
+    </section>
+
+    <div>
+      <section id="store-promo" class="store-promo" aria-labelledby="store-promo-title">
+        <div class="store-promo__panel">
+          <picture class="store-promo__donuts"><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/stores/torre-de-donas-movil-192.webp 192w, assets/images/webp/stores/torre-de-donas-movil-384.webp 384w" sizes="166px"><source media="(width &lt; 48rem)" srcset="assets/images/stores/torre-de-donas-movil.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="2380" height="4096" alt="" loading="lazy"></picture>
+          <div class="layout-container layout-grid store-promo__grid">
+            <div class="store-promo__content">
+              <h2 id="store-promo-title">TU DUNKIN<br>ESTA<br>CERCA</h2>
+              <a class="button button--inverse button--small button--compact button--compact-flat" href="sucursales.html">Encontrar Local</a>
+            </div>
+          </div>
+        </div>
+        <div class="store-promo__photo">
+          <picture><source media="(width &lt; 48rem)" type="image/webp" srcset="assets/images/webp/stores/carteles-movil-768.webp 768w, assets/images/webp/stores/carteles-movil-1536.webp 1536w" sizes="100vw"><source media="(width &lt; 48rem)" srcset="assets/images/stores/carteles-movil.jpeg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="3840" height="2160" alt="Murales y carteles de Dunkin en una fachada" loading="lazy"></picture>
+        </div>
+      </section>
+    </div>
+
+    <section id="about-preview" class="about-preview" aria-labelledby="about-preview-title">
+      <div class="about-preview__decoration" aria-hidden="true">
+        <picture><source type="image/webp" srcset="assets/images/webp/brand/confeti-somos-dunkin-640.webp 640w, assets/images/webp/brand/confeti-somos-dunkin-941.webp 941w" sizes="(min-width: 48rem) 100vw, 531px"><img src="assets/images/brand/confeti-somos-dunkin.png" width="941" height="1672" alt="" loading="lazy"></picture>
+      </div>
+      <div class="layout-container layout-grid">
+        <div class="about-preview__content">
+          <h2 id="about-preview-title">SOMOS <img src="assets/logos/dunkin-somos.svg" width="354" height="69" alt="Dunkin’"></h2>
+          <a class="button button--secondary button--narrow button--compact button--compact-flat about-preview__button"
+             href="nosotros.html">Conócenos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer">
+    <div class="layout-container layout-grid site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="index.html" aria-label="Dunkin’, inicio">
+          <picture>
+            <source media="(min-width: 48rem)" srcset="assets/logos/dunkin-footer-escritorio.svg" width="174" height="35">
+            <img src="assets/logos/dunkin-footer-movil.svg" width="168" height="33" alt="">
+          </picture>
+        </a>
+        <picture class="site-footer__flag"><source type="image/webp" srcset="assets/images/webp/brand/bandera-mexico-48.webp 48w, assets/images/webp/brand/bandera-mexico-96.webp 96w" sizes="42px"><img src="assets/images/brand/bandera-mexico.png" width="40" height="40" alt="México" loading="lazy"></picture>
+      </div>
+      <nav class="site-footer__nav" aria-labelledby="footer-about">
+        <h2 class="site-footer__heading" id="footer-about">ACERCA DE</h2>
+        <ul class="site-footer__links" role="list">
+          <li><a href="index.html" aria-current="page">Principal</a></li>
+          <li><a href="menu-cafe.html">Menú</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="#footer-contact">Contáctanos</a></li>
+        </ul>
+        <ul class="site-footer__links" role="list">
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a role="link" aria-disabled="true">Términos y condiciones</a></li>
+          <li><a role="link" aria-disabled="true">Política de privacidad</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2 class="site-footer__heading" id="footer-contact">CONTACTO</h2>
+        <address>
+          <a href="mailto:dunkindonuts@dunkin.com.mx">dunkindonuts@dunkin.com.mx</a>
+          <a href="tel:5611234567">Tel. 56 1123 4567</a>
+        </address>
+        <ul class="site-footer__socials" role="list" aria-label="Redes sociales">
+          <li><a class="site-footer__social" aria-label="Facebook" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/facebook-escritorio.svg" width="27" height="27">
+            <img src="assets/icons/facebook-movil.svg" width="27" height="27" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="TikTok" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/tiktok-escritorio.svg" width="21" height="25">
+            <img src="assets/icons/tiktok-movil.svg" width="21" height="24" alt="">
+          </picture></a></li>
+          <li><a class="site-footer__social" aria-label="Instagram" role="link" aria-disabled="true"><picture>
+            <source media="(min-width: 48rem)" srcset="assets/icons/instagram-escritorio.svg" width="25" height="25">
+            <img src="assets/icons/instagram-movil.svg" width="24" height="24" alt="">
+          </picture></a></li>
+        </ul>
+      </div>
+      <p class="site-footer__copyright">Dunkin' Derechos Reservados © 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,425 @@
+.stores-page {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+}
+
+.stores-page .site-header {
+  flex: none;
+}
+
+@media (min-width: 64rem) {
+  .stores-page .site-header__link--store[aria-current] {
+    position: relative;
+  }
+
+  .stores-page .site-header__link--store[aria-current]::after {
+    position: absolute;
+    inset-block-end: var(--space-4);
+    inset-inline-start: 0;
+    inline-size: 134px;
+    block-size: 3px;
+    background: url("../assets/icons/sucursales/subrayado-sucursales.svg") center no-repeat;
+    content: "";
+    pointer-events: none;
+  }
+}
+
+.store-locator {
+  flex: 1;
+  align-content: start;
+  row-gap: 0;
+  padding-block: var(--space-8) var(--space-32);
+}
+
+.store-locator > * {
+  grid-column: 1 / -1;
+}
+
+.store-locator__assistive {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.store-locator__cities label {
+  white-space: nowrap;
+}
+
+.store-locator :is(button:disabled, .catalog-cities:disabled label) {
+  opacity: 1;
+  cursor: default;
+}
+
+.store-locator__tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .8125rem;
+  margin-block-start: var(--space-16);
+}
+
+.store-locator__nearby {
+  --button-padding-inline: var(--space-12);
+
+  white-space: nowrap;
+}
+
+.store-locator [data-nearby-message] {
+  margin-block-start: var(--space-12);
+}
+
+.store-locator__nearby-icon {
+  flex: none;
+  inline-size: 11px;
+  block-size: 14px;
+  background-color: currentColor;
+  mask: url("../assets/icons/sucursales/cerca-de-mi.svg") center / contain no-repeat;
+}
+
+.store-map {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1604 / 1022;
+  background: var(--color-off-white);
+}
+
+.store-locator > .store-map {
+  justify-self: center;
+  inline-size: min(40rem, calc(100% + 2 * var(--page-gutter)));
+  margin-block-start: 1.5625rem;
+}
+
+.store-map > picture,
+.store-map > picture img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.store-map > picture img {
+  object-fit: cover;
+  object-position: right center;
+}
+
+.store-map__pin {
+  position: absolute;
+  inset-inline-start: 63.5%;
+  inset-block-start: 47.45%;
+  display: grid;
+  place-items: center;
+  inline-size: 18px;
+  block-size: 18px;
+  border-radius: 50%;
+  background: var(--color-pink);
+  color: var(--color-white);
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
+.store-map__pin .button__location-icon {
+  inline-size: var(--space-12);
+  block-size: var(--space-12);
+}
+
+.store-locator__results {
+  justify-self: center;
+  inline-size: min(100%, 40rem);
+  margin-block-start: var(--space-8);
+  padding-block-start: 1.375rem;
+}
+
+.store-locator__list {
+  display: grid;
+  gap: var(--space-24);
+  padding: 0;
+  list-style: none;
+}
+
+:is(.store-card, .store-locator__entry) {
+  max-inline-size: 22.25rem;
+}
+
+.store-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  min-inline-size: 0;
+  inline-size: 100%;
+  padding: var(--space-12) .875rem;
+  border: 2px solid var(--color-pink);
+  border-radius: 23px;
+  background: var(--color-white);
+  color: var(--color-pink);
+  font-family: var(--font-quicksand);
+  font-size: var(--type-copy-mobile);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  text-align: start;
+  cursor: pointer;
+}
+
+.store-card > span {
+  inline-size: min(100%, 19.9375rem);
+  overflow-wrap: anywhere;
+}
+
+.store-card__title {
+  font-size: var(--type-copy-desktop);
+  font-weight: var(--weight-bold);
+}
+
+.store-card__address {
+  margin-block-start: .6875rem;
+  color: var(--color-orange);
+  font-size: var(--type-category-mobile);
+}
+
+.store-card[data-store-id="plaza-mitikah"] .store-card__address {
+  font-size: inherit;
+}
+
+.store-card__hours {
+  display: grid;
+  grid-template-columns: 19px minmax(0, 1fr);
+  align-content: center;
+  align-items: start;
+  gap: var(--space-8);
+  min-block-size: 42px;
+  padding-block: var(--space-8);
+}
+
+.store-card__clock {
+  flex: none;
+  inline-size: 19px;
+  block-size: 19px;
+  background: url("../assets/icons/sucursales/horario.svg") center / contain no-repeat;
+}
+
+.store-card[aria-pressed="true"] {
+  background: var(--color-pink);
+  color: var(--color-off-white);
+}
+
+.store-card[aria-pressed="true"] .store-card__address {
+  color: inherit;
+}
+
+.store-card[aria-pressed="true"] .store-card__clock {
+  background-image: url("../assets/icons/sucursales/horario-seleccionado.svg");
+}
+
+.store-card:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: -5px;
+}
+
+.store-card:active .store-card__title {
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .store-card:hover .store-card__title {
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .store-card {
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+  }
+}
+
+@media (max-width: 22rem) {
+  .store-locator__tools .store-locator__nearby {
+    --button-padding-inline: var(--space-8);
+  }
+
+  .store-locator__tools .catalog-search {
+    padding-inline-start: var(--space-8);
+  }
+}
+
+@media (min-width: 64rem) {
+  .store-locator {
+    padding-block: .8125rem 0;
+    row-gap: 1.1875rem;
+  }
+
+  .store-locator__tools {
+    display: contents;
+  }
+
+  .store-locator__tools > *,
+  .store-locator > .store-locator__cities {
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .store-locator__tools .store-locator__search {
+    grid-column: 1 / span 4;
+    justify-self: center;
+    inline-size: min(100%, 24rem);
+    min-block-size: 36px;
+  }
+
+  .store-locator__tools .store-locator__search input {
+    font-size: var(--type-button-large);
+  }
+
+  .store-locator__tools .store-locator__nearby {
+    grid-column: 5 / span 2;
+    justify-self: start;
+  }
+
+  .store-locator__tools .store-locator__nearby,
+  .store-locator > .store-locator__cities .button {
+    --button-font-size: var(--type-button-large);
+
+    min-block-size: 38px;
+  }
+
+  .store-locator > .store-locator__cities {
+    grid-column: 7 / -1;
+    justify-self: end;
+    column-gap: clamp(var(--space-12), 2.3vw, 1.875rem);
+  }
+
+  .store-locator > .store-map {
+    grid-area: 2 / 5 / 3 / -1;
+    justify-self: stretch;
+    inline-size: auto;
+    margin-block-start: 0;
+    margin-inline-end: calc(-1 * var(--page-gutter));
+    aspect-ratio: 775 / 596;
+  }
+
+  .store-locator > .store-map .store-map__pin {
+    display: none;
+  }
+
+  .store-locator__results {
+    grid-area: 2 / 1 / 3 / 5;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    align-self: stretch;
+    inline-size: min(100%, 24rem);
+    min-block-size: 0;
+    margin: 0;
+    padding: 0;
+    /* La altura de la fila la define el mapa, incluso con listas largas. */
+    contain: size;
+  }
+
+  .store-locator__scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .store-locator__scroll:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+.store-map__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-off-white);
+  font-family: var(--font-quicksand);
+}
+
+.store-map__notice,
+.store-locator__message {
+  color: var(--color-dark);
+  font-size: var(--type-category-mobile);
+  line-height: var(--leading-tight);
+}
+
+.store-map__notice {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: var(--space-8);
+  inset-inline: var(--space-8);
+  inline-size: fit-content;
+  max-inline-size: calc(100% - 2 * var(--space-8));
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-button);
+  background: var(--color-white);
+  pointer-events: none;
+}
+
+.store-locator__entry {
+  inline-size: 100%;
+  min-inline-size: 0;
+  justify-self: center;
+}
+
+.store-directions {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-size);
+  font-size: var(--type-category-mobile);
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+}
+
+.store-map__canvas .store-directions,
+.store-directions--fallback {
+  color: var(--color-pink);
+}
+
+.store-directions--fallback {
+  margin-inline-start: .875rem;
+}
+
+.store-map__popup strong {
+  font-size: var(--type-copy-mobile);
+}
+
+.store-marker {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.store-marker__face {
+  display: grid;
+  place-items: center;
+  inline-size: 26px;
+  block-size: 26px;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  background: var(--color-pink);
+  color: var(--color-white);
+}
+
+.store-marker__face .button__location-icon {
+  inline-size: var(--space-16);
+  block-size: var(--space-16);
+}
+
+.store-marker[aria-pressed="true"] .store-marker__face {
+  outline: 2px solid var(--color-dark);
+  scale: 1.14;
+}
+
+.store-marker:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: -2px;
+}
+
+.store-map__canvas .leaflet-control-zoom a {
+  display: grid;
+  place-items: center;
+  min-inline-size: var(--target-size);
+  min-block-size: var(--target-size);
+}
+
+.store-map__canvas .leaflet-control-attribution a {
+  text-decoration: underline;
+}
+

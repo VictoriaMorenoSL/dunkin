@@ -1,0 +1,95 @@
+.product-card {
+  --product-media-width: var(--product-width-mobile);
+  --product-label-size: var(--type-category-mobile);
+
+  display: grid;
+  justify-items: center;
+  row-gap: 1px;
+  min-inline-size: 0;
+  color: var(--color-pink);
+  font-family: var(--font-quicksand);
+  font-size: var(--product-label-size);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  text-align: center;
+  text-decoration: none;
+}
+
+.product-card--latte,
+.product-card--cold-brew {
+  --product-width-mobile: 6.5rem;
+  --product-width-wide: 7.465625rem;
+  --product-ratio: 1024 / 1536;
+}
+
+.product-card--cappuccino {
+  --product-width-mobile: 7.625rem;
+  --product-width-wide: 8.75775rem;
+  --product-ratio: 1199 / 1312;
+}
+
+.product-card--mocha {
+  --product-width-mobile: 7.75rem;
+  --product-width-wide: 8.901375rem;
+  --product-ratio: 1225 / 1284;
+}
+
+.product-card--macchiato {
+  --product-width-mobile: 7.6875rem;
+  --product-width-wide: 8.8295625rem;
+  --product-ratio: 1210 / 1300;
+}
+
+.product-card--americano {
+  --product-width-mobile: 7.8125rem;
+  --product-width-wide: 8.973125rem;
+  --product-ratio: 1237 / 1271;
+}
+
+.product-card--decaf,
+.product-card--espresso {
+  --product-width-mobile: 8.3125rem;
+  --product-width-wide: 9.5474375rem;
+  --product-ratio: 1312 / 1199;
+}
+
+.product-card__media {
+  display: block;
+  align-self: end;
+  inline-size: min(100%, var(--product-media-width));
+  aspect-ratio: var(--product-ratio);
+}
+
+.product-card__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+.product-card__name {
+  align-self: start;
+  overflow-wrap: anywhere;
+}
+
+.product-card:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 3px;
+}
+
+@media (min-width: 48rem) {
+  .product-card {
+    --product-media-width: var(--product-width-wide);
+  }
+}
+
+@media (min-width: 64rem) {
+  .product-card {
+    --product-label-size: 1.07675rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-card:active .product-card__image {
+    scale: .97;
+  }
+}
