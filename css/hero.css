@@ -82,6 +82,7 @@
 
 .hero__title {
   font-size: min(var(--type-hero-mobile), calc(48 * var(--hero-pixel)));
+  line-height: var(--leading-expressive);
 }
 
 .hero__title > span {

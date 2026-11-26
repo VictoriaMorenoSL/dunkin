@@ -87,10 +87,9 @@
   background: var(--color-off-white);
 }
 
-.store-locator > .store-map {
+.store-locator__panel > .store-map {
   justify-self: center;
   inline-size: min(40rem, calc(100% + 2 * var(--page-gutter)));
-  margin-block-start: 1.5625rem;
 }
 
 .store-map > picture,
@@ -152,8 +151,8 @@
   padding: var(--space-12) .875rem;
   border: 2px solid var(--color-pink);
   border-radius: 23px;
-  background: var(--color-white);
-  color: var(--color-pink);
+  background: var(--store-card-background, var(--color-white));
+  color: var(--store-card-color, var(--color-pink));
   font-family: var(--font-quicksand);
   font-size: var(--type-body);
   font-weight: 500;
@@ -174,7 +173,7 @@
 
 .store-card__address {
   margin-block-start: .6875rem;
-  color: var(--color-orange);
+  color: var(--store-card-address, var(--color-orange));
   font-size: var(--type-body);
 }
 
@@ -185,6 +184,8 @@
   align-items: start;
   gap: var(--gap-icon-text);
   min-block-size: 42px;
+  font-size: var(--type-secondary);
+  line-height: var(--leading-secondary);
   padding-block: var(--space-8);
 }
 
@@ -192,35 +193,28 @@
   flex: none;
   inline-size: 19px;
   block-size: 19px;
-  background: url("../assets/icons/sucursales/horario.svg") center / contain no-repeat;
+  background: var(--store-card-clock, url("../assets/icons/sucursales/horario.svg")) center / contain no-repeat;
 }
 
-.store-card[aria-pressed="true"] {
-  background: var(--color-pink);
-  color: var(--color-off-white);
+.store-card:is([aria-pressed="true"], :active) {
+  --store-card-background: var(--color-pink);
+  --store-card-color: var(--color-white);
+  --store-card-address: currentColor;
+  --store-card-clock: url("../assets/icons/sucursales/horario-seleccionado.svg");
 }
 
-.store-card[aria-pressed="true"] .store-card__address {
-  color: inherit;
-}
-
-.store-card[aria-pressed="true"] .store-card__clock {
-  background-image: url("../assets/icons/sucursales/horario-seleccionado.svg");
+@media (hover: hover) and (pointer: fine) {
+  .store-card:not([aria-pressed="true"]):hover {
+    --store-card-background: var(--color-pink);
+    --store-card-color: var(--color-white);
+    --store-card-address: currentColor;
+    --store-card-clock: url("../assets/icons/sucursales/horario-seleccionado.svg");
+  }
 }
 
 .store-card:focus-visible {
   outline: 2px solid var(--color-dark);
   outline-offset: -5px;
-}
-
-.store-card:active .store-card__title {
-  text-decoration: underline;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .store-card:hover .store-card__title {
-    text-decoration: underline;
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -236,7 +230,6 @@
 
   .store-locator__tools .store-locator__nearby {
     --button-padding-inline: 0.375rem;
-    --button-font-size: var(--type-button-compact-constrained);
   }
 
   .store-locator__tools .catalog-search {
@@ -250,12 +243,13 @@
     row-gap: 1.1875rem;
   }
 
+  .store-locator__panel,
   .store-locator__tools {
     display: contents;
   }
 
   .store-locator__tools > *,
-  .store-locator > .store-locator__cities {
+  .store-locator__panel > .store-locator__cities {
     grid-row: 1;
     align-self: start;
   }
@@ -273,19 +267,17 @@
   }
 
   .store-locator__tools .store-locator__nearby,
-  .store-locator > .store-locator__cities .button {
-    --button-font-size: var(--type-button-large);
-
+  .store-locator__panel > .store-locator__cities .button {
     min-block-size: 38px;
   }
 
-  .store-locator > .store-locator__cities {
+  .store-locator__panel > .store-locator__cities {
     grid-column: 7 / -1;
     justify-self: end;
     column-gap: clamp(var(--space-12), 2.3vw, 1.875rem);
   }
 
-  .store-locator > .store-map {
+  .store-locator__panel > .store-map {
     grid-area: 2 / 5 / 3 / -1;
     justify-self: stretch;
     inline-size: auto;
@@ -294,7 +286,7 @@
     aspect-ratio: 775 / 596;
   }
 
-  .store-locator > .store-map .store-map__pin {
+  .store-locator__panel > .store-map .store-map__pin {
     display: none;
   }
 
@@ -333,7 +325,7 @@
 .store-locator__message {
   color: var(--color-dark);
   font-size: var(--type-secondary);
-  line-height: var(--leading-tight);
+  line-height: var(--leading-secondary);
 }
 
 .store-map__notice {
@@ -361,7 +353,8 @@
   min-block-size: var(--target-size);
   font-size: var(--type-secondary);
   font-weight: var(--weight-bold);
-  text-decoration: underline;
+  line-height: var(--leading-secondary);
+  text-decoration: none;
 }
 
 .store-map__canvas .store-directions,
@@ -417,6 +410,46 @@
 }
 
 .store-map__canvas .leaflet-control-attribution a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
+
+@media (width < 64rem) {
+  .stores-page .site-header {
+    background: var(--color-white);
+  }
+
+  .store-locator {
+    --store-map-spacing: 1.5625rem;
+    --store-controls-height: calc(2 * var(--target-size) + var(--store-map-spacing) + var(--space-16));
+    --store-map-height: min(
+      calc(min(100vw, 40rem) * 1022 / 1604),
+      45svh,
+      max(var(--space-64), calc(100svh - var(--site-header-reserve) - var(--store-controls-height) - var(--space-80)))
+    );
+  }
+
+  .store-locator__panel {
+    position: sticky;
+    inset-block-start: var(--site-header-reserve);
+    z-index: 2;
+    align-self: start;
+    display: grid;
+    background: var(--color-white);
+  }
+
+  .store-locator__panel > .store-map {
+    margin-block-start: var(--store-map-spacing);
+    block-size: var(--store-map-height);
+  }
+
+  .store-locator__tools {
+    min-block-size: var(--target-size);
+  }
+
+  .store-locator__entry,
+  .store-card,
+  [data-nearby-message] {
+    scroll-margin-block-start: calc(var(--store-map-height) + var(--store-controls-height) + var(--space-8));
+  }
+}

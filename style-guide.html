@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guía de estilos · Dunkin’</title>
+  <meta name="description" content="Consulta los colores, la tipografía, la retícula y los componentes del rediseño académico no oficial de Dunkin México.">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/tokens.css?v=cintas">
-  <link rel="stylesheet" href="css/base.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/tokens.css?v=tipo-final">
+  <link rel="stylesheet" href="css/base.css?v=hover-sucursal">
   <link rel="stylesheet" href="css/layout.css?v=relato-espacio">
-  <link rel="stylesheet" href="css/components.css?v=relato-espacio">
+  <link rel="stylesheet" href="css/components.css?v=tipo-final">
   <link rel="stylesheet" href="css/menu-categories.css?v=tipografia-2">
   <link rel="stylesheet" href="css/product-card.css?v=tipografia-2">
-  <link rel="stylesheet" href="css/catalog-controls.css?v=tipografia-2">
-  <link rel="stylesheet" href="css/product-controls.css?v=tipografia-2">
-  <link rel="stylesheet" href="css/style-guide.css?v=tipografia-2">
-  <link rel="stylesheet" href="css/sucursales.css?v=relato-espacio">
+  <link rel="stylesheet" href="css/catalog-controls.css?v=tipo-verificado">
+  <link rel="stylesheet" href="css/product-controls.css?v=hover-sucursal">
+  <link rel="stylesheet" href="css/style-guide.css?v=hover-sucursal">
+  <link rel="stylesheet" href="css/sucursales.css?v=tipo-verificado">
   <link rel="stylesheet" href="css/landing-loops.css?v=cintas">
-  <link rel="stylesheet" href="css/nosotros.css?v=pausa">
+  <link rel="stylesheet" href="css/nosotros.css?v=tipo-final">
   <script src="js/sucursales.js" defer></script>
   <script src="js/city-preference.js" defer></script>
   <link rel="stylesheet" href="css/mobile-menu.css?v=relato-espacio">
@@ -121,21 +122,26 @@
 <div class="sg-table-wrap" tabindex="0" role="region" aria-label="Escala tipográfica web">
   <table class="sg-table">
     <caption>Escala tipográfica web</caption>
-    <thead><tr><th scope="col">Función</th><th scope="col">Móvil (px)</th><th scope="col">Escritorio (px)</th><th scope="col">Tokens</th></tr></thead>
+    <thead><tr><th scope="col">Función</th><th scope="col">Móvil (px)</th><th scope="col">Tableta (px)</th><th scope="col">Escritorio (px)</th><th scope="col">Interlineado</th><th scope="col">Aplicación</th><th scope="col">Tokens</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Texto secundario y botón compacto</th><td>14</td><td>14</td><td><code>--type-secondary</code>, <code>--type-button-compact</code></td></tr>
-      <tr><th scope="row">Texto general, buscadores y direcciones</th><td>16</td><td>16</td><td><code>--type-body</code>, <code>--type-search</code></td></tr>
-      <tr><th scope="row">Etiquetas de categorías y productos</th><td>16</td><td>18</td><td><code>--type-label</code>, <code>--type-label-wide</code></td></tr>
-      <tr><th scope="row">Botón estándar y grande</th><td>16–18</td><td>16–18</td><td><code>--type-button-default</code>, <code>--type-button-large</code></td></tr>
-      <tr><th scope="row">Encabezados de tarjetas</th><td>20</td><td>20</td><td><code>--type-card-heading</code></td></tr>
-      <tr><th scope="row">Texto narrativo de Nosotros</th><td>16</td><td>20</td><td><code>--type-narrative</code>, <code>--type-narrative-wide</code></td></tr>
-      <tr><th scope="row">Subtítulos y precios de la ficha</th><td>24</td><td>24</td><td><code>--type-subtitle</code></td></tr>
-      <tr><th scope="row">Título de ficha · COLD BREW</th><td>36</td><td>36</td><td><code>--type-product-title</code></td></tr>
-      <tr><th scope="row">Títulos de sección · CAFÉ, NOVEDADES, SOMOS</th><td>Hasta 48</td><td>48</td><td><code>--type-section-title</code></td></tr>
+      <tr><th scope="row">Título de sección</th><td>48</td><td>48</td><td>48</td><td>1,2</td><td>CAFÉ y SOMOS</td><td><code>--type-section-title</code></td></tr>
+      <tr><th scope="row">Título de producto</th><td>36</td><td>36</td><td>36</td><td>1,2</td><td>COLD BREW</td><td><code>--type-product-title</code></td></tr>
+      <tr><th scope="row">Subtítulo</th><td>24</td><td>24</td><td>24</td><td>1,2</td><td>Precio en el selector de tamaño</td><td><code>--type-subtitle</code></td></tr>
+      <tr><th scope="row">Encabezado de tarjeta</th><td>20</td><td>20</td><td>20</td><td>1,2</td><td>Nombre de sucursal</td><td><code>--type-card-heading</code></td></tr>
+      <tr><th scope="row">Descripción principal</th><td>16</td><td>18</td><td>20</td><td>1,5</td><td>Ficha de COLD BREW</td><td><code>--type-description</code></td></tr>
+      <tr><th scope="row">Texto narrativo</th><td>16</td><td>18</td><td>20</td><td>1,5</td><td>Capítulos y bloque final de Nosotros</td><td><code>--type-narrative</code></td></tr>
+      <tr><th scope="row">Nombre de categoría o producto</th><td>16</td><td>16</td><td>18</td><td>1,2</td><td>Categorías y catálogo</td><td><code>--type-label / --type-label-wide</code></td></tr>
+      <tr><th scope="row">Botón principal</th><td>16</td><td>16</td><td>18</td><td>1,2</td><td>Encontrar mi Dunkin</td><td><code>--type-button-primary</code></td></tr>
+      <tr><th scope="row">Botón compacto</th><td>14</td><td>14</td><td>14</td><td>1,2</td><td>Encontrar Local</td><td><code>--type-button-compact</code></td></tr>
+      <tr><th scope="row">Campo de búsqueda</th><td>16</td><td>16</td><td>16</td><td>1,2</td><td>Buscar producto / Buscar tienda</td><td><code>--type-search</code></td></tr>
+      <tr><th scope="row">Encabezado del footer</th><td>16</td><td>18</td><td>18</td><td>1,2</td><td>ACERCA DE / CONTACTO</td><td><code>--type-footer-heading</code></td></tr>
+      <tr><th scope="row">Texto del footer</th><td>16</td><td>16</td><td>16</td><td>20 / 20 / 24 px</td><td>Navegación y contacto</td><td><code>--type-body</code></td></tr>
+      <tr><th scope="row">Información secundaria</th><td>14</td><td>14</td><td>14</td><td>1,4</td><td>Derechos, horarios y avisos de Sucursales</td><td><code>--type-secondary</code></td></tr>
     </tbody>
   </table>
 </div>
-<p class="sg-caption">Los títulos convencionales y las etiquetas tienen interlineado de 1,2. Los textos narrativos usan 1,5. La escala expresiva de Hero, Refresher, las campañas de Nosotros y el menú móvil mantiene sus medidas aprobadas. «Probar ahora» conserva 13 px en la composición compacta del Refresher. En Sucursales, «Cerca de mí» usa 13 px hasta 352 px de viewport para dar espacio al buscador de 16 px.</p>
+<p>Los títulos del hero y Refresher usan interlineado 1,1 y conservan su escala expresiva. Sus textos escalan con la composición. El año de Nosotros mantiene interlineado 1, el titular de la combinación 1,12 y el cierre de equipo conserva su escala propia. «NOVEDADES» se reduce en pantallas estrechas para caber en una línea. El menú móvil y las frases de marca conservan sus medidas de composición. «Probar ahora» conserva 13 px en el Refresher compacto. El CTA final de Nosotros usa 14 px en móvil y tableta y 18 px en escritorio.</p>
+<p>Las descripciones se separan de los títulos con <code>--gap-title-description</code> (16 / 16 / 24 px). La distancia al CTA usa <code>--gap-description-cta</code> (24 / 24 / 32 px) cuando la composición comparte ese patrón.</p>
 <div class="sg-table-wrap" tabindex="0" role="region" aria-label="Medidas originales de Figma">
       <table class="sg-table">
         <caption>Medidas originales de Figma</caption>
@@ -155,7 +161,7 @@
 <tr><th scope="row">Pie · contacto y navegación</th><td>Quicksand 400 / 700</td><td>15,52</td><td>15</td><td>16,55 / 16 px</td><td>0</td></tr></tbody>
       </table>
     </div>
-<p class="sg-caption"><strong>Interlineados web.</strong> Las frases de marca pasan de 16 a 24 px en escritorio y mantienen 16 px en móvil. El pie usa 24 px de interlineado en escritorio y 20 px en móvil; los originales son 16,55 px en escritorio y 16 px en móvil.</p>
+<p class="sg-caption"><strong>Interlineados web.</strong> Las frases de marca pasan de 16 a 24 px en escritorio y mantienen 16 px en móvil. El cuerpo del pie usa 24 px de interlineado en escritorio y 20 px en móvil y tableta; los originales son 16,55 px en escritorio y 16 px en móvil.</p>
 </section>
 <section class="sg-section" id="espaciados" aria-labelledby="espaciados-titulo">
   <h2 id="espaciados-titulo"><span aria-hidden="true">03</span>Espaciados</h2>
@@ -254,13 +260,13 @@
   <button type="button" class="button button--outline button--icon-only" aria-label="Sucursales"><img src="assets/icons/sucursal-movil.svg" alt="" width="32" height="32"></button>
 </div>
 <div class="sg-button-stage sg-stage--dark"><button class="button button--inverse button--compact" type="button">Inicio</button></div>
-<p class="sg-caption">Los tamaños <code>--small</code> (13 px), estándar (16 px) y <code>--large</code> (18 px), el padding compacto <code>--narrow</code> y los modificadores <code>--with-icon</code> y <code>--icon-only</code> son independientes del color. Los iconos son los SVG originales.</p>
+<p class="sg-caption">Los tamaños <code>--small</code> (14 px), estándar (16 / 16 / 18 px) y <code>--large</code> (18 px), el padding compacto <code>--narrow</code> y los modificadores <code>--with-icon</code> y <code>--icon-only</code> son independientes del color. Los iconos son los SVG originales.</p>
 <div class="layout-cluster">
   <a class="sg-inline-link" href="#reticula">Consultar retícula</a>
   <a class="button button--outline" href="index.html#menu-categories">Ir a categorías</a>
   <span class="sg-inline-disabled" role="link" aria-disabled="true">Producto · enlace inactivo</span>
 </div>
-<p class="sg-caption">El enlace de texto hereda <code>base.css</code>. Su grosor de subrayado en hover, el subrayado doble en active y el ejemplo de enlace inactivo son propuestas de la guía.</p>
+<p class="sg-caption">El enlace de texto hereda <code>base.css</code>. Pasa a naranja con el puntero. El texto vuelve a rosa al pulsar.</p>
 <h3>Foco, contraste y área táctil</h3>
 <p>Los botones y el enlace del localizador usan un área mínima de 44 px de alto. Los botones también tienen un mínimo de 44 px de ancho, incluso con icono solo. El foco por teclado combina un anillo claro y un contorno oscuro.</p>
 <p>El blanco sobre rosa y el rosa sobre blanco dan <strong>4,02:1</strong>. El blanco sobre naranja da <strong>2,82:1</strong> y sobre rosa claro, <strong>2,67:1</strong>. El blanco secundario del localizador sobre rosa da <strong>3,68:1</strong> y alcanza el mínimo para su texto de 24 px en negrita. El contorno naranja sobre blanco da <strong>2,82:1</strong>, por debajo de 3:1 cuando el borde es necesario para distinguir el control. <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum">Criterio de contraste del texto</a> · <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast">Criterio de contraste de componentes</a>.</p>
@@ -351,7 +357,8 @@
   <p class="sg-caption">La portada deja 2,2 segundos de lectura antes de que la dona aparezca sobre los logotipos. Los capítulos quedan por debajo de la primera vista y entran por etapas al bajar. Las cintas «Nuestra historia» y «La combinación» avanzan horizontalmente a 42 px/s con el mismo bucle de Inicio. El control de la primera cinta pausa ambas. El giro de la dona sigue el avance vertical, se revierte al subir y se detiene dentro de 2025. Su eje horizontal permanece fijo. La taza entra por la izquierda, la capa original de chispas y la bandera por la derecha. El titular de la combinación queda debajo de la escena. Las entradas duran 700 ms, con desenlace <code>ease-out</code> y desfases de 120 ms. Con movimiento reducido o sin JavaScript, los textos y recursos permanecen visibles y la dona se muestra en 2025.</p>
   <p><a href="nosotros.html">Ver paneles, composición de marca y bloque de equipo</a></p>
   <h3 id="componentes-sucursales">Localizador de sucursales</h3>
-  <p class="sg-caption">Las tarjetas muestran datos provisionales de Figma. Pulsa cada una para alternar su estado. El mapa estático y su marcador documentan el encuadre móvil de Figma. La tarjeta conserva el ancho de referencia de 356 px, padding de 14 × 12 px y radio de 23 px. En el localizador, «Cómo llegar» aparece en la ventana del marcador. Si el mapa no carga, el enlace aparece debajo de la tarjeta seleccionada.</p>
+  <p>Al pasar el cursor, la tarjeta muestra relleno rosa con texto y reloj blancos. La selección conserva ese estado al retirar el cursor.</p>
+  <p class="sg-caption">Las tarjetas muestran datos provisionales de Figma. Pulsa cada una para alternar su estado. El mapa estático y su marcador documentan el encuadre móvil de Figma. En Sucursales, el selector de ciudad, el mapa y los controles quedan fijos bajo el encabezado en pantallas estrechas mientras pasan las tarjetas. La tarjeta conserva el ancho de referencia de 356 px, padding de 14 × 12 px y radio de 23 px. En el localizador, «Cómo llegar» aparece en la ventana del marcador. Si el mapa no carga, el enlace aparece debajo de la tarjeta seleccionada.</p>
   <div class="layout-grid sg-catalog">
     <div class="sg-panel layout-stack">
       <button class="store-card" type="button" aria-pressed="false" aria-labelledby="sg-store-plaza-mitikah-title" aria-describedby="sg-store-plaza-mitikah-address sg-store-plaza-mitikah-hours" data-store-id="plaza-mitikah">
@@ -487,7 +494,7 @@
   </div>
 
   <h3 id="controles-producto">Controles de la ficha de producto</h3>
-  <p>La ficha de COLD BREW muestra S como estado inicial. Usa Tab y las flechas para probar la selección exclusiva. El foco enmarca la opción y el hover y la pulsación la subrayan. La selección solo cambia la presentación. Los volúmenes y precios que aparecen aquí proceden del prototipo.</p>
+  <p>La ficha de COLD BREW muestra S como estado inicial. Usa Tab y las flechas para probar la selección exclusiva. El foco enmarca la opción. El puntero invierte el relleno y la pulsación lo cambia a naranja. La selección solo cambia la presentación. Los volúmenes y precios que aparecen aquí proceden del prototipo.</p>
   <div class="layout-stack">
     <a class="button button--outline button--compact button--with-icon product-back" href="menu-cafe.html#cafe">
       <span class="product-back__icon" aria-hidden="true"></span>Menú
@@ -565,13 +572,13 @@
 </div>
 <p class="sg-caption">La muestra usa las cuatro fotografías originales con sus proporciones, la sombra suave aprobada y los rótulos rosa #F20C90 en mayúsculas. Los enlaces llevan a las categorías de la landing.</p>
 <p class="sg-caption"><strong>Decisión de desarrollo web.</strong> En dispositivos con puntero preciso y hover, el nombre pasa de rosa a naranja y la imagen crece a 1,05, sube 6 px y pasa de sombra suave a media. La transición dura 250 ms con <code>ease-out</code>. Con movimiento reducido se aplican solo el color y la sombra, sin desplazamiento, escala ni transición.</p>
- <p class="sg-caption"><strong>Adaptación web.</strong> La fila de cuatro empieza a 768 px. El botón conserva los 44 px de altura del sistema y su centro coincide con el de Figma. Los enlaces usan anclas provisionales de la landing mientras se crean las páginas.</p>
+ <p class="sg-caption"><strong>Adaptación web.</strong> La fila de cuatro empieza a 768 px. El botón conserva los 44 px de altura del sistema y su centro coincide con el de Figma. En Inicio, Café y «Ver menú» llevan a Menú-Café. Las demás categorías son referencias sin destino activo. Los enlaces de la muestra permiten ubicar las categorías en Inicio.</p>
 <h3>Banner de ubicación</h3>
 <a class="store-locator-banner store-locator-link" href="index.html#store-locator-banner">
   <span>Encontrar ubicación</span>
   <img src="assets/icons/ubicacion.svg" alt="" width="24" height="24">
 </a>
-<p class="sg-caption">Toda la franja rosa de 64 px funciona como enlace. El subrayado aparece con el puntero y el foco de teclado se indica con un contorno interior.</p>
+<p class="sg-caption">Toda la franja rosa de 64 px funciona como enlace. El fondo pasa a naranja con el puntero y el foco de teclado se indica con un contorno interior.</p>
 <h3>Verificación de otros textos de la landing</h3>
 <p>En los frames de escritorio y móvil se verificó blanco en los titulares y textos del hero, el producto destacado, la promoción de sucursales y el pie. La navegación de escritorio, <strong>NOVEDADES</strong> y <strong>SOMOS</strong> usan rosa. Las muestras tipográficas de la guía conservan sus rótulos editoriales.</p>
 <h3>Flotación del Strawberry Dragonfruit Refresher</h3>
@@ -586,12 +593,12 @@
   <a class="button button--inverse button--small" href="index.html#store-locator-banner">Encontrar Local</a>
   <a class="button button--secondary button--narrow" href="nosotros.html">Conócenos</a>
 </div>
-<p class="sg-caption">Los botones de la muestra heredan el hover y el foco de teclado globales. La promoción de sucursales aparece por debajo de 768 px. Su titular conserva 40 px, interlineado de 43 px y espaciado de −1,6 px. «Conócenos» usa 18 px en escritorio y 13 px en móvil, y el logotipo de Somos conserva su proporción de 354 × 69 px.</p>
+<p class="sg-caption">Los botones de la muestra heredan el hover y el foco de teclado globales. La promoción de sucursales aparece por debajo de 768 px. Su titular conserva 40 px, interlineado de 43 px y espaciado de −1,6 px. «Conócenos» usa 18 px desde tableta y 14 px en móvil, y el logotipo de Somos conserva su proporción de 354 × 69 px.</p>
 <h3>Pie de página</h3>
 <p>La muestra al final de la guía reutiliza <code>.site-footer</code>. Los enlaces disponibles se subrayan con el puntero y tienen contorno al recibir el foco de teclado. Los círculos de redes conservan sus colores y crecen a 1,03 en 250 ms con <code>ease</code> cuando el dispositivo admite hover. La preferencia de movimiento reducido desactiva ese efecto.</p>
-<p class="sg-caption">En escritorio los encabezados usan 18 px, los enlaces y el contacto 16 px y los derechos 14 px, con interlineado de 24 px. En móvil, los enlaces habilitados tienen objetivos de al menos 44 px. Los destinos de redes y los documentos legales siguen pendientes. Los datos de contacto corresponden al texto de Figma.</p>
+<p class="sg-caption">Los encabezados usan 16 px en móvil y 18 px desde tableta. Los enlaces y el contacto usan 16 px con interlineado de 20 px en móvil y tableta y 24 px en escritorio. Los derechos usan 14 px con interlineado 1,4. En móvil, los enlaces habilitados tienen objetivos de al menos 44 px. Los destinos de redes y los documentos legales siguen pendientes. Los datos de contacto corresponden al texto de Figma.</p>
 <h3>Encabezado fijo al desplazarse</h3>
-<p>El encabezado conserva su tamaño inicial y reduce su padding vertical al bajar. La transición tarda 250 ms y se desactiva con movimiento reducido. La página reserva su altura inicial y separa de la cabecera los destinos de los enlaces internos. La sección activa usa un único indicador naranja, incluso al pasar el puntero. El subrayado rosa identifica los enlaces no activos en hover y todos conservan el contorno de foco.</p>
+<p>El encabezado conserva su tamaño inicial y reduce su padding vertical al bajar. La transición tarda 250 ms y se desactiva con movimiento reducido. La página reserva su altura inicial y separa de la cabecera los destinos de los enlaces internos. La sección activa usa un único indicador naranja, incluso al pasar el puntero. Los enlaces no activos pasan a naranja con el puntero y todos conservan el contorno de foco.</p>
   <h3 id="menu-movil">Menú móvil de pantalla completa</h3>
   <p>La referencia de 402 × 874 px usa Dunkin Sans Bold de 46 px en filas de 95 px. Las tres variantes hover muestran una franja naranja con las mismas letras blancas, tamaño y posición. En pantallas táctiles, la franja aparece al pulsar. La entrada y la salida duran 300 ms con <code>ease-out</code>, y se desactivan con movimiento reducido. Los iconos sociales conservan el arte original y esperan destinos confirmados.</p>
   <button type="button" class="button button--primary" data-mobile-menu-demo aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" hidden>Probar menú móvil</button>

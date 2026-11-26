@@ -56,13 +56,9 @@
   text-decoration: none;
 }
 
-.site-header__link:not([aria-current]):focus-visible {
-  text-decoration: underline;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .site-header__link:not([aria-current]):hover {
-    text-decoration: underline;
+    color: var(--color-orange);
   }
 }
 

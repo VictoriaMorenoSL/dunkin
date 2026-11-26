@@ -2,6 +2,8 @@ const narrative = document.querySelector(".about-narrative");
 const motion = matchMedia("(prefers-reduced-motion: reduce)");
 const finale = narrative?.querySelector(".about-year--recent");
 const introduction = narrative?.querySelector(".about-intro");
+const coffee = narrative?.querySelector(".about-mix__coffee");
+const donutAnchor = narrative?.querySelector(".about-narrative__anchor");
 let frame = 0;
 let introTimer = 0;
 let introReady = false;
@@ -23,6 +25,14 @@ function updateNarrative() {
   narrative.toggleAttribute("data-donut-visible", introReady || enteredStory);
   narrative.style.setProperty("--about-donut-offset", `${18 * travel * settle}px`);
   narrative.style.setProperty("--about-donut-spin", `${120 * travel}deg`);
+
+  if (coffee.classList.contains("about-reveal-pending")) {
+    const edge = donutAnchor.getBoundingClientRect().bottom;
+    const ribbonEdge = narrative.querySelector(".about-ribbon--mix").getBoundingClientRect().bottom;
+    if (ribbonEdge <= innerHeight * .58 && coffee.getBoundingClientRect().top <= edge) {
+      coffee.classList.replace("about-reveal-pending", "about-reveal-entering");
+    }
+  }
 }
 
 function queueNarrative() {
@@ -55,19 +65,22 @@ function setupReveal(story) {
 
   const targets = [...story.querySelectorAll("[data-about-reveal]")];
   const headerHeight = document.querySelector(".site-header").offsetHeight;
-  const observer = new IntersectionObserver(entries => {
+  function reveal(entries, observer) {
     for (const { target, isIntersecting } of entries) {
       if (!isIntersecting) continue;
       observer.unobserve(target);
       target.classList.replace("about-reveal-pending", "about-reveal-entering");
     }
-  }, { rootMargin: `-${headerHeight}px 0px 0px` });
+  }
+  const observer = new IntersectionObserver(reveal, { rootMargin: `-${headerHeight}px 0px 0px` });
+  const sceneObserver = new IntersectionObserver(reveal, { rootMargin: `-${headerHeight}px 0px -${Math.round(innerHeight * .3)}px 0px` });
 
   for (const target of targets) {
     // Los elementos de la primera vista también permanecen visibles al recargar o seguir un ancla.
     if (target.getBoundingClientRect().top < document.documentElement.clientHeight) continue;
     target.classList.add("about-reveal-pending");
-    observer.observe(target);
+    if (target === coffee) continue;
+    (target.matches(".about-mix__sprinkles, .about-year__flag") ? sceneObserver : observer).observe(target);
   }
 
   story.addEventListener("animationend", event => {
@@ -79,6 +92,7 @@ function setupReveal(story) {
   motion.addEventListener("change", event => {
     if (!event.matches) return;
     observer.disconnect();
+    sceneObserver.disconnect();
     for (const target of targets) {
       target.classList.remove("about-reveal-pending", "about-reveal-entering");
     }

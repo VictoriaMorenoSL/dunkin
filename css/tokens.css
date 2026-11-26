@@ -27,9 +27,10 @@
   --type-button-compact: var(--type-secondary);
   --type-button-default: var(--type-body);
   --type-button-large: 1.125rem;
+  --type-button-primary: var(--type-button-default);
   --type-card-heading: 1.25rem;
   --type-narrative: var(--type-body);
-  --type-narrative-wide: 1.25rem;
+  --type-description: var(--type-body);
   --type-subtitle: 1.5rem;
   --type-product-title: 2.25rem;
   --type-section-title: 3rem;
@@ -56,12 +57,11 @@
   --type-narrative-campaign-wide: 6rem;
   --type-marquee-mobile: 0.9375rem;
   --type-marquee-desktop: 1.25rem;
-  --type-footer-mobile: 0.9375rem;
-  --type-footer-wide: var(--type-body);
-  --type-footer-heading-wide: var(--type-label-wide);
-  --type-footer-caption-wide: var(--type-secondary);
+  --type-footer-heading: var(--type-body);
 
+  --leading-expressive: 1.1;
   --leading-tight: 1.2;
+  --leading-secondary: 1.4;
   --leading-copy: 1.5;
   --leading-store-promo: 1.075; /* 43 px a 40 px */
   --leading-marquee-mobile: 1.066667; /* 16 px a 15 px */
@@ -105,12 +105,17 @@
 
 @media (min-width: 48rem) {
   :root {
+    --type-description: 1.125rem;
+    --type-narrative: var(--type-description);
+    --type-footer-heading: var(--type-label-wide);
     --section-space: var(--space-64);
   }
 }
 
 @media (min-width: 64rem) {
   :root {
+    --type-description: 1.25rem;
+    --type-button-primary: var(--type-button-large);
     --gap-title-description: var(--space-24);
     --gap-description-cta: var(--space-32);
     --gap-content-group: var(--space-48);

@@ -39,6 +39,7 @@
   color: var(--color-dark);
   font-family: inherit;
   font-size: var(--type-search);
+  line-height: var(--leading-tight);
   font-weight: 500;
 }
 
@@ -71,7 +72,7 @@
   border-radius: var(--radius-button);
   color: var(--color-pink);
   font-size: var(--type-card-heading);
-  line-height: 1;
+  line-height: var(--leading-tight);
   cursor: pointer;
 }
 
@@ -130,11 +131,6 @@
   mask-image: url("../assets/icons/menu-cafe/ubicacion-monterrey.svg");
 }
 
-.catalog-cities__choice:active {
-  text-decoration: underline;
-  text-underline-offset: .16em;
-}
-
 .catalog-empty {
   display: grid;
   justify-items: center;
@@ -155,9 +151,13 @@
   border-radius: var(--radius-button);
   background: transparent;
   font-weight: var(--weight-bold);
-  text-decoration: underline;
-  text-underline-offset: .16em;
   cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .catalog-empty__restore:hover {
+    color: var(--color-orange);
+  }
 }
 
 .catalog-category-rail {

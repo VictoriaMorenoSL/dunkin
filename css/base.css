@@ -69,6 +69,7 @@ body {
 
 :where(a) {
   color: inherit;
+  text-decoration: none;
   text-underline-offset: 0.16em;
 }
 

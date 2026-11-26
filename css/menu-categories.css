@@ -4,7 +4,7 @@
 }
 
 .menu-categories__inner {
-  --stack-gap: 1.15625rem;
+  --stack-gap: var(--space-32);
 
   align-items: center;
 }
@@ -80,7 +80,7 @@
   }
 
   .menu-categories__inner {
-    --stack-gap: 1.28125rem;
+    --stack-gap: var(--space-40);
   }
 
   .menu-category-grid {

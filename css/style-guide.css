@@ -48,7 +48,6 @@
 
 .sg-index a {
   padding: var(--space-8);
-  text-decoration-thickness: 1px;
 }
 
 .sg-index a:hover,
@@ -318,12 +317,14 @@
 }
 
 
-.sg-inline-link:hover {
-  text-decoration-thickness: 2px;
+@media (hover: hover) and (pointer: fine) {
+  .sg-inline-link:hover {
+    color: var(--color-orange);
+  }
 }
 
 .sg-inline-link:active {
-  text-decoration-style: double;
+  color: var(--color-pink);
 }
 
 .sg-inline-disabled {

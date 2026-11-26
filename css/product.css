@@ -50,9 +50,9 @@
   max-inline-size: 20rem;
   margin-block-start: var(--gap-title-description);
   color: var(--color-orange);
-  font-size: var(--type-body);
+  font-size: var(--type-description);
   font-weight: var(--weight-bold);
-  line-height: var(--leading-tight);
+  line-height: var(--leading-copy);
 }
 
 .product-detail .product-sizes {
@@ -133,7 +133,6 @@
   .product-detail__description {
     max-inline-size: 25.3125rem;
     margin-block-start: var(--gap-title-description);
-    font-size: var(--type-campaign-copy-wide);
   }
 
   .product-detail .product-sizes {
@@ -144,6 +143,5 @@
   .product-detail__locator {
     margin-block-start: 3.5625rem;
     margin-inline-start: calc(-1 * var(--space-4));
-    font-size: var(--type-button-large);
   }
 }

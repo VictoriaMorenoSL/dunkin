@@ -354,7 +354,7 @@ function readDirectory(stores) {
 async function loadDirectory() {
   if (location.protocol !== "file:") {
     try {
-      const response = await fetch("data/sucursales.json", { signal: AbortSignal.timeout(3500) });
+      const response = await fetch("data/sucursales.json?v=toreo", { signal: AbortSignal.timeout(3500) });
       if (!response.ok) throw new Error("Directorio no disponible");
       return readDirectory((await response.json()).sucursales);
     } catch {

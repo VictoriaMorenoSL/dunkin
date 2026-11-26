@@ -103,7 +103,8 @@
 }
 
 .product-sizes__input:active + .product-sizes__mark {
-  text-decoration: underline;
+  --button-color: var(--color-white);
+  --button-background: var(--color-orange);
 }
 
 .product-sizes__price {
@@ -113,8 +114,13 @@
 
 @media (hover: hover) and (pointer: fine) {
   .product-sizes__option:hover .product-sizes__mark {
-    text-decoration: underline;
-    text-underline-offset: .14em;
+    --button-background: var(--color-pink);
+    --button-color: var(--color-white);
+  }
+
+  .product-sizes__option:hover .product-sizes__input:checked + .product-sizes__mark {
+    --button-background: var(--color-white);
+    --button-color: var(--color-orange);
   }
 }
 

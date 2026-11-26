@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sucursales | Dunkin’ México</title>
+  <meta name="description" content="Explora el mapa y busca sucursales de CDMX y Monterrey en este rediseño académico no oficial de Dunkin México.">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/tokens.css?v=cintas">
-  <link rel="stylesheet" href="css/base.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/tokens.css?v=tipo-final">
+  <link rel="stylesheet" href="css/base.css?v=hover-sucursal">
   <link rel="stylesheet" href="css/layout.css?v=relato-espacio">
-  <link rel="stylesheet" href="css/components.css?v=relato-espacio">
-  <link rel="stylesheet" href="css/site-header.css?v=menu-movil">
-  <link rel="stylesheet" href="css/catalog-controls.css?v=tipografia-2">
+  <link rel="stylesheet" href="css/components.css?v=tipo-final">
+  <link rel="stylesheet" href="css/site-header.css?v=hover-sucursal">
+  <link rel="stylesheet" href="css/catalog-controls.css?v=tipo-verificado">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="css/sucursales.css?v=relato-espacio">
+  <link rel="stylesheet" href="css/sucursales.css?v=tipo-verificado">
   <script src="js/city-preference.js" defer></script>
-  <script src="js/store-map.js?v=ficha" defer></script>
+  <script src="js/store-map.js?v=toreo" defer></script>
   <!-- Respaldo local de los datos de visualización de data/sucursales.json. -->
   <script type="application/json" id="store-directory-fallback">
   [
@@ -22,7 +23,7 @@
     {"id":"forum-buenavista","zona":"cdmx","ciudad":"Ciudad de México","nombre":"Dunkin' Forum Buenavista","direccion":"Eje 1 Norte (Mosqueta) 259, Buenavista, Cuauhtémoc, 06350 Ciudad de México","latitud":19.4469957,"longitud":-99.1521347,"horarioPublicado":"Lunes a domingo, 9:00 AM a 10:00 PM"},
     {"id":"parque-tepeyac","zona":"cdmx","ciudad":"Ciudad de México","nombre":"Dunkin' Parque Tepeyac","direccion":"Eduardo Molina 6730, Granjas Modernas, Gustavo A. Madero, 07460 Ciudad de México","latitud":19.4779977,"longitud":-99.099149,"horarioPublicado":"Lunes a domingo, 9:00 AM a 10:00 PM"},
     {"id":"las-americas","zona":"cdmx","ciudad":"Ecatepec de Morelos","nombre":"Dunkin' Centro Comercial Las Américas","direccion":"Av. Central S/N, local PB-24B, Las Américas, 55076 Ecatepec de Morelos, Estado de México","latitud":19.5844066,"longitud":-99.0234269,"horarioPublicado":"Lunes a domingo, 9:00 AM a 9:30 PM"},
-    {"id":"toreo-parque-central","zona":"cdmx","ciudad":"Naucalpan de Juárez","nombre":"Dunkin' Toreo Parque Central","direccion":"Boulevard Manuel Ávila Camacho 5, Lomas de Sotelo, 53390 Naucalpan de Juárez, Estado de México","latitud":19.4546883,"longitud":-99.2192761,"horarioPublicado":"Lun. a jue. 7:00 AM a 9:30 PM. Vie. 8:00 AM a 9:30 PM. Sáb. y dom. 9:00 AM a 10:30 PM."},
+    {"id":"toreo-parque-central","zona":"cdmx","ciudad":"Naucalpan de Juárez","nombre":"Dunkin' Toreo Parque Central","direccion":"Boulevard Manuel Ávila Camacho 5, Lomas de Sotelo, 53390 Naucalpan de Juárez, Estado de México","latitud":19.4546883,"longitud":-99.2192761,"horarioPublicado":"Lunes a Domingo (9:00 AM a 9:30 PM)"},
     {"id":"contry","zona":"monterrey","ciudad":"Monterrey","nombre":"Dunkin' Contry","direccion":"Av. Eugenio Garza Sada Sur 602, Arroyo Seco, 64740 Monterrey, N.L.","latitud":25.6389316,"longitud":-100.2860475,"horarioPublicado":"7:00 AM a 10:00 PM"},
     {"id":"park-point","zona":"monterrey","ciudad":"Monterrey","nombre":"Dunkin' Park Point","direccion":"Av. Paseo de los Leones 99, Cumbres Elite, Sector Villas, 64349 Monterrey, N.L.","latitud":25.7384954,"longitud":-100.4050529,"horarioPublicado":"Todos los días, 7:00 AM a 10:00 PM"},
     {"id":"citadel","zona":"monterrey","ciudad":"San Nicolás de los Garza","nombre":"Dunkin' Citadel","direccion":"Av. Miguel Alemán 526A, La Fe, 66477 San Nicolás de los Garza, N.L.","latitud":25.7262201,"longitud":-100.2150351,"horarioPublicado":"8:00 AM a 9:00 PM"},
@@ -63,33 +64,35 @@
 
   <main id="contenido" class="layout-container layout-grid store-locator" tabindex="-1">
     <h1 class="store-locator__assistive">Sucursales</h1>
-    <fieldset class="catalog-cities store-locator__cities" aria-label="Ciudad" data-store-city>
-      <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
-        <input type="radio" name="ciudad-sucursales" value="cdmx" checked>
-        CDMX <span class="button__location-icon" aria-hidden="true"></span>
-      </label>
-      <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
-        <input type="radio" name="ciudad-sucursales" value="monterrey">
-        Monterrey <span class="button__location-icon" aria-hidden="true"></span>
-      </label>
-    </fieldset>
-    <section class="store-map store-map--interactive" aria-label="Mapa de sucursales">
-      <div id="store-map" class="store-map__canvas" data-store-map
-           data-tile-url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
-           data-tile-max-zoom="19"></div>
-      <template id="store-map-credit">&copy; <a href="https://stadiamaps.com/attribution/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></template>
-      <p class="store-map__notice" data-map-notice role="status" hidden></p>
-    </section>
-    <div class="store-locator__tools">
-      <form class="catalog-search store-locator__search" role="search" aria-label="Buscar tienda" data-store-search>
-        <input type="search" placeholder="Buscar tienda" aria-label="Buscar tienda" name="consulta" aria-controls="store-list">
-        <button class="catalog-search__action" type="submit" aria-label="Buscar">
-          <img src="assets/icons/menu-cafe/buscar-producto.svg" width="17" height="17" alt="">
+    <div class="store-locator__panel">
+      <fieldset class="catalog-cities store-locator__cities" aria-label="Ciudad" data-store-city>
+        <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+          <input type="radio" name="ciudad-sucursales" value="cdmx" checked>
+          CDMX <span class="button__location-icon" aria-hidden="true"></span>
+        </label>
+        <label class="button button--small button--with-icon button--compact button--compact-flat catalog-cities__choice">
+          <input type="radio" name="ciudad-sucursales" value="monterrey">
+          Monterrey <span class="button__location-icon" aria-hidden="true"></span>
+        </label>
+      </fieldset>
+      <section class="store-map store-map--interactive" aria-label="Mapa de sucursales">
+        <div id="store-map" class="store-map__canvas" data-store-map
+             data-tile-url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
+             data-tile-max-zoom="19"></div>
+        <template id="store-map-credit">&copy; <a href="https://stadiamaps.com/attribution/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></template>
+        <p class="store-map__notice" data-map-notice role="status" hidden></p>
+      </section>
+      <div class="store-locator__tools">
+        <form class="catalog-search store-locator__search" role="search" aria-label="Buscar tienda" data-store-search>
+          <input type="search" placeholder="Buscar tienda" aria-label="Buscar tienda" name="consulta" aria-controls="store-list">
+          <button class="catalog-search__action" type="submit" aria-label="Buscar">
+            <img src="assets/icons/menu-cafe/buscar-producto.svg" width="17" height="17" alt="">
+          </button>
+        </form>
+        <button class="button button--secondary button--small button--compact button--compact-flat button--with-icon store-locator__nearby" type="button" data-store-nearby>
+          Cerca de mí <span class="store-locator__nearby-icon" aria-hidden="true"></span>
         </button>
-      </form>
-      <button class="button button--secondary button--small button--compact button--compact-flat button--with-icon store-locator__nearby" type="button" data-store-nearby>
-        Cerca de mí <span class="store-locator__nearby-icon" aria-hidden="true"></span>
-      </button>
+      </div>
     </div>
     <section class="store-locator__results" aria-label="Sucursales de CDMX y zona metropolitana">
       <div class="store-locator__scroll" data-store-results role="group" aria-label="Lista de sucursales">

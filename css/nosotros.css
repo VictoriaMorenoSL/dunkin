@@ -190,6 +190,7 @@
 }
 
 .about-ribbon--mix {
+  z-index: 0;
   margin-block-start: var(--space-24);
 }
 
@@ -280,7 +281,7 @@
 
 .about-mix__coffee {
   z-index: 2;
-  inset-block-start: 2.2rem;
+  inset-block-start: calc(2.2rem + var(--space-80));
   inset-inline-start: max(1vw, calc(50% - 11.5rem));
   inline-size: min(69vw, 17.125rem);
   rotate: -18.15deg;
@@ -388,11 +389,6 @@
     padding-inline-start: var(--space-16);
   }
 
-  .about-year p,
-  .about-team p {
-    font-size: var(--type-narrative-wide);
-  }
-
   .about-year h2 {
     font-size: clamp(var(--type-narrative-year), 9.72vw, var(--type-narrative-year-wide));
   }
@@ -422,7 +418,7 @@
   }
 
   .about-mix__coffee {
-    inset-block-start: 19.25rem;
+    inset-block-start: calc(19.25rem + var(--space-80));
     inset-inline-start: max(14%, calc(50% - 21rem));
     inline-size: min(37vw, 26.5625rem);
   }
@@ -492,12 +488,29 @@
   }
 
   .about-team__cta {
-    --button-font-size: var(--type-button-large);
+    --button-font-size: var(--type-button-primary);
 
     position: relative;
     inset: auto;
     grid-area: 2 / 2 / 3 / 6;
     justify-self: start;
     margin-inline-start: var(--space-16);
+  }
+}
+
+@media (width < 48rem) {
+  .about-mix__art {
+    min-block-size: 30.75rem;
+  }
+
+  .about-mix h2 {
+    position: absolute;
+    inset-block-start: 17.25rem;
+    inset-inline: var(--page-gutter);
+    padding-block: 0;
+  }
+
+  .about-mix__coffee {
+    inset-block-start: 3.75rem;
   }
 }

@@ -2,7 +2,7 @@
   --button-background: transparent;
   --button-color: var(--color-white);
   --button-border: transparent;
-  --button-font-size: var(--type-button-default);
+  --button-font-size: var(--type-button-primary);
   --button-padding-inline: var(--space-24);
 
   position: relative;
@@ -294,8 +294,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .store-locator-link[href]:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.16em;
+    background-color: var(--color-orange);
   }
 }
 
@@ -401,7 +400,7 @@
 .site-footer {
   background: var(--color-orange);
   color: var(--color-white);
-  font-size: var(--type-footer-mobile);
+  font-size: var(--type-body);
   line-height: var(--leading-footer-body);
 }
 
@@ -427,9 +426,9 @@
 }
 
 .site-footer__heading {
-  font-size: inherit;
+  font-size: var(--type-footer-heading);
   font-weight: var(--weight-regular);
-  line-height: inherit;
+  line-height: var(--leading-tight);
 }
 
 .site-footer__nav {
@@ -485,6 +484,8 @@
 }
 
 .site-footer__copyright {
+  font-size: var(--type-secondary);
+  line-height: var(--leading-secondary);
   margin-block-start: var(--space-4);
   font-weight: var(--weight-bold);
 }
@@ -567,16 +568,7 @@
 
 @media (min-width: 64rem) {
   .site-footer {
-    font-size: var(--type-footer-wide);
     line-height: var(--leading-copy);
-  }
-
-  .site-footer__heading {
-    font-size: var(--type-footer-heading-wide);
-  }
-
-  .site-footer__copyright {
-    font-size: var(--type-footer-caption-wide);
   }
 
   .site-footer__brand {
