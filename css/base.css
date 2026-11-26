@@ -35,6 +35,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: only light;
+}
+
 body {
   margin: 0;
   background: var(--color-white);
