@@ -2,6 +2,9 @@
 
 Prototipo académico de maquetación web. Incluye Index, Menú-Café, Producto, Sucursales, Nosotros y una guía de estilos interactiva.
 
+- [Abrir Inicio (index.html)](https://victoriamorenosl.github.io/dunkin/index.html)
+- [Abrir la guía de estilos (style-guide.html)](https://victoriamorenosl.github.io/dunkin/style-guide.html)
+
 ## Abrir en local
 
 Desde esta carpeta, ejecuta:
